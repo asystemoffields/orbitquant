@@ -486,14 +486,17 @@ def apply_orbitquant(
     tokenizer,
     calibration_prompts: list[str],
     args,
+    mode: str = "full",
 ) -> tuple[list, dict]:
+    if mode not in {"full", "kv", "mlp"}:
+        raise ValueError(f"unknown OrbitQuant mode {mode!r}")
     kv_layers = parse_int_list(args.kv_layers)
     mlp_choices = parse_mlp_choices(args.mlp_choices, args.mlp_alpha)
     handles = []
-    if kv_layers:
+    if mode in {"full", "kv"} and kv_layers:
         handles.extend(patch_kv_layers(model, kv_layers, args.kv_bits, args.kv_rotation, args.kv_alpha))
     mlp_params = []
-    if mlp_choices:
+    if mode in {"full", "mlp"} and mlp_choices:
         mlp_params = build_mlp_runtime_params(
             model,
             tokenizer,
@@ -504,6 +507,7 @@ def apply_orbitquant(
         )
         handles.extend(patch_mlp_layers(model, mlp_params, args.mlp_bits))
     audit = {
+        "mode": mode,
         "kv_layers": kv_layers,
         "kv_bits": args.kv_bits,
         "kv_rotation": args.kv_rotation,
@@ -532,17 +536,26 @@ def static_payload_bytes(result: dict, variant: str, low_payload: int, total_wei
     return variant_payload_bytes(result, variant, low_payload, total_weights)
 
 
-def normalize_variant(raw: str, args) -> tuple[str, bool, str]:
+def normalize_variant(raw: str, args) -> tuple[str, str | None, str]:
     if raw == "pmra":
-        return args.pmra_variant, False, "pmra"
+        return args.pmra_variant, None, "pmra"
     if raw == "pmra_orbitquant":
-        return args.pmra_variant, True, "pmra_orbitquant"
+        return args.pmra_variant, "full", "pmra_orbitquant"
+    if raw == "pmra_kv_only":
+        return args.pmra_variant, "kv", "pmra_kv_only"
+    if raw == "pmra_mlp_only":
+        return args.pmra_variant, "mlp", "pmra_mlp_only"
     if raw == "orbitquant":
-        return args.orbit_base_source, True, "orbitquant"
-    suffix = "_orbitquant"
-    if raw.endswith(suffix):
-        return raw[: -len(suffix)], True, raw
-    return raw, False, raw
+        return args.orbit_base_source, "full", "orbitquant"
+    suffix_modes = {
+        "_orbitquant": "full",
+        "_kv_only": "kv",
+        "_mlp_only": "mlp",
+    }
+    for suffix, mode in suffix_modes.items():
+        if raw.endswith(suffix):
+            return raw[: -len(suffix)], mode, raw
+    return raw, None, raw
 
 
 def patch_static_variant(
@@ -724,9 +737,9 @@ def run(args) -> dict:
         fp_nll = None
 
         for raw_variant in variants:
-            base_variant, use_orbit, display_name = normalize_variant(raw_variant, args)
+            base_variant, orbit_mode, display_name = normalize_variant(raw_variant, args)
             print(
-                f"[orbit-gemma4] evaluating {display_name} base={base_variant} orbit={use_orbit}",
+                f"[orbit-gemma4] evaluating {display_name} base={base_variant} orbit={orbit_mode or 'none'}",
                 flush=True,
             )
             patch_static_variant(model, hf, readers, groups, specs, result, base_variant, tensor_profile)
@@ -734,8 +747,8 @@ def run(args) -> dict:
             handles = []
             orbit_audit = None
             try:
-                if use_orbit:
-                    handles, orbit_audit = apply_orbitquant(model, tokenizer, calib_prompts, args)
+                if orbit_mode:
+                    handles, orbit_audit = apply_orbitquant(model, tokenizer, calib_prompts, args, orbit_mode)
 
                 eval_args = SimpleNamespace(eval_max_length=args.eval_max_length)
                 eval_result = evaluate_model(
@@ -758,7 +771,8 @@ def run(args) -> dict:
                 stripped["payload_bpw"] = float(payload_bytes * 8 / total_weights)
                 stripped["delta_nll_vs_fp16"] = float(stripped["nll"] - fp_nll)
                 stripped["static_base"] = base_variant
-                stripped["orbitquant"] = bool(use_orbit)
+                stripped["orbitquant"] = bool(orbit_mode)
+                stripped["orbit_mode"] = orbit_mode
                 if orbit_audit is not None:
                     stripped["orbit_audit"] = orbit_audit
                 output["variants"][display_name] = stripped
@@ -768,9 +782,13 @@ def run(args) -> dict:
 
     text_config = model.config.get_text_config() if hasattr(model.config, "get_text_config") else model.config
     orbit_audit = None
-    for row in output["variants"].values():
-        if row.get("orbit_audit"):
-            orbit_audit = row["orbit_audit"]
+    for preferred_mode in ("full", "mlp", "kv"):
+        for row in output["variants"].values():
+            candidate = row.get("orbit_audit")
+            if candidate and candidate.get("mode") == preferred_mode:
+                orbit_audit = candidate
+                break
+        if orbit_audit is not None:
             break
     output["runtime_savings_estimate"] = estimate_runtime_savings_mib(args, text_config, orbit_audit)
     output["completed_utc"] = datetime.now(UTC).isoformat()

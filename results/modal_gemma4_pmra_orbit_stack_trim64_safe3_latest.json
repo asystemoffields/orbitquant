@@ -1,0 +1,230 @@
+{
+  "output_dir": "/cache/results/orbitquant_gemma4_pmra_stack/trim64_safe3_20260513_224137",
+  "variants": {
+    "fp16": {
+      "tokens": 8086,
+      "nll": 14.349727198359933,
+      "ppl": 1706111.2200276991,
+      "payload_bytes": 9294899782,
+      "payload_bpw": 16.0,
+      "delta_nll_vs_fp16": 0.0,
+      "static_base": "fp16",
+      "orbitquant": false,
+      "orbit_mode": null
+    },
+    "q3_k_s": {
+      "tokens": 8086,
+      "nll": 18.045770694323174,
+      "ppl": 68735110.34969883,
+      "last_logit_mse_to_fp16": 34.44797840714455,
+      "top10_overlap_to_fp16": 0.0515625,
+      "payload_bytes": 3094396044,
+      "payload_bpw": 5.32661328956758,
+      "delta_nll_vs_fp16": 3.6960434959632416,
+      "static_base": "q3_k_s",
+      "orbitquant": false,
+      "orbit_mode": null
+    },
+    "pmra": {
+      "tokens": 8086,
+      "nll": 12.984226213243378,
+      "ppl": 435489.6082093468,
+      "last_logit_mse_to_fp16": 59.14878644794226,
+      "top10_overlap_to_fp16": 0.1359375,
+      "payload_bytes": 3094396044,
+      "payload_bpw": 5.32661328956758,
+      "delta_nll_vs_fp16": -1.3655009851165545,
+      "static_base": "c2_calib_knapsack_mixed",
+      "orbitquant": false,
+      "orbit_mode": null
+    },
+    "pmra_kv_only": {
+      "tokens": 8086,
+      "nll": 13.042897893625883,
+      "ppl": 461804.94947116676,
+      "last_logit_mse_to_fp16": 55.830424562096596,
+      "top10_overlap_to_fp16": 0.1421875,
+      "payload_bytes": 3094396044,
+      "payload_bpw": 5.32661328956758,
+      "delta_nll_vs_fp16": -1.30682930473405,
+      "static_base": "c2_calib_knapsack_mixed",
+      "orbitquant": true,
+      "orbit_mode": "kv",
+      "orbit_audit": {
+        "mode": "kv",
+        "kv_layers": [
+          33,
+          28,
+          30,
+          16,
+          18,
+          11,
+          15
+        ],
+        "kv_bits": 3,
+        "kv_rotation": "hadamard",
+        "kv_alpha": 0.75,
+        "mlp_bits": 2,
+        "mlp_block_size": 512,
+        "mlp_choices": []
+      }
+    },
+    "pmra_mlp_only": {
+      "tokens": 8086,
+      "nll": 13.092513612907121,
+      "ppl": 485295.6699367711,
+      "last_logit_mse_to_fp16": 59.58511006087065,
+      "top10_overlap_to_fp16": 0.1375,
+      "payload_bytes": 3094396044,
+      "payload_bpw": 5.32661328956758,
+      "delta_nll_vs_fp16": -1.2572135854528117,
+      "static_base": "c2_calib_knapsack_mixed",
+      "orbitquant": true,
+      "orbit_mode": "mlp",
+      "orbit_audit": {
+        "mode": "mlp",
+        "kv_layers": [
+          33,
+          28,
+          30,
+          16,
+          18,
+          11,
+          15
+        ],
+        "kv_bits": 3,
+        "kv_rotation": "hadamard",
+        "kv_alpha": 0.75,
+        "mlp_bits": 2,
+        "mlp_block_size": 512,
+        "mlp_choices": [
+          {
+            "layer": 20,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375,
+            "rotation_summary": {
+              "name": "preperm_activation_max_hadamard",
+              "dim": 12288,
+              "block_size": 512,
+              "has_order": true
+            }
+          },
+          {
+            "layer": 19,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375,
+            "rotation_summary": {
+              "name": "preperm_activation_max_hadamard",
+              "dim": 12288,
+              "block_size": 512,
+              "has_order": true
+            }
+          },
+          {
+            "layer": 6,
+            "primitive": "plus",
+            "rotation": "preperm_boundary_rms_hadamard",
+            "alpha": 0.375,
+            "rotation_summary": {
+              "name": "preperm_boundary_rms_hadamard",
+              "dim": 6144,
+              "block_size": 512,
+              "has_order": true
+            }
+          }
+        ]
+      }
+    },
+    "pmra_orbitquant": {
+      "tokens": 8086,
+      "nll": 13.059487475046804,
+      "ppl": 469530.0007954527,
+      "last_logit_mse_to_fp16": 58.645174250006676,
+      "top10_overlap_to_fp16": 0.12187500000000001,
+      "payload_bytes": 3094396044,
+      "payload_bpw": 5.32661328956758,
+      "delta_nll_vs_fp16": -1.2902397233131282,
+      "static_base": "c2_calib_knapsack_mixed",
+      "orbitquant": true,
+      "orbit_mode": "full",
+      "orbit_audit": {
+        "mode": "full",
+        "kv_layers": [
+          33,
+          28,
+          30,
+          16,
+          18,
+          11,
+          15
+        ],
+        "kv_bits": 3,
+        "kv_rotation": "hadamard",
+        "kv_alpha": 0.75,
+        "mlp_bits": 2,
+        "mlp_block_size": 512,
+        "mlp_choices": [
+          {
+            "layer": 20,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375,
+            "rotation_summary": {
+              "name": "preperm_activation_max_hadamard",
+              "dim": 12288,
+              "block_size": 512,
+              "has_order": true
+            }
+          },
+          {
+            "layer": 19,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375,
+            "rotation_summary": {
+              "name": "preperm_activation_max_hadamard",
+              "dim": 12288,
+              "block_size": 512,
+              "has_order": true
+            }
+          },
+          {
+            "layer": 6,
+            "primitive": "plus",
+            "rotation": "preperm_boundary_rms_hadamard",
+            "alpha": 0.375,
+            "rotation_summary": {
+              "name": "preperm_boundary_rms_hadamard",
+              "dim": 6144,
+              "block_size": 512,
+              "has_order": true
+            }
+          }
+        ]
+      }
+    }
+  },
+  "baseline": {},
+  "rows": [],
+  "rows_by_delta_desc": [],
+  "rows_by_delta_asc": [],
+  "runtime_savings_estimate": {
+    "context_length": 8192,
+    "mlp_lifetime_tokens": 64,
+    "kv_saved_mib": 45.5,
+    "mlp_saved_mib": 3.28125,
+    "total_saved_mib": 48.78125,
+    "mlp_dims": [
+      12288,
+      12288,
+      6144
+    ]
+  },
+  "wall_time_seconds": 554.1325242519379,
+  "result_path": "/cache/results/orbitquant_gemma4_pmra_stack/trim64_safe3_20260513_224137/result.json",
+  "profile": "trim64_safe3",
+  "stdout_tail": "`torch_dtype` is deprecated! Use `dtype` instead!\n\nLoading weights:   0%|          | 0/2011 [00:00<?, ?it/s]\nLoading weights:   8%|\u258a         | 169/2011 [00:00<00:01, 1689.76it/s]\nLoading weights:  18%|\u2588\u258a        | 365/2011 [00:00<00:00, 1774.15it/s]\nLoading weights:  27%|\u2588\u2588\u258b       | 543/2011 [00:00<00:00, 1753.72it/s]\nLoading weights:  37%|\u2588\u2588\u2588\u258b      | 750/2011 [00:00<00:00, 1802.13it/s]\nLoading weights:  46%|\u2588\u2588\u2588\u2588\u258c     | 930/2011 [00:00<00:01, 866.68it/s] \nLoading weights:  53%|\u2588\u2588\u2588\u2588\u2588\u258e    | 1061/2011 [00:01<00:01, 662.63it/s]\nLoading weights:  58%|\u2588\u2588\u2588\u2588\u2588\u258a    | 1161/2011 [00:01<00:01, 525.48it/s]\nLoading weights:  62%|\u2588\u2588\u2588\u2588\u2588\u2588\u258f   | 1239/2011 [00:01<00:01, 473.72it/s]\nLoading weights:  65%|\u2588\u2588\u2588\u2588\u2588\u2588\u258d   | 1303/2011 [00:01<00:01, 441.44it/s]\nLoading weights:  74%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d  | 1497/2011 [00:02<00:00, 671.76it/s]\nLoading weights:  85%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d | 1705/2011 [00:02<00:00, 928.49it/s]\nLoading weights:  95%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c| 1915/2011 [00:02<00:00, 1169.15it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 2011/2011 [00:02<00:00, 897.47it/s] \n[c2] loading GGUF source iq4_xs: /cache/models/baselines/mradermacher__gemma-4-E2B-it-GGUF/gemma-4-E2B-it.IQ4_XS.gguf\n[c2] loading GGUF source q2_k: /cache/models/baselines/mradermacher__gemma-4-E2B-it-GGUF/gemma-4-E2B-it.Q2_K.gguf\n[c2] loading GGUF source q3_k_l: /cache/models/baselines/mradermacher__gemma-4-E2B-it-GGUF/gemma-4-E2B-it.Q3_K_L.gguf\n[c2] loading GGUF source q3_k_m: /cache/models/baselines/mradermacher__gemma-4-E2B-it-GGUF/gemma-4-E2B-it.Q3_K_M.gguf\n[c2] loading GGUF source q3_k_s: /cache/models/baselines/mradermacher__gemma-4-E2B-it-GGUF/gemma-4-E2B-it.Q3_K_S.gguf\n[c2] loading GGUF source q4_k_m: /cache/models/baselines/mradermacher__gemma-4-E2B-it-GGUF/gemma-4-E2B-it.Q4_K_M.gguf\nWarning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nGenerating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]\nGenerating test split: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 4358/4358 [00:00<00:00, 229918.83 examples/s]\n\nGenerating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]\nGenerating train split: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 36718/36718 [00:00<00:00, 584537.93 examples/s]\n\nGenerating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]\nGenerating validation split: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 3760/3760 [00:00<00:00, 521203.75 examples/s]\n[orbit-gemma4] evaluating fp16 base=fp16 orbit=none\n[orbit-gemma4] restoring fp16 reference weights\n[orbit-gemma4] evaluating q3_k_s base=q3_k_s orbit=none\n[orbit-gemma4] patching uniform source q3_k_s\n[orbit-gemma4] evaluating pmra base=c2_calib_knapsack_mixed orbit=none\n[orbit-gemma4] patching PMRA selection c2_calib_knapsack_mixed\n[orbit-gemma4] evaluating pmra_kv_only base=c2_calib_knapsack_mixed orbit=kv\n[orbit-gemma4] patching PMRA selection c2_calib_knapsack_mixed\n[orbit-gemma4] evaluating pmra_mlp_only base=c2_calib_knapsack_mixed orbit=mlp\n[orbit-gemma4] patching PMRA selection c2_calib_knapsack_mixed\n[orbit-gemma4] calibrating MLP layer 20 rotation=preperm_activation_max_hadamard alpha=0.375\n[orbit-gemma4] calibrating MLP layer 19 rotation=preperm_activation_max_hadamard alpha=0.375\n[orbit-gemma4] calibrating MLP layer 6 rotation=preperm_boundary_rms_hadamard alpha=0.375\n[orbit-gemma4] evaluating pmra_orbitquant base=c2_calib_knapsack_mixed orbit=full\n[orbit-gemma4] patching PMRA selection c2_calib_knapsack_mixed\n[orbit-gemma4] calibrating MLP layer 20 rotation=preperm_activation_max_hadamard alpha=0.375\n[orbit-gemma4] calibrating MLP layer 19 rotation=preperm_activation_max_hadamard alpha=0.375\n[orbit-gemma4] calibrating MLP layer 6 rotation=preperm_boundary_rms_hadamard alpha=0.375\n{\n  \"output_dir\": \"/cache/results/orbitquant_gemma4_pmra_stack/trim64_safe3_20260513_224137\",\n  \"variants\": {\n    \"fp16\": {\n      \"tokens\": 8086,\n      \"nll\": 14.349727198359933,\n      \"ppl\": 1706111.2200276991,\n      \"payload_bytes\": 9294899782,\n      \"payload_bpw\": 16.0,\n      \"delta_nll_vs_fp16\": 0.0,\n      \"static_base\": \"fp16\",\n      \"orbitquant\": false,\n      \"orbit_mode\": null\n    },\n    \"q3_k_s\": {\n      \"tokens\": 8086,\n      \"nll\": 18.045770694323174,\n      \"ppl\": 68735110.34969883,\n      \"last_logit_mse_to_fp16\": 34.44797840714455,\n      \"top10_overlap_to_fp16\": 0.0515625,\n      \"payload_bytes\": 3094396044,\n      \"payload_bpw\": 5.32661328956758,\n      \"delta_nll_vs_fp16\": 3.6960434959632416,\n      \"static_base\": \"q3_k_s\",\n      \"orbitquant\": false,\n      \"orbit_mode\": null\n    },\n    \"pmra\": {\n      \"tokens\": 8086,\n      \"nll\": 12.984226213243378,\n      \"ppl\": 435489.6082093468,\n      \"last_logit_mse_to_fp16\": 59.14878644794226,\n      \"top10_overlap_to_fp16\": 0.1359375,\n      \"payload_bytes\": 3094396044,\n      \"payload_bpw\": 5.32661328956758,\n      \"delta_nll_vs_fp16\": -1.3655009851165545,\n      \"static_base\": \"c2_calib_knapsack_mixed\",\n      \"orbitquant\": false,\n      \"orbit_mode\": null\n    },\n    \"pmra_kv_only\": {\n      \"tokens\": 8086,\n      \"nll\": 13.042897893625883,\n      \"ppl\": 461804.94947116676,\n      \"last_logit_mse_to_fp16\": 55.830424562096596,\n      \"top10_overlap_to_fp16\": 0.1421875,\n      \"payload_bytes\": 3094396044,\n      \"payload_bpw\": 5.32661328956758,\n      \"delta_nll_vs_fp16\": -1.30682930473405,\n      \"static_base\": \"c2_calib_knapsack_mixed\",\n      \"orbitquant\": true,\n      \"orbit_mode\": \"kv\",\n      \"orbit_audit\": {\n        \"mode\": \"kv\",\n        \"kv_layers\": [\n          33,\n          28,\n          30,\n          16,\n          18,\n          11,\n          15\n        ],\n        \"kv_bits\": 3,\n        \"kv_rotation\": \"hadamard\",\n        \"kv_alpha\": 0.75,\n        \"mlp_bits\": 2,\n        \"mlp_block_size\": 512,\n        \"mlp_choices\": []\n      }\n    },\n    \"pmra_mlp_only\": {\n      \"tokens\": 8086,\n      \"nll\": 13.092513612907121,\n      \"ppl\": 485295.6699367711,\n      \"last_logit_mse_to_fp16\": 59.58511006087065,\n      \"top10_overlap_to_fp16\": 0.1375,\n      \"payload_bytes\": 3094396044,\n      \"payload_bpw\": 5.32661328956758,\n      \"delta_nll_vs_fp16\": -1.2572135854528117,\n      \"static_base\": \"c2_calib_knapsack_mixed\",\n      \"orbitquant\": true,\n      \"orbit_mode\": \"mlp\",\n      \"orbit_audit\": {\n        \"mode\": \"mlp\",\n        \"kv_layers\": [\n          33,\n          28,\n          30,\n          16,\n          18,\n          11,\n          15\n        ],\n        \"kv_bits\": 3,\n        \"kv_rotation\": \"hadamard\",\n        \"kv_alpha\": 0.75,\n        \"mlp_bits\": 2,\n        \"mlp_block_size\": 512,\n        \"mlp_choices\": [\n          {\n            \"layer\": 20,\n            \"primitive\": \"plus\",\n            \"rotation\": \"preperm_activation_max_hadamard\",\n            \"alpha\": 0.375,\n            \"rotation_summary\": {\n              \"name\": \"preperm_activation_max_hadamard\",\n              \"dim\": 12288,\n              \"block_size\": 512,\n              \"has_order\": true\n            }\n          },\n          {\n            \"layer\": 19,\n            \"primitive\": \"plus\",\n            \"rotation\": \"preperm_activation_max_hadamard\",\n            \"alpha\": 0.375,\n            \"rotation_summary\": {\n              \"name\": \"preperm_activation_max_hadamard\",\n              \"dim\": 12288,\n              \"block_size\": 512,\n              \"has_order\": true\n            }\n          },\n          {\n            \"layer\": 6,\n            \"primitive\": \"plus\",\n            \"rotation\": \"preperm_boundary_rms_hadamard\",\n            \"alpha\": 0.375,\n            \"rotation_summary\": {\n              \"name\": \"preperm_boundary_rms_hadamard\",\n              \"dim\": 6144,\n              \"block_size\": 512,\n              \"has_order\": true\n            }\n          }\n        ]\n      }\n    },\n    \"pmra_orbitquant\": {\n      \"tokens\": 8086,\n      \"nll\": 13.059487475046804,\n      \"ppl\": 469530.0007954527,\n      \"last_logit_mse_to_fp16\": 58.645174250006676,\n      \"top10_overlap_to_fp16\": 0.12187500000000001,\n      \"payload_bytes\": 3094396044,\n      \"payload_bpw\": 5.32661328956758,\n      \"delta_nll_vs_fp16\": -1.2902397233131282,\n      \"static_base\": \"c2_calib_knapsack_mixed\",\n      \"orbitquant\": true,\n      \"orbit_mode\": \"full\",\n      \"orbit_audit\": {\n        \"mode\": \"full\",\n        \"kv_layers\": [\n          33,\n          28,\n          30,\n          16,\n          18,\n          11,\n          15\n        ],\n        \"kv_bits\": 3,\n        \"kv_rotation\": \"hadamard\",\n        \"kv_alpha\": 0.75,\n        \"mlp_bits\": 2,\n        \"mlp_block_size\": 512,\n        \"mlp_choices\": [\n          {\n            \"layer\": 20,\n            \"primitive\": \"plus\",\n            \"rotation\": \"preperm_activation_max_hadamard\",\n            \"alpha\": 0.375,\n            \"rotation_summary\": {\n              \"name\": \"preperm_activation_max_hadamard\",\n              \"dim\": 12288,\n              \"block_size\": 512,\n              \"has_order\": true\n            }\n          },\n          {\n            \"layer\": 19,\n            \"primitive\": \"plus\",\n            \"rotation\": \"preperm_activation_max_hadamard\",\n            \"alpha\": 0.375,\n            \"rotation_summary\": {\n              \"name\": \"preperm_activation_max_hadamard\",\n              \"dim\": 12288,\n              \"block_size\": 512,\n              \"has_order\": true\n            }\n          },\n          {\n            \"layer\": 6,\n            \"primitive\": \"plus\",\n            \"rotation\": \"preperm_boundary_rms_hadamard\",\n            \"alpha\": 0.375,\n            \"rotation_summary\": {\n              \"name\": \"preperm_boundary_rms_hadamard\",\n              \"dim\": 6144,\n              \"block_size\": 512,\n              \"has_order\": true\n            }\n          }\n        ]\n      }\n    }\n  }\n}\n[orbit-gemma4] wrote /cache/results/orbitquant_gemma4_pmra_stack/trim64_safe3_20260513_224137/result.md\n",
+  "persisted_volume": "codex-jmrc-cache"
+}

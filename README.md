@@ -20,24 +20,35 @@ Result note:
 
 ```text
 notes/gemma4_pmra_orbit_stack_result.md
+notes/gemma4_pmra_orbit_damage_attribution.md
 ```
 
 Fetched Modal summary:
 
 ```text
 results/modal_gemma4_pmra_orbit_stack_stack64_latest.json
+results/modal_gemma4_pmra_orbit_stack_split64_latest.json
+results/modal_gemma4_pmra_orbit_layer_mlp_split64_latest.json
+results/modal_gemma4_pmra_orbit_stack_trim64_safe3_latest.json
 ```
 
-Stack64 result on Wikitext test, 64 prompts:
+Current Gemma4 PMRA + OrbitQuant operating point on Wikitext test, 64 prompts:
 
 | Variant | NLL | Payload bpw |
 |---|---:|---:|
 | q3_k_s | 18.045771 | 5.326613 |
-| q3_k_s + OrbitQuant | 17.921134 | 5.326613 |
 | PMRA | 12.984226 | 5.326613 |
-| PMRA + OrbitQuant | 13.818808 | 5.326613 |
+| PMRA + KV-only OrbitQuant | 13.042898 | 5.326613 |
+| PMRA + OrbitQuant safe3 | 13.059487 | 5.326613 |
 
-The naive depth-scaled policy costs PMRA `0.834582` NLL while preserving about `83.5%` of PMRA's gain over uniform `q3_k_s`. The next allocator should select Gemma4/PMRA-native runtime buses instead of inheriting the SmolLM2 layer map.
+The `safe3` stack keeps PMRA's static payload and adds a runtime overlay:
+
+- KV layers: `33,28,30,16,18,11,15`, 3-bit Hadamard.
+- MLP buses: `20:plus:preperm_activation_max_hadamard`, `19:plus:preperm_activation_max_hadamard`, `6:plus:preperm_boundary_rms_hadamard`, 2-bit.
+- Estimated runtime memory saved: `48.78 MiB` at context length 8192 with 64 live MLP tokens.
+- NLL cost over PMRA: `0.075261`.
+
+The damage attribution run found that the original inherited MLP buses caused most of the stack loss. Dropping layers 14/15 recovered `0.375819` NLL; trimming to the safe three MLP buses recovered `0.597284` NLL versus the original split stack.
 
 Quality16 14-bus result on the broad held-out prompt split:
 

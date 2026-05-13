@@ -14,6 +14,11 @@ results/*
 !results/smol135_mlp_impact_2bit_20260513_084037.json
 !results/smol135_fused_stack_20260513_093857.json
 !results/modal_gemma4_pmra_orbit_stack_stack64_latest.json
+!results/modal_gemma4_pmra_orbit_stack_split64_latest.json
+!results/modal_gemma4_pmra_orbit_layer_mlp_split64_latest.json
+!results/modal_gemma4_pmra_orbit_stack_trim64_no14_15_latest.json
+!results/modal_gemma4_pmra_orbit_stack_trim64_safe3_latest.json
+!results/modal_gemma4_pmra_orbit_stack_trim64_mlp20_latest.json
 
 results/modal_runs/
 *.log
