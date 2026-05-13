@@ -1,0 +1,78 @@
+Describe why a Hadamard rotation can help scalar quantization.
+Write a Python function that reverses a list without modifying the original.
+The capital city of Canada is
+If an object travels 60 miles in 2 hours, its average speed is
+Summarize in one sentence: the system stores detail only where behavior is sensitive to error.
+Translate to Italian: The experiment needs a stronger evaluation set.
+In SQL, the WHERE clause is used to
+The color made by mixing red and blue is
+Complete the sequence: 3, 6, 12, 24,
+A cautious financial answer should remind the user to consider
+The exception occurred because the index was outside
+Explain why a held-out test set matters.
+In a lease agreement, the tenant usually agrees to
+Write a JavaScript function that returns true if a number is even.
+The telescope allowed scientists to observe
+If lunch costs 18 dollars and the tip is 20 percent, the tip is
+A residual stream in a transformer carries
+The character kept the old photograph because
+Classify the sentiment: The package arrived late and the box was damaged.
+The HTTP status code 500 means
+Explain compression using the analogy of a library catalog.
+In Python, a set is useful when you need
+The capital of Brazil is
+Freezing water at standard pressure occurs at
+A useful integration test checks whether components
+The file was saved successfully after the user clicked
+The peace agreement required both sides to
+Give a short headline for an article about a new battery breakthrough.
+The binary representation of eight is
+In music, melody refers to
+Write a regex that matches a basic email-like string.
+The loop terminates when the counter reaches
+A controlled experiment includes a control group to
+The baker folded the dough and let it
+Explain why local operator error may not predict global model behavior.
+If a 40 dollar jacket is discounted by 25 percent, the new price is
+The opposite of generous is
+Attention heads can specialize in patterns such as
+The patient should consult a clinician if the pain
+Rewrite in a friendly tone: Please submit the report today.
+The novel uses rain to create a mood of
+Name three planets in the solar system.
+In Git, a commit records
+Breadth-first search is often used to find
+Complete the analogy: key is to lock as password is to
+Explain why an allocator might compress only selected layers.
+The guide said the painting was restored after
+The operating system schedules tasks according to
+A deadlock occurs when processes wait on each other for
+Summarize: The rotation reduces coordinate outliers before ternary rounding.
+The circumference of a circle depends on its
+Return a YAML object with fields title and priority.
+The investigator reviewed camera footage, receipts, and phone records to
+In chemistry, a catalyst changes the rate of
+An assistant should refuse requests that enable
+Write a PowerShell command that shows the current directory.
+The word "ambiguous" most nearly means
+If 45 students form groups of 5, there are
+The answer should include uncertainty because the evidence is
+The rover collected samples from the surface of
+Explain why clipping can improve ternary quantization.
+The conference was rescheduled after the venue
+The soup is ready when the vegetables are
+In chess, a knight moves in
+The user asked for implementation, so the assistant should
+The simplest model that fits the evidence is often preferred by
+The garden dried out after weeks without
+Write pseudocode for checking whether a number is prime.
+The phrase "under the weather" means
+In probability, mutually exclusive events cannot
+The archaeologist compared pottery fragments with known regional styles to
+The API returned status 403, which indicates
+If an account balance rises from 120 to 150, it increases by
+The city council voted on a proposal about
+Explain how a tiny correction map could preserve a boundary operation.
+The story begins when the character discovers
+The command line option --version usually
+The most likely next word after "salt and" is

@@ -1,0 +1,1964 @@
+{
+  "experiment": "mlp_hadamard_plus_impact_sweep",
+  "repo": "HuggingFaceTB/SmolLM2-135M",
+  "local_result": "results\\smol135_mlp_hadamard_plus_2bit_20260513_131208.json",
+  "bits": 2,
+  "block_size": 512,
+  "calibration_prompt_count": 78,
+  "eval_prompt_count": 78,
+  "baseline_eval": {
+    "loss": 4.249420642852783,
+    "perplexity": 70.06481170654297
+  },
+  "summary": {
+    "groups": 30,
+    "single_layer_kl_wins_vs_plain": 17,
+    "mean_single_layer_kl_delta_vs_plain": -0.03710894783337911,
+    "mean_single_layer_topk_delta_vs_plain": 0.007384976525821611
+  },
+  "rows": [
+    {
+      "layer": 0,
+      "identity": {
+        "param": {
+          "layer": 0,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.4190780222415924,
+          "local_eval_down_output_rel_mse": 0.44069918990135193
+        },
+        "metrics": {
+          "loss": 7.896967887878418,
+          "perplexity": 2689.1162109375,
+          "logit_mse": 108.01152801513672,
+          "kl_from_baseline": 3.3326354026794434,
+          "topk_overlap": 0.2964788732394366,
+          "loss_delta_from_baseline": 3.6475472450256348
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 0,
+          "rotation": "block_hadamard",
+          "alpha": 0.5,
+          "local_calibration_down_output_rel_mse": 0.14597442746162415,
+          "local_eval_down_output_rel_mse": 0.13780106604099274
+        },
+        "metrics": {
+          "loss": 4.454552173614502,
+          "perplexity": 86.01762390136719,
+          "logit_mse": 4.023708820343018,
+          "kl_from_baseline": 0.17868861556053162,
+          "topk_overlap": 0.7771830985915492,
+          "loss_delta_from_baseline": 0.20513153076171875
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 0,
+          "rotation": "preperm_boundary_rms_hadamard",
+          "alpha": 0.5,
+          "local_calibration_down_output_rel_mse": 0.11411172896623611,
+          "local_eval_down_output_rel_mse": 0.11268305033445358
+        },
+        "metrics": {
+          "loss": 4.458526611328125,
+          "perplexity": 86.36017608642578,
+          "logit_mse": 3.031979560852051,
+          "kl_from_baseline": 0.14177873730659485,
+          "topk_overlap": 0.8111267605633803,
+          "loss_delta_from_baseline": 0.2091059684753418
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": -0.03690987825393677,
+        "topk_overlap": 0.033943661971831074,
+        "loss_delta_from_baseline": 0.003974437713623047
+      }
+    },
+    {
+      "layer": 1,
+      "identity": {
+        "param": {
+          "layer": 1,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.3601015508174896,
+          "local_eval_down_output_rel_mse": 0.33675941824913025
+        },
+        "metrics": {
+          "loss": 4.603881359100342,
+          "perplexity": 99.87120056152344,
+          "logit_mse": 5.123106002807617,
+          "kl_from_baseline": 0.2928183972835541,
+          "topk_overlap": 0.7601408450704226,
+          "loss_delta_from_baseline": 0.3544607162475586
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 1,
+          "rotation": "block_hadamard",
+          "alpha": 0.5,
+          "local_calibration_down_output_rel_mse": 0.12721200287342072,
+          "local_eval_down_output_rel_mse": 0.131706103682518
+        },
+        "metrics": {
+          "loss": 4.360340595245361,
+          "perplexity": 78.2837905883789,
+          "logit_mse": 2.6802334785461426,
+          "kl_from_baseline": 0.10830207169055939,
+          "topk_overlap": 0.8502816901408451,
+          "loss_delta_from_baseline": 0.11091995239257812
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 1,
+          "rotation": "preperm_activation_rms_hadamard",
+          "alpha": 0.5,
+          "local_calibration_down_output_rel_mse": 0.09446709603071213,
+          "local_eval_down_output_rel_mse": 0.1005396842956543
+        },
+        "metrics": {
+          "loss": 4.317807674407959,
+          "perplexity": 75.02397155761719,
+          "logit_mse": 1.1650627851486206,
+          "kl_from_baseline": 0.06872192025184631,
+          "topk_overlap": 0.8736619718309858,
+          "loss_delta_from_baseline": 0.06838703155517578
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": -0.039580151438713074,
+        "topk_overlap": 0.023380281690140725,
+        "loss_delta_from_baseline": -0.042532920837402344
+      }
+    },
+    {
+      "layer": 2,
+      "identity": {
+        "param": {
+          "layer": 2,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.0627976804971695,
+          "local_eval_down_output_rel_mse": 0.06178940832614899
+        },
+        "metrics": {
+          "loss": 5.13180685043335,
+          "perplexity": 169.32278442382812,
+          "logit_mse": 20.635135650634766,
+          "kl_from_baseline": 0.9619617462158203,
+          "topk_overlap": 0.6825352112676056,
+          "loss_delta_from_baseline": 0.8823862075805664
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 2,
+          "rotation": "block_hadamard",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.03477488458156586,
+          "local_eval_down_output_rel_mse": 0.03342059999704361
+        },
+        "metrics": {
+          "loss": 7.5738654136657715,
+          "perplexity": 1946.650390625,
+          "logit_mse": 73.1396484375,
+          "kl_from_baseline": 3.066957712173462,
+          "topk_overlap": 0.35591549295774644,
+          "loss_delta_from_baseline": 3.3244447708129883
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 2,
+          "rotation": "preperm_down_norm_hadamard",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.026266077533364296,
+          "local_eval_down_output_rel_mse": 0.024449218064546585
+        },
+        "metrics": {
+          "loss": 7.273176193237305,
+          "perplexity": 1441.1204833984375,
+          "logit_mse": 56.65583801269531,
+          "kl_from_baseline": 2.808715581893921,
+          "topk_overlap": 0.43112676056338034,
+          "loss_delta_from_baseline": 3.0237555503845215
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": -0.258242130279541,
+        "topk_overlap": 0.0752112676056339,
+        "loss_delta_from_baseline": -0.3006892204284668
+      }
+    },
+    {
+      "layer": 3,
+      "identity": {
+        "param": {
+          "layer": 3,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.7414997220039368,
+          "local_eval_down_output_rel_mse": 0.7493472099304199
+        },
+        "metrics": {
+          "loss": 4.375044345855713,
+          "perplexity": 79.443359375,
+          "logit_mse": 1.2401601076126099,
+          "kl_from_baseline": 0.08123721182346344,
+          "topk_overlap": 0.888450704225352,
+          "loss_delta_from_baseline": 0.1256237030029297
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 3,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.17314934730529785,
+          "local_eval_down_output_rel_mse": 0.1728011667728424
+        },
+        "metrics": {
+          "loss": 4.28147029876709,
+          "perplexity": 72.34673309326172,
+          "logit_mse": 0.3578323721885681,
+          "kl_from_baseline": 0.017339840531349182,
+          "topk_overlap": 0.9438028169014084,
+          "loss_delta_from_baseline": 0.03204965591430664
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 3,
+          "rotation": "preperm_boundary_max_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.16672813892364502,
+          "local_eval_down_output_rel_mse": 0.1702980250120163
+        },
+        "metrics": {
+          "loss": 4.280116081237793,
+          "perplexity": 72.24882507324219,
+          "logit_mse": 0.22585833072662354,
+          "kl_from_baseline": 0.017970995977520943,
+          "topk_overlap": 0.9453521126760565,
+          "loss_delta_from_baseline": 0.030695438385009766
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": 0.0006311554461717606,
+        "topk_overlap": 0.0015492957746480185,
+        "loss_delta_from_baseline": -0.001354217529296875
+      }
+    },
+    {
+      "layer": 4,
+      "identity": {
+        "param": {
+          "layer": 4,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.4194023311138153,
+          "local_eval_down_output_rel_mse": 0.43843910098075867
+        },
+        "metrics": {
+          "loss": 4.297394752502441,
+          "perplexity": 73.5080337524414,
+          "logit_mse": 0.9426166415214539,
+          "kl_from_baseline": 0.055436138063669205,
+          "topk_overlap": 0.8976056338028169,
+          "loss_delta_from_baseline": 0.0479741096496582
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 4,
+          "rotation": "block_hadamard",
+          "alpha": 0.5,
+          "local_calibration_down_output_rel_mse": 0.171327605843544,
+          "local_eval_down_output_rel_mse": 0.1756400465965271
+        },
+        "metrics": {
+          "loss": 4.26300048828125,
+          "perplexity": 71.02276611328125,
+          "logit_mse": 0.16999872028827667,
+          "kl_from_baseline": 0.012044043280184269,
+          "topk_overlap": 0.9449295774647887,
+          "loss_delta_from_baseline": 0.013579845428466797
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 4,
+          "rotation": "interleave_boundary_rms_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.16342420876026154,
+          "local_eval_down_output_rel_mse": 0.16443078219890594
+        },
+        "metrics": {
+          "loss": 4.277280807495117,
+          "perplexity": 72.04427337646484,
+          "logit_mse": 0.20720233023166656,
+          "kl_from_baseline": 0.012627133168280125,
+          "topk_overlap": 0.9457746478873239,
+          "loss_delta_from_baseline": 0.027860164642333984
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": 0.0005830898880958557,
+        "topk_overlap": 0.0008450704225352323,
+        "loss_delta_from_baseline": 0.014280319213867188
+      }
+    },
+    {
+      "layer": 5,
+      "identity": {
+        "param": {
+          "layer": 5,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.6414400935173035,
+          "local_eval_down_output_rel_mse": 0.6748542189598083
+        },
+        "metrics": {
+          "loss": 4.29617166519165,
+          "perplexity": 73.41818237304688,
+          "logit_mse": 0.9237097501754761,
+          "kl_from_baseline": 0.05813755467534065,
+          "topk_overlap": 0.8877464788732393,
+          "loss_delta_from_baseline": 0.04675102233886719
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 5,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.16136769950389862,
+          "local_eval_down_output_rel_mse": 0.16033264994621277
+        },
+        "metrics": {
+          "loss": 4.258110046386719,
+          "perplexity": 70.67628479003906,
+          "logit_mse": 0.15739533305168152,
+          "kl_from_baseline": 0.00934002734720707,
+          "topk_overlap": 0.9498591549295774,
+          "loss_delta_from_baseline": 0.008689403533935547
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 5,
+          "rotation": "preperm_boundary_rms_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.15332043170928955,
+          "local_eval_down_output_rel_mse": 0.15073013305664062
+        },
+        "metrics": {
+          "loss": 4.262040138244629,
+          "perplexity": 70.95458984375,
+          "logit_mse": 0.16669437289237976,
+          "kl_from_baseline": 0.01178254559636116,
+          "topk_overlap": 0.9507042253521126,
+          "loss_delta_from_baseline": 0.012619495391845703
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": 0.002442518249154091,
+        "topk_overlap": 0.0008450704225352323,
+        "loss_delta_from_baseline": 0.003930091857910156
+      }
+    },
+    {
+      "layer": 6,
+      "identity": {
+        "param": {
+          "layer": 6,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.6119468808174133,
+          "local_eval_down_output_rel_mse": 0.6274381875991821
+        },
+        "metrics": {
+          "loss": 4.30111837387085,
+          "perplexity": 73.78226470947266,
+          "logit_mse": 0.7273063063621521,
+          "kl_from_baseline": 0.04548076167702675,
+          "topk_overlap": 0.892112676056338,
+          "loss_delta_from_baseline": 0.051697731018066406
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 6,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.17360791563987732,
+          "local_eval_down_output_rel_mse": 0.17574171721935272
+        },
+        "metrics": {
+          "loss": 4.25874137878418,
+          "perplexity": 70.72091674804688,
+          "logit_mse": 0.16572245955467224,
+          "kl_from_baseline": 0.010641932487487793,
+          "topk_overlap": 0.9474647887323945,
+          "loss_delta_from_baseline": 0.009320735931396484
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 6,
+          "rotation": "preperm_down_norm_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.14970970153808594,
+          "local_eval_down_output_rel_mse": 0.15377439558506012
+        },
+        "metrics": {
+          "loss": 4.260123252868652,
+          "perplexity": 70.81871032714844,
+          "logit_mse": 0.1896643042564392,
+          "kl_from_baseline": 0.011501291766762733,
+          "topk_overlap": 0.942112676056338,
+          "loss_delta_from_baseline": 0.01070261001586914
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": 0.0008593592792749405,
+        "topk_overlap": -0.0053521126760565085,
+        "loss_delta_from_baseline": 0.0013818740844726562
+      }
+    },
+    {
+      "layer": 7,
+      "identity": {
+        "param": {
+          "layer": 7,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.4610432982444763,
+          "local_eval_down_output_rel_mse": 0.49138733744621277
+        },
+        "metrics": {
+          "loss": 4.298687934875488,
+          "perplexity": 73.60315704345703,
+          "logit_mse": 0.865024983882904,
+          "kl_from_baseline": 0.055620670318603516,
+          "topk_overlap": 0.8867605633802818,
+          "loss_delta_from_baseline": 0.04926729202270508
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 7,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.17587165534496307,
+          "local_eval_down_output_rel_mse": 0.1737072914838791
+        },
+        "metrics": {
+          "loss": 4.274237155914307,
+          "perplexity": 71.82532501220703,
+          "logit_mse": 0.8505947589874268,
+          "kl_from_baseline": 0.0205584317445755,
+          "topk_overlap": 0.9298591549295775,
+          "loss_delta_from_baseline": 0.024816513061523438
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 7,
+          "rotation": "preperm_activation_rms_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.1691025197505951,
+          "local_eval_down_output_rel_mse": 0.16627073287963867
+        },
+        "metrics": {
+          "loss": 4.259744644165039,
+          "perplexity": 70.79190063476562,
+          "logit_mse": 0.8299165964126587,
+          "kl_from_baseline": 0.01951696164906025,
+          "topk_overlap": 0.9329577464788732,
+          "loss_delta_from_baseline": 0.01032400131225586
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": -0.0010414700955152512,
+        "topk_overlap": 0.003098591549295704,
+        "loss_delta_from_baseline": -0.014492511749267578
+      }
+    },
+    {
+      "layer": 8,
+      "identity": {
+        "param": {
+          "layer": 8,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.5108027458190918,
+          "local_eval_down_output_rel_mse": 0.4787784516811371
+        },
+        "metrics": {
+          "loss": 4.946384429931641,
+          "perplexity": 140.6654510498047,
+          "logit_mse": 16.5286865234375,
+          "kl_from_baseline": 0.7089728116989136,
+          "topk_overlap": 0.7343661971830986,
+          "loss_delta_from_baseline": 0.6969637870788574
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 8,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.21095813810825348,
+          "local_eval_down_output_rel_mse": 0.21280620992183685
+        },
+        "metrics": {
+          "loss": 5.307046413421631,
+          "perplexity": 201.75344848632812,
+          "logit_mse": 10.874926567077637,
+          "kl_from_baseline": 1.1135826110839844,
+          "topk_overlap": 0.7767605633802817,
+          "loss_delta_from_baseline": 1.0576257705688477
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 8,
+          "rotation": "preperm_activation_rms_hadamard",
+          "alpha": 0.5,
+          "local_calibration_down_output_rel_mse": 0.1429394781589508,
+          "local_eval_down_output_rel_mse": 0.1330210119485855
+        },
+        "metrics": {
+          "loss": 4.312201023101807,
+          "perplexity": 74.6045150756836,
+          "logit_mse": 0.995541512966156,
+          "kl_from_baseline": 0.07969074696302414,
+          "topk_overlap": 0.8732394366197183,
+          "loss_delta_from_baseline": 0.06278038024902344
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": -1.0338918641209602,
+        "topk_overlap": 0.0964788732394366,
+        "loss_delta_from_baseline": -0.9948453903198242
+      }
+    },
+    {
+      "layer": 9,
+      "identity": {
+        "param": {
+          "layer": 9,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.11887726187705994,
+          "local_eval_down_output_rel_mse": 0.10436336696147919
+        },
+        "metrics": {
+          "loss": 6.024762153625488,
+          "perplexity": 413.54327392578125,
+          "logit_mse": 38.32095718383789,
+          "kl_from_baseline": 1.5929123163223267,
+          "topk_overlap": 0.5949295774647887,
+          "loss_delta_from_baseline": 1.775341510772705
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 9,
+          "rotation": "block_hadamard",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.10578884184360504,
+          "local_eval_down_output_rel_mse": 0.08343073725700378
+        },
+        "metrics": {
+          "loss": 6.192370891571045,
+          "perplexity": 489.0041198730469,
+          "logit_mse": 44.28654861450195,
+          "kl_from_baseline": 1.8884414434432983,
+          "topk_overlap": 0.5577464788732395,
+          "loss_delta_from_baseline": 1.9429502487182617
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 9,
+          "rotation": "preperm_activation_max_hadamard",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.09820540249347687,
+          "local_eval_down_output_rel_mse": 0.07982930541038513
+        },
+        "metrics": {
+          "loss": 6.3156843185424805,
+          "perplexity": 553.1804809570312,
+          "logit_mse": 48.60142517089844,
+          "kl_from_baseline": 1.9872938394546509,
+          "topk_overlap": 0.5608450704225352,
+          "loss_delta_from_baseline": 2.0662636756896973
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": 0.09885239601135254,
+        "topk_overlap": 0.003098591549295704,
+        "loss_delta_from_baseline": 0.12331342697143555
+      }
+    },
+    {
+      "layer": 10,
+      "identity": {
+        "param": {
+          "layer": 10,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.1601741462945938,
+          "local_eval_down_output_rel_mse": 0.1474531590938568
+        },
+        "metrics": {
+          "loss": 4.953023433685303,
+          "perplexity": 141.60244750976562,
+          "logit_mse": 24.264822006225586,
+          "kl_from_baseline": 0.7086048722267151,
+          "topk_overlap": 0.6983098591549296,
+          "loss_delta_from_baseline": 0.7036027908325195
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 10,
+          "rotation": "block_hadamard",
+          "alpha": 0.75,
+          "local_calibration_down_output_rel_mse": 0.12578454613685608,
+          "local_eval_down_output_rel_mse": 0.13194382190704346
+        },
+        "metrics": {
+          "loss": 4.986923694610596,
+          "perplexity": 146.48509216308594,
+          "logit_mse": 8.635581970214844,
+          "kl_from_baseline": 0.7570772171020508,
+          "topk_overlap": 0.7607042253521127,
+          "loss_delta_from_baseline": 0.7375030517578125
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 10,
+          "rotation": "preperm_activation_max_hadamard",
+          "alpha": 0.5,
+          "local_calibration_down_output_rel_mse": 0.07205533236265182,
+          "local_eval_down_output_rel_mse": 0.07261642813682556
+        },
+        "metrics": {
+          "loss": 5.063039779663086,
+          "perplexity": 158.07028198242188,
+          "logit_mse": 12.448395729064941,
+          "kl_from_baseline": 0.80759197473526,
+          "topk_overlap": 0.7425352112676057,
+          "loss_delta_from_baseline": 0.8136191368103027
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": 0.05051475763320923,
+        "topk_overlap": -0.018169014084506996,
+        "loss_delta_from_baseline": 0.07611608505249023
+      }
+    },
+    {
+      "layer": 11,
+      "identity": {
+        "param": {
+          "layer": 11,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.07923854142427444,
+          "local_eval_down_output_rel_mse": 0.08169917017221451
+        },
+        "metrics": {
+          "loss": 4.9774041175842285,
+          "perplexity": 145.0972442626953,
+          "logit_mse": 22.593093872070312,
+          "kl_from_baseline": 0.7950603365898132,
+          "topk_overlap": 0.7463380281690141,
+          "loss_delta_from_baseline": 0.7279834747314453
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 11,
+          "rotation": "block_hadamard",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.008809559047222137,
+          "local_eval_down_output_rel_mse": 0.007360842544585466
+        },
+        "metrics": {
+          "loss": 4.960585117340088,
+          "perplexity": 142.67726135253906,
+          "logit_mse": 4.964598178863525,
+          "kl_from_baseline": 0.6483737826347351,
+          "topk_overlap": 0.7771830985915492,
+          "loss_delta_from_baseline": 0.7111644744873047
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 11,
+          "rotation": "block_hadamard",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.008809559047222137,
+          "local_eval_down_output_rel_mse": 0.007360842544585466
+        },
+        "metrics": {
+          "loss": 4.960585117340088,
+          "perplexity": 142.67726135253906,
+          "logit_mse": 4.964598178863525,
+          "kl_from_baseline": 0.6483737826347351,
+          "topk_overlap": 0.7771830985915492,
+          "loss_delta_from_baseline": 0.7111644744873047
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": 0.0,
+        "topk_overlap": 0.0,
+        "loss_delta_from_baseline": 0.0
+      }
+    },
+    {
+      "layer": 12,
+      "identity": {
+        "param": {
+          "layer": 12,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.8026657104492188,
+          "local_eval_down_output_rel_mse": 0.8102744221687317
+        },
+        "metrics": {
+          "loss": 4.3102874755859375,
+          "perplexity": 74.4618911743164,
+          "logit_mse": 0.8040868043899536,
+          "kl_from_baseline": 0.051920317113399506,
+          "topk_overlap": 0.8930985915492958,
+          "loss_delta_from_baseline": 0.0608668327331543
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 12,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.18949107825756073,
+          "local_eval_down_output_rel_mse": 0.1909726858139038
+        },
+        "metrics": {
+          "loss": 4.2588701248168945,
+          "perplexity": 70.73001861572266,
+          "logit_mse": 0.13566337525844574,
+          "kl_from_baseline": 0.00865330919623375,
+          "topk_overlap": 0.9505633802816901,
+          "loss_delta_from_baseline": 0.009449481964111328
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 12,
+          "rotation": "preperm_activation_max_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.18797607719898224,
+          "local_eval_down_output_rel_mse": 0.18843139708042145
+        },
+        "metrics": {
+          "loss": 4.264193534851074,
+          "perplexity": 71.10755157470703,
+          "logit_mse": 0.15836547315120697,
+          "kl_from_baseline": 0.009045826271176338,
+          "topk_overlap": 0.9477464788732394,
+          "loss_delta_from_baseline": 0.014772891998291016
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": 0.0003925170749425888,
+        "topk_overlap": -0.0028169014084507005,
+        "loss_delta_from_baseline": 0.0053234100341796875
+      }
+    },
+    {
+      "layer": 13,
+      "identity": {
+        "param": {
+          "layer": 13,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.6831396818161011,
+          "local_eval_down_output_rel_mse": 0.6776382327079773
+        },
+        "metrics": {
+          "loss": 4.31845235824585,
+          "perplexity": 75.07234954833984,
+          "logit_mse": 0.8624857068061829,
+          "kl_from_baseline": 0.04464399814605713,
+          "topk_overlap": 0.889718309859155,
+          "loss_delta_from_baseline": 0.0690317153930664
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 13,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.16596855223178864,
+          "local_eval_down_output_rel_mse": 0.16464154422283173
+        },
+        "metrics": {
+          "loss": 4.257667541503906,
+          "perplexity": 70.64501190185547,
+          "logit_mse": 0.16613824665546417,
+          "kl_from_baseline": 0.00884309969842434,
+          "topk_overlap": 0.9483098591549295,
+          "loss_delta_from_baseline": 0.008246898651123047
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 13,
+          "rotation": "preperm_activation_max_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.1634659469127655,
+          "local_eval_down_output_rel_mse": 0.16340848803520203
+        },
+        "metrics": {
+          "loss": 4.2596259117126465,
+          "perplexity": 70.78350067138672,
+          "logit_mse": 0.17594042420387268,
+          "kl_from_baseline": 0.008426794782280922,
+          "topk_overlap": 0.9478873239436619,
+          "loss_delta_from_baseline": 0.010205268859863281
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": -0.00041630491614341736,
+        "topk_overlap": -0.00042253521126756066,
+        "loss_delta_from_baseline": 0.0019583702087402344
+      }
+    },
+    {
+      "layer": 14,
+      "identity": {
+        "param": {
+          "layer": 14,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.6210031509399414,
+          "local_eval_down_output_rel_mse": 0.5960888862609863
+        },
+        "metrics": {
+          "loss": 4.302474498748779,
+          "perplexity": 73.88239288330078,
+          "logit_mse": 0.8444369435310364,
+          "kl_from_baseline": 0.04181661456823349,
+          "topk_overlap": 0.8956338028169014,
+          "loss_delta_from_baseline": 0.053053855895996094
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 14,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.1587567776441574,
+          "local_eval_down_output_rel_mse": 0.15715578198432922
+        },
+        "metrics": {
+          "loss": 4.254558086395264,
+          "perplexity": 70.42568969726562,
+          "logit_mse": 0.1701761782169342,
+          "kl_from_baseline": 0.009023184888064861,
+          "topk_overlap": 0.9440845070422534,
+          "loss_delta_from_baseline": 0.005137443542480469
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 14,
+          "rotation": "preperm_activation_rms_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.1566106081008911,
+          "local_eval_down_output_rel_mse": 0.1498481184244156
+        },
+        "metrics": {
+          "loss": 4.263537883758545,
+          "perplexity": 71.06094360351562,
+          "logit_mse": 0.16832906007766724,
+          "kl_from_baseline": 0.009388110600411892,
+          "topk_overlap": 0.9447887323943661,
+          "loss_delta_from_baseline": 0.014117240905761719
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": 0.00036492571234703064,
+        "topk_overlap": 0.0007042253521126751,
+        "loss_delta_from_baseline": 0.00897979736328125
+      }
+    },
+    {
+      "layer": 15,
+      "identity": {
+        "param": {
+          "layer": 15,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.7417933940887451,
+          "local_eval_down_output_rel_mse": 0.7463840842247009
+        },
+        "metrics": {
+          "loss": 4.308780670166016,
+          "perplexity": 74.34977722167969,
+          "logit_mse": 0.6354302763938904,
+          "kl_from_baseline": 0.03605252131819725,
+          "topk_overlap": 0.9002816901408451,
+          "loss_delta_from_baseline": 0.05936002731323242
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 15,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.19086980819702148,
+          "local_eval_down_output_rel_mse": 0.18930913507938385
+        },
+        "metrics": {
+          "loss": 4.255715847015381,
+          "perplexity": 70.50727081298828,
+          "logit_mse": 0.15687960386276245,
+          "kl_from_baseline": 0.007693416904658079,
+          "topk_overlap": 0.9514084507042253,
+          "loss_delta_from_baseline": 0.006295204162597656
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 15,
+          "rotation": "interleave_boundary_rms_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.19060933589935303,
+          "local_eval_down_output_rel_mse": 0.18758220970630646
+        },
+        "metrics": {
+          "loss": 4.263164043426514,
+          "perplexity": 71.03438568115234,
+          "logit_mse": 0.14791451394557953,
+          "kl_from_baseline": 0.007554336450994015,
+          "topk_overlap": 0.9467605633802818,
+          "loss_delta_from_baseline": 0.013743400573730469
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": -0.0001390804536640644,
+        "topk_overlap": -0.0046478873239435,
+        "loss_delta_from_baseline": 0.0074481964111328125
+      }
+    },
+    {
+      "layer": 16,
+      "identity": {
+        "param": {
+          "layer": 16,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.7127936482429504,
+          "local_eval_down_output_rel_mse": 0.7077619433403015
+        },
+        "metrics": {
+          "loss": 4.290464878082275,
+          "perplexity": 73.00039672851562,
+          "logit_mse": 0.5167123675346375,
+          "kl_from_baseline": 0.029030630365014076,
+          "topk_overlap": 0.9087323943661972,
+          "loss_delta_from_baseline": 0.04104423522949219
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 16,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.1915735900402069,
+          "local_eval_down_output_rel_mse": 0.19016538560390472
+        },
+        "metrics": {
+          "loss": 4.249246597290039,
+          "perplexity": 70.0526123046875,
+          "logit_mse": 0.11534403264522552,
+          "kl_from_baseline": 0.0066179875284433365,
+          "topk_overlap": 0.9528169014084507,
+          "loss_delta_from_baseline": -0.00017404556274414062
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 16,
+          "rotation": "preperm_activation_max_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.18903718888759613,
+          "local_eval_down_output_rel_mse": 0.18880674242973328
+        },
+        "metrics": {
+          "loss": 4.252015113830566,
+          "perplexity": 70.246826171875,
+          "logit_mse": 0.11525314301252365,
+          "kl_from_baseline": 0.006601682398468256,
+          "topk_overlap": 0.9559154929577466,
+          "loss_delta_from_baseline": 0.002594470977783203
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": -1.630512997508049e-05,
+        "topk_overlap": 0.003098591549295926,
+        "loss_delta_from_baseline": 0.0027685165405273438
+      }
+    },
+    {
+      "layer": 17,
+      "identity": {
+        "param": {
+          "layer": 17,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.805561900138855,
+          "local_eval_down_output_rel_mse": 0.7936290502548218
+        },
+        "metrics": {
+          "loss": 4.266039848327637,
+          "perplexity": 71.23896026611328,
+          "logit_mse": 0.5677265524864197,
+          "kl_from_baseline": 0.028998887166380882,
+          "topk_overlap": 0.9011267605633804,
+          "loss_delta_from_baseline": 0.016619205474853516
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 17,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.2111840546131134,
+          "local_eval_down_output_rel_mse": 0.21062283217906952
+        },
+        "metrics": {
+          "loss": 4.257440567016602,
+          "perplexity": 70.62898254394531,
+          "logit_mse": 0.12204291671514511,
+          "kl_from_baseline": 0.006966010667383671,
+          "topk_overlap": 0.9556338028169014,
+          "loss_delta_from_baseline": 0.00801992416381836
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 17,
+          "rotation": "preperm_activation_max_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.21002522110939026,
+          "local_eval_down_output_rel_mse": 0.20871682465076447
+        },
+        "metrics": {
+          "loss": 4.254510879516602,
+          "perplexity": 70.42236328125,
+          "logit_mse": 0.12436755746603012,
+          "kl_from_baseline": 0.006459483876824379,
+          "topk_overlap": 0.9552112676056339,
+          "loss_delta_from_baseline": 0.005090236663818359
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": -0.0005065267905592918,
+        "topk_overlap": -0.00042253521126744964,
+        "loss_delta_from_baseline": -0.0029296875
+      }
+    },
+    {
+      "layer": 18,
+      "identity": {
+        "param": {
+          "layer": 18,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.7351823449134827,
+          "local_eval_down_output_rel_mse": 0.7213765382766724
+        },
+        "metrics": {
+          "loss": 4.3085784912109375,
+          "perplexity": 74.33474731445312,
+          "logit_mse": 0.8636630177497864,
+          "kl_from_baseline": 0.037066590040922165,
+          "topk_overlap": 0.8947887323943663,
+          "loss_delta_from_baseline": 0.0591578483581543
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 18,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.20329824090003967,
+          "local_eval_down_output_rel_mse": 0.2015906423330307
+        },
+        "metrics": {
+          "loss": 4.265690326690674,
+          "perplexity": 71.21406555175781,
+          "logit_mse": 0.20704285800457,
+          "kl_from_baseline": 0.010654768906533718,
+          "topk_overlap": 0.9415492957746479,
+          "loss_delta_from_baseline": 0.016269683837890625
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 18,
+          "rotation": "preperm_activation_rms_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.2003820687532425,
+          "local_eval_down_output_rel_mse": 0.19952699542045593
+        },
+        "metrics": {
+          "loss": 4.265447616577148,
+          "perplexity": 71.19678497314453,
+          "logit_mse": 0.2186143547296524,
+          "kl_from_baseline": 0.010411743074655533,
+          "topk_overlap": 0.9394366197183098,
+          "loss_delta_from_baseline": 0.016026973724365234
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": -0.00024302583187818527,
+        "topk_overlap": -0.0021126760563380254,
+        "loss_delta_from_baseline": -0.00024271011352539062
+      }
+    },
+    {
+      "layer": 19,
+      "identity": {
+        "param": {
+          "layer": 19,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.6995441317558289,
+          "local_eval_down_output_rel_mse": 0.6903588175773621
+        },
+        "metrics": {
+          "loss": 4.3261260986328125,
+          "perplexity": 75.6506576538086,
+          "logit_mse": 1.0890381336212158,
+          "kl_from_baseline": 0.043439123779535294,
+          "topk_overlap": 0.8814084507042255,
+          "loss_delta_from_baseline": 0.0767054557800293
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 19,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.18567882478237152,
+          "local_eval_down_output_rel_mse": 0.18408013880252838
+        },
+        "metrics": {
+          "loss": 4.276646137237549,
+          "perplexity": 71.9985580444336,
+          "logit_mse": 0.2637079358100891,
+          "kl_from_baseline": 0.01059030182659626,
+          "topk_overlap": 0.9387323943661972,
+          "loss_delta_from_baseline": 0.027225494384765625
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 19,
+          "rotation": "preperm_activation_rms_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.18296757340431213,
+          "local_eval_down_output_rel_mse": 0.1823435127735138
+        },
+        "metrics": {
+          "loss": 4.268583297729492,
+          "perplexity": 71.42037963867188,
+          "logit_mse": 0.2893419563770294,
+          "kl_from_baseline": 0.009982659481465816,
+          "topk_overlap": 0.9390140845070423,
+          "loss_delta_from_baseline": 0.019162654876708984
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": -0.0006076423451304436,
+        "topk_overlap": 0.00028169014084511446,
+        "loss_delta_from_baseline": -0.00806283950805664
+      }
+    },
+    {
+      "layer": 20,
+      "identity": {
+        "param": {
+          "layer": 20,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.7257281541824341,
+          "local_eval_down_output_rel_mse": 0.7236427664756775
+        },
+        "metrics": {
+          "loss": 4.345685958862305,
+          "perplexity": 77.14493560791016,
+          "logit_mse": 1.429330587387085,
+          "kl_from_baseline": 0.06823092699050903,
+          "topk_overlap": 0.8611267605633802,
+          "loss_delta_from_baseline": 0.09626531600952148
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 20,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.19890998303890228,
+          "local_eval_down_output_rel_mse": 0.19713051617145538
+        },
+        "metrics": {
+          "loss": 4.260590076446533,
+          "perplexity": 70.85177612304688,
+          "logit_mse": 0.3721356987953186,
+          "kl_from_baseline": 0.01706065982580185,
+          "topk_overlap": 0.9236619718309859,
+          "loss_delta_from_baseline": 0.01116943359375
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 20,
+          "rotation": "preperm_activation_max_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.1941269040107727,
+          "local_eval_down_output_rel_mse": 0.19504836201667786
+        },
+        "metrics": {
+          "loss": 4.276641845703125,
+          "perplexity": 71.99825286865234,
+          "logit_mse": 0.36673760414123535,
+          "kl_from_baseline": 0.01653357408940792,
+          "topk_overlap": 0.9238028169014084,
+          "loss_delta_from_baseline": 0.027221202850341797
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": -0.0005270857363939285,
+        "topk_overlap": 0.00014084507042255723,
+        "loss_delta_from_baseline": 0.016051769256591797
+      }
+    },
+    {
+      "layer": 21,
+      "identity": {
+        "param": {
+          "layer": 21,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.6706193685531616,
+          "local_eval_down_output_rel_mse": 0.6838521361351013
+        },
+        "metrics": {
+          "loss": 4.340811252593994,
+          "perplexity": 76.76979064941406,
+          "logit_mse": 1.0661879777908325,
+          "kl_from_baseline": 0.05184020847082138,
+          "topk_overlap": 0.8760563380281691,
+          "loss_delta_from_baseline": 0.09139060974121094
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 21,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.1814972460269928,
+          "local_eval_down_output_rel_mse": 0.17977899312973022
+        },
+        "metrics": {
+          "loss": 4.274750232696533,
+          "perplexity": 71.86219024658203,
+          "logit_mse": 0.21944984793663025,
+          "kl_from_baseline": 0.012671097181737423,
+          "topk_overlap": 0.9328169014084506,
+          "loss_delta_from_baseline": 0.02532958984375
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 21,
+          "rotation": "preperm_activation_rms_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.17908969521522522,
+          "local_eval_down_output_rel_mse": 0.17896847426891327
+        },
+        "metrics": {
+          "loss": 4.270201683044434,
+          "perplexity": 71.53606414794922,
+          "logit_mse": 0.242705300450325,
+          "kl_from_baseline": 0.012259503826498985,
+          "topk_overlap": 0.9378873239436619,
+          "loss_delta_from_baseline": 0.02078104019165039
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": -0.00041159335523843765,
+        "topk_overlap": 0.005070422535211283,
+        "loss_delta_from_baseline": -0.004548549652099609
+      }
+    },
+    {
+      "layer": 22,
+      "identity": {
+        "param": {
+          "layer": 22,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.7195820808410645,
+          "local_eval_down_output_rel_mse": 0.7094268202781677
+        },
+        "metrics": {
+          "loss": 4.345026969909668,
+          "perplexity": 77.0941162109375,
+          "logit_mse": 1.9235913753509521,
+          "kl_from_baseline": 0.07504228502511978,
+          "topk_overlap": 0.8538028169014085,
+          "loss_delta_from_baseline": 0.09560632705688477
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 22,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.19217145442962646,
+          "local_eval_down_output_rel_mse": 0.19135682284832
+        },
+        "metrics": {
+          "loss": 4.262242794036865,
+          "perplexity": 70.9689712524414,
+          "logit_mse": 0.3714132308959961,
+          "kl_from_baseline": 0.017726270481944084,
+          "topk_overlap": 0.923943661971831,
+          "loss_delta_from_baseline": 0.012822151184082031
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 22,
+          "rotation": "preperm_boundary_rms_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.18752731382846832,
+          "local_eval_down_output_rel_mse": 0.18721960484981537
+        },
+        "metrics": {
+          "loss": 4.268118858337402,
+          "perplexity": 71.38722229003906,
+          "logit_mse": 0.39495062828063965,
+          "kl_from_baseline": 0.017244674265384674,
+          "topk_overlap": 0.920281690140845,
+          "loss_delta_from_baseline": 0.01869821548461914
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": -0.0004815962165594101,
+        "topk_overlap": -0.003661971830985933,
+        "loss_delta_from_baseline": 0.005876064300537109
+      }
+    },
+    {
+      "layer": 23,
+      "identity": {
+        "param": {
+          "layer": 23,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.6607069373130798,
+          "local_eval_down_output_rel_mse": 0.6628356575965881
+        },
+        "metrics": {
+          "loss": 4.345439910888672,
+          "perplexity": 77.12596130371094,
+          "logit_mse": 1.4423248767852783,
+          "kl_from_baseline": 0.07688605040311813,
+          "topk_overlap": 0.8632394366197182,
+          "loss_delta_from_baseline": 0.09601926803588867
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 23,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.16122768819332123,
+          "local_eval_down_output_rel_mse": 0.16083841025829315
+        },
+        "metrics": {
+          "loss": 4.285812854766846,
+          "perplexity": 72.66158294677734,
+          "logit_mse": 0.2639474868774414,
+          "kl_from_baseline": 0.017481839284300804,
+          "topk_overlap": 0.9284507042253521,
+          "loss_delta_from_baseline": 0.0363922119140625
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 23,
+          "rotation": "preperm_activation_rms_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.15755943953990936,
+          "local_eval_down_output_rel_mse": 0.158027783036232
+        },
+        "metrics": {
+          "loss": 4.282966613769531,
+          "perplexity": 72.45507049560547,
+          "logit_mse": 0.24077045917510986,
+          "kl_from_baseline": 0.01704571768641472,
+          "topk_overlap": 0.9287323943661971,
+          "loss_delta_from_baseline": 0.03354597091674805
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": -0.0004361215978860855,
+        "topk_overlap": 0.00028169014084500343,
+        "loss_delta_from_baseline": -0.002846240997314453
+      }
+    },
+    {
+      "layer": 24,
+      "identity": {
+        "param": {
+          "layer": 24,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.6646702289581299,
+          "local_eval_down_output_rel_mse": 0.670055627822876
+        },
+        "metrics": {
+          "loss": 4.367934226989746,
+          "perplexity": 78.8805160522461,
+          "logit_mse": 2.6019701957702637,
+          "kl_from_baseline": 0.0732174813747406,
+          "topk_overlap": 0.8701408450704224,
+          "loss_delta_from_baseline": 0.11851358413696289
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 24,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.18835850059986115,
+          "local_eval_down_output_rel_mse": 0.18886373937129974
+        },
+        "metrics": {
+          "loss": 4.27700662612915,
+          "perplexity": 72.02452087402344,
+          "logit_mse": 0.3241010904312134,
+          "kl_from_baseline": 0.017153529450297356,
+          "topk_overlap": 0.9271830985915492,
+          "loss_delta_from_baseline": 0.027585983276367188
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 24,
+          "rotation": "preperm_activation_rms_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.18285039067268372,
+          "local_eval_down_output_rel_mse": 0.18389767408370972
+        },
+        "metrics": {
+          "loss": 4.294938564300537,
+          "perplexity": 73.32771301269531,
+          "logit_mse": 0.35437673330307007,
+          "kl_from_baseline": 0.018729066476225853,
+          "topk_overlap": 0.9359154929577465,
+          "loss_delta_from_baseline": 0.045517921447753906
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": 0.0015755370259284973,
+        "topk_overlap": 0.008732394366197216,
+        "loss_delta_from_baseline": 0.01793193817138672
+      }
+    },
+    {
+      "layer": 25,
+      "identity": {
+        "param": {
+          "layer": 25,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.7119057774543762,
+          "local_eval_down_output_rel_mse": 0.7062532901763916
+        },
+        "metrics": {
+          "loss": 4.339596271514893,
+          "perplexity": 76.67657470703125,
+          "logit_mse": 0.8102671504020691,
+          "kl_from_baseline": 0.06447618454694748,
+          "topk_overlap": 0.8753521126760564,
+          "loss_delta_from_baseline": 0.09017562866210938
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 25,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.20653094351291656,
+          "local_eval_down_output_rel_mse": 0.20760303735733032
+        },
+        "metrics": {
+          "loss": 4.276893138885498,
+          "perplexity": 72.01634979248047,
+          "logit_mse": 0.1886465698480606,
+          "kl_from_baseline": 0.015541271306574345,
+          "topk_overlap": 0.9347887323943662,
+          "loss_delta_from_baseline": 0.027472496032714844
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 25,
+          "rotation": "preperm_activation_rms_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.2003932148218155,
+          "local_eval_down_output_rel_mse": 0.2012091726064682
+        },
+        "metrics": {
+          "loss": 4.271737575531006,
+          "perplexity": 71.6460189819336,
+          "logit_mse": 0.18510381877422333,
+          "kl_from_baseline": 0.015266995877027512,
+          "topk_overlap": 0.9338028169014084,
+          "loss_delta_from_baseline": 0.022316932678222656
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": -0.00027427542954683304,
+        "topk_overlap": -0.0009859154929577896,
+        "loss_delta_from_baseline": -0.0051555633544921875
+      }
+    },
+    {
+      "layer": 26,
+      "identity": {
+        "param": {
+          "layer": 26,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.7090646624565125,
+          "local_eval_down_output_rel_mse": 0.72456294298172
+        },
+        "metrics": {
+          "loss": 4.308465003967285,
+          "perplexity": 74.32630920410156,
+          "logit_mse": 0.9627797603607178,
+          "kl_from_baseline": 0.05828549712896347,
+          "topk_overlap": 0.8774647887323944,
+          "loss_delta_from_baseline": 0.05904436111450195
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 26,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.202534019947052,
+          "local_eval_down_output_rel_mse": 0.20381684601306915
+        },
+        "metrics": {
+          "loss": 4.265622138977051,
+          "perplexity": 71.2092056274414,
+          "logit_mse": 0.2598491311073303,
+          "kl_from_baseline": 0.014027327299118042,
+          "topk_overlap": 0.9325352112676056,
+          "loss_delta_from_baseline": 0.016201496124267578
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 26,
+          "rotation": "preperm_boundary_rms_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.200528085231781,
+          "local_eval_down_output_rel_mse": 0.20067039132118225
+        },
+        "metrics": {
+          "loss": 4.262662887573242,
+          "perplexity": 70.99879455566406,
+          "logit_mse": 0.26493826508522034,
+          "kl_from_baseline": 0.014168228022754192,
+          "topk_overlap": 0.931830985915493,
+          "loss_delta_from_baseline": 0.013242244720458984
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": 0.00014090072363615036,
+        "topk_overlap": -0.0007042253521126751,
+        "loss_delta_from_baseline": -0.0029592514038085938
+      }
+    },
+    {
+      "layer": 27,
+      "identity": {
+        "param": {
+          "layer": 27,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.048663001507520676,
+          "local_eval_down_output_rel_mse": 0.05924319848418236
+        },
+        "metrics": {
+          "loss": 4.325918674468994,
+          "perplexity": 75.63496398925781,
+          "logit_mse": 1.9448262453079224,
+          "kl_from_baseline": 0.09037964791059494,
+          "topk_overlap": 0.832112676056338,
+          "loss_delta_from_baseline": 0.07649803161621094
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 27,
+          "rotation": "block_hadamard",
+          "alpha": 0.75,
+          "local_calibration_down_output_rel_mse": 0.0458131805062294,
+          "local_eval_down_output_rel_mse": 0.05246249586343765
+        },
+        "metrics": {
+          "loss": 4.3221845626831055,
+          "perplexity": 75.35306549072266,
+          "logit_mse": 1.0170296430587769,
+          "kl_from_baseline": 0.06392782181501389,
+          "topk_overlap": 0.8618309859154929,
+          "loss_delta_from_baseline": 0.07276391983032227
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 27,
+          "rotation": "block_hadamard_sign",
+          "alpha": 0.75,
+          "local_calibration_down_output_rel_mse": 0.04549666866660118,
+          "local_eval_down_output_rel_mse": 0.05219968408346176
+        },
+        "metrics": {
+          "loss": 4.312206745147705,
+          "perplexity": 74.60494232177734,
+          "logit_mse": 1.0261082649230957,
+          "kl_from_baseline": 0.060531675815582275,
+          "topk_overlap": 0.8601408450704225,
+          "loss_delta_from_baseline": 0.06278610229492188
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": -0.00339614599943161,
+        "topk_overlap": -0.0016901408450703537,
+        "loss_delta_from_baseline": -0.00997781753540039
+      }
+    },
+    {
+      "layer": 28,
+      "identity": {
+        "param": {
+          "layer": 28,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.0035126986913383007,
+          "local_eval_down_output_rel_mse": 0.0034056443255394697
+        },
+        "metrics": {
+          "loss": 5.212944030761719,
+          "perplexity": 183.63388061523438,
+          "logit_mse": 11.067934036254883,
+          "kl_from_baseline": 0.9264485836029053,
+          "topk_overlap": 0.7273239436619718,
+          "loss_delta_from_baseline": 0.9635233879089355
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 28,
+          "rotation": "block_hadamard",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.0014107120223343372,
+          "local_eval_down_output_rel_mse": 0.0014058650704100728
+        },
+        "metrics": {
+          "loss": 5.25065803527832,
+          "perplexity": 190.69171142578125,
+          "logit_mse": 4.614310264587402,
+          "kl_from_baseline": 0.951730489730835,
+          "topk_overlap": 0.693943661971831,
+          "loss_delta_from_baseline": 1.001237392425537
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 28,
+          "rotation": "preperm_down_norm_hadamard",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.0011833765311166644,
+          "local_eval_down_output_rel_mse": 0.0011896844953298569
+        },
+        "metrics": {
+          "loss": 5.266129970550537,
+          "perplexity": 193.66502380371094,
+          "logit_mse": 5.228854656219482,
+          "kl_from_baseline": 0.9732815027236938,
+          "topk_overlap": 0.6914084507042253,
+          "loss_delta_from_baseline": 1.016709327697754
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": 0.021551012992858887,
+        "topk_overlap": -0.002535211267605697,
+        "loss_delta_from_baseline": 0.015471935272216797
+      }
+    },
+    {
+      "layer": 29,
+      "identity": {
+        "param": {
+          "layer": 29,
+          "rotation": "identity",
+          "alpha": 1.0,
+          "local_calibration_down_output_rel_mse": 0.4029461145401001,
+          "local_eval_down_output_rel_mse": 0.41505345702171326
+        },
+        "metrics": {
+          "loss": 5.3616132736206055,
+          "perplexity": 213.0684051513672,
+          "logit_mse": 57.57008361816406,
+          "kl_from_baseline": 1.22420072555542,
+          "topk_overlap": 0.5895774647887324,
+          "loss_delta_from_baseline": 1.1121926307678223
+        }
+      },
+      "plain_block_hadamard": {
+        "param": {
+          "layer": 29,
+          "rotation": "block_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.12571954727172852,
+          "local_eval_down_output_rel_mse": 0.1258406937122345
+        },
+        "metrics": {
+          "loss": 5.043042182922363,
+          "perplexity": 154.94065856933594,
+          "logit_mse": 17.28841209411621,
+          "kl_from_baseline": 0.7392451167106628,
+          "topk_overlap": 0.6577464788732394,
+          "loss_delta_from_baseline": 0.7936215400695801
+        }
+      },
+      "hadamard_plus": {
+        "param": {
+          "layer": 29,
+          "rotation": "preperm_boundary_max_hadamard",
+          "alpha": 0.375,
+          "local_calibration_down_output_rel_mse": 0.06756196916103363,
+          "local_eval_down_output_rel_mse": 0.06920038908720016
+        },
+        "metrics": {
+          "loss": 5.1071038246154785,
+          "perplexity": 165.1912384033203,
+          "logit_mse": 11.07370376586914,
+          "kl_from_baseline": 0.8251897096633911,
+          "topk_overlap": 0.666056338028169,
+          "loss_delta_from_baseline": 0.8576831817626953
+        }
+      },
+      "hadamard_plus_minus_plain": {
+        "kl": 0.08594459295272827,
+        "topk_overlap": 0.008309859154929544,
+        "loss_delta_from_baseline": 0.06406164169311523
+      }
+    }
+  ],
+  "stacks": [
+    {
+      "top_count": 4,
+      "hadamard_plus_layers": [
+        17,
+        16,
+        15,
+        13
+      ],
+      "plain_layers": [
+        16,
+        17,
+        15,
+        12
+      ],
+      "hadamard_plus_metrics": {
+        "loss": 4.27938985824585,
+        "perplexity": 72.19637298583984,
+        "logit_mse": 0.6136151552200317,
+        "kl_from_baseline": 0.03006688505411148,
+        "topk_overlap": 0.9061971830985915,
+        "loss_delta_from_baseline": 0.029969215393066406
+      },
+      "plain_block_hadamard_metrics": {
+        "loss": 4.26938533782959,
+        "perplexity": 71.4776840209961,
+        "logit_mse": 0.5680898427963257,
+        "kl_from_baseline": 0.03143542632460594,
+        "topk_overlap": 0.9043661971830986,
+        "loss_delta_from_baseline": 0.01996469497680664
+      },
+      "same_layer_plain_block_hadamard_metrics": {
+        "loss": 4.283282279968262,
+        "perplexity": 72.47794342041016,
+        "logit_mse": 0.6599613428115845,
+        "kl_from_baseline": 0.032404057681560516,
+        "topk_overlap": 0.9045070422535212,
+        "loss_delta_from_baseline": 0.033861637115478516
+      },
+      "plus_minus_plain_top_layers": {
+        "kl": -0.001368541270494461,
+        "topk_overlap": 0.001830985915492911,
+        "loss_delta_from_baseline": 0.010004520416259766
+      },
+      "plus_minus_same_layers_plain": {
+        "kl": -0.0023371726274490356,
+        "topk_overlap": 0.0016901408450703537,
+        "loss_delta_from_baseline": -0.0038924217224121094
+      }
+    },
+    {
+      "top_count": 8,
+      "hadamard_plus_layers": [
+        17,
+        16,
+        15,
+        13,
+        12,
+        14,
+        19,
+        18
+      ],
+      "plain_layers": [
+        16,
+        17,
+        15,
+        12,
+        13,
+        14,
+        5,
+        19
+      ],
+      "hadamard_plus_metrics": {
+        "loss": 4.378308296203613,
+        "perplexity": 79.70308685302734,
+        "logit_mse": 1.4626597166061401,
+        "kl_from_baseline": 0.07866047322750092,
+        "topk_overlap": 0.8505633802816901,
+        "loss_delta_from_baseline": 0.12888765335083008
+      },
+      "plain_block_hadamard_metrics": {
+        "loss": 4.347661972045898,
+        "perplexity": 77.29753112792969,
+        "logit_mse": 1.4961743354797363,
+        "kl_from_baseline": 0.07550148665904999,
+        "topk_overlap": 0.8509859154929578,
+        "loss_delta_from_baseline": 0.09824132919311523
+      },
+      "same_layer_plain_block_hadamard_metrics": {
+        "loss": 4.331435203552246,
+        "perplexity": 76.05335998535156,
+        "logit_mse": 1.5976097583770752,
+        "kl_from_baseline": 0.07481878250837326,
+        "topk_overlap": 0.8525352112676056,
+        "loss_delta_from_baseline": 0.08201456069946289
+      },
+      "plus_minus_plain_top_layers": {
+        "kl": 0.0031589865684509277,
+        "topk_overlap": -0.0004225352112676717,
+        "loss_delta_from_baseline": 0.030646324157714844
+      },
+      "plus_minus_same_layers_plain": {
+        "kl": 0.003841690719127655,
+        "topk_overlap": -0.001971830985915468,
+        "loss_delta_from_baseline": 0.04687309265136719
+      }
+    },
+    {
+      "top_count": 12,
+      "hadamard_plus_layers": [
+        17,
+        16,
+        15,
+        13,
+        12,
+        14,
+        19,
+        18,
+        6,
+        5,
+        21,
+        4
+      ],
+      "plain_layers": [
+        16,
+        17,
+        15,
+        12,
+        13,
+        14,
+        5,
+        19,
+        6,
+        18,
+        4,
+        21
+      ],
+      "hadamard_plus_metrics": {
+        "loss": 4.4154462814331055,
+        "perplexity": 82.71875,
+        "logit_mse": 2.3905649185180664,
+        "kl_from_baseline": 0.13302507996559143,
+        "topk_overlap": 0.8154929577464789,
+        "loss_delta_from_baseline": 0.16602563858032227
+      },
+      "plain_block_hadamard_metrics": {
+        "loss": 4.42710542678833,
+        "perplexity": 83.6888198852539,
+        "logit_mse": 2.4283559322357178,
+        "kl_from_baseline": 0.13672898709774017,
+        "topk_overlap": 0.8132394366197183,
+        "loss_delta_from_baseline": 0.17768478393554688
+      },
+      "same_layer_plain_block_hadamard_metrics": {
+        "loss": 4.42710542678833,
+        "perplexity": 83.6888198852539,
+        "logit_mse": 2.4283559322357178,
+        "kl_from_baseline": 0.13672898709774017,
+        "topk_overlap": 0.8132394366197183,
+        "loss_delta_from_baseline": 0.17768478393554688
+      },
+      "plus_minus_plain_top_layers": {
+        "kl": -0.0037039071321487427,
+        "topk_overlap": 0.0022535211267605826,
+        "loss_delta_from_baseline": -0.01165914535522461
+      },
+      "plus_minus_same_layers_plain": {
+        "kl": -0.0037039071321487427,
+        "topk_overlap": 0.0022535211267605826,
+        "loss_delta_from_baseline": -0.01165914535522461
+      }
+    }
+  ]
+}

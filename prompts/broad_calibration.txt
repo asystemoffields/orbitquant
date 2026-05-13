@@ -1,0 +1,78 @@
+Explain how a cache eviction policy decides which item to remove.
+Write a Python function that counts vowels in a string.
+The main difference between a list and a tuple is
+Summarize this in one sentence: measurement prevents a team from mistaking motion for progress.
+If a rectangle has width 7 and height 9, its area is
+Translate to German: The small model solved the puzzle carefully.
+In a database transaction, atomicity means that
+The artist mixed blue and yellow paint to make
+Complete the sequence: 1, 1, 2, 3, 5,
+A safe answer to a medical question should mention
+The compiler reported an error because the variable was
+Explain why rotating a vector before quantization can reduce outliers.
+In a legal contract, a clause usually specifies
+Write a SQL query that selects all rows from a table named users.
+The ancient astronomer observed the motion of planets and recorded
+If the train departs at 14:20 and the trip takes 35 minutes, it arrives at
+A neural network layer transforms input activations by applying
+The protagonist hesitated before opening the letter because
+Classify the sentiment: The meal was warm, thoughtful, and beautifully prepared.
+The HTTP method used to retrieve a resource is usually
+Explain entropy to a beginner using an example from everyday life.
+In JavaScript, an array can be filtered using
+The capital of Japan is
+When water boils at sea level, its temperature is about
+A good unit test should be deterministic and check
+The file could not be opened because the path
+The treaty ended after both governments agreed to
+Give a short title for an essay about cities adapting to heat waves.
+The binary representation of the number five is
+In music, tempo refers to
+Write a regex that matches one or more digits.
+The function returns early when the input is empty to avoid
+A scientist changes one variable at a time because
+The chef added salt, lemon juice, and herbs to
+Explain why long-context recall can break under aggressive compression.
+If a store gives a 20 percent discount on a 50 dollar item, the price becomes
+The opposite of transparent is
+In a transformer, attention weights determine
+The patient should call emergency services if symptoms include
+Rewrite in a formal tone: I need this done by Friday.
+The poem uses winter imagery to suggest
+Name three colors in the rainbow.
+In Git, a branch is used to
+The shortest path algorithm often used for weighted graphs is
+Complete the analogy: book is to reading as fork is to
+Explain why calibration and evaluation prompts should be separate.
+The museum guide explained that the sculpture was carved from
+The memory allocator assigns resources based on
+When a program has a race condition, the result depends on
+Summarize: The proposal reduces storage by changing representation rather than discarding meaning.
+The area of a circle depends on its
+The output should be JSON with keys name and score.
+The detective compared fingerprints, timestamps, and witness statements to
+In biology, photosynthesis converts light energy into
+An ethical assistant should avoid helping with
+Write a Bash command that lists files in the current directory.
+The word "benevolent" most nearly means
+If there are 24 cookies split equally among 6 people, each person gets
+The model's uncertainty increased because the question was
+The satellite transmitted data back to Earth using
+Explain what precision loss means in numerical computation.
+The meeting was postponed until next Tuesday because
+The recipe says to simmer the sauce until it
+In chess, castling involves the king and
+The user asked for a concise answer, so the assistant should
+The best explanation is the one that accounts for the evidence with
+The river flooded after several days of
+Write pseudocode for finding the maximum item in a list.
+The phrase "break the ice" means
+In probability, independent events are events where
+The historian compared primary sources with later interpretations to
+The API returned status 401, which indicates
+If a battery is charged from 30 percent to 80 percent, it gains
+The school principal announced a new policy about
+Explain why a low-rank correction might repair quantization error.
+The story ends with the character realizing that
+The command line option --help usually
+The most likely next word after "peanut butter and" is

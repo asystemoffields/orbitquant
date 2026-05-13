@@ -1,0 +1,1219 @@
+{
+  "experiment": "mlp_impact_sweep",
+  "repo": "HuggingFaceTB/SmolLM2-135M",
+  "layers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "bits": 2,
+  "calibration_prompt_count": 78,
+  "eval_prompt_count": 78,
+  "baseline_eval": {
+    "loss": 4.249420642852783,
+    "perplexity": 70.06481170654297
+  },
+  "rows": [
+    {
+      "layer": 0,
+      "calibrated_param": {
+        "layer": 0,
+        "rotation": "block_hadamard",
+        "alpha": 0.5,
+        "calibration": {
+          "activation_rel_mse": 0.1964326798915863,
+          "down_output_rel_mse": 0.14597442746162415
+        }
+      },
+      "identity": {
+        "loss": 7.896967887878418,
+        "perplexity": 2689.1162109375,
+        "logit_mse": 108.01152801513672,
+        "kl_from_baseline": 3.3326354026794434,
+        "topk_overlap": 0.2964788732394366,
+        "loss_delta_from_baseline": 3.6475472450256348
+      },
+      "calibrated": {
+        "loss": 4.454552173614502,
+        "perplexity": 86.01762390136719,
+        "logit_mse": 4.023708820343018,
+        "kl_from_baseline": 0.17868861556053162,
+        "topk_overlap": 0.7771830985915492,
+        "loss_delta_from_baseline": 0.20513153076171875
+      },
+      "calibrated_minus_identity": {
+        "kl": -3.1539467871189117,
+        "topk_overlap": 0.4807042253521126,
+        "loss_delta_abs": -3.442415714263916
+      }
+    },
+    {
+      "layer": 1,
+      "calibrated_param": {
+        "layer": 1,
+        "rotation": "block_hadamard",
+        "alpha": 0.5,
+        "calibration": {
+          "activation_rel_mse": 0.23746369779109955,
+          "down_output_rel_mse": 0.12721200287342072
+        }
+      },
+      "identity": {
+        "loss": 4.603881359100342,
+        "perplexity": 99.87120056152344,
+        "logit_mse": 5.123106002807617,
+        "kl_from_baseline": 0.2928183972835541,
+        "topk_overlap": 0.7601408450704226,
+        "loss_delta_from_baseline": 0.3544607162475586
+      },
+      "calibrated": {
+        "loss": 4.360340595245361,
+        "perplexity": 78.2837905883789,
+        "logit_mse": 2.6802334785461426,
+        "kl_from_baseline": 0.10830207169055939,
+        "topk_overlap": 0.8502816901408451,
+        "loss_delta_from_baseline": 0.11091995239257812
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.1845163255929947,
+        "topk_overlap": 0.09014084507042253,
+        "loss_delta_abs": -0.24354076385498047
+      }
+    },
+    {
+      "layer": 2,
+      "calibrated_param": {
+        "layer": 2,
+        "rotation": "block_hadamard",
+        "alpha": 1.0,
+        "calibration": {
+          "activation_rel_mse": 0.12874703109264374,
+          "down_output_rel_mse": 0.03477488458156586
+        }
+      },
+      "identity": {
+        "loss": 5.13180685043335,
+        "perplexity": 169.32278442382812,
+        "logit_mse": 20.635135650634766,
+        "kl_from_baseline": 0.9619617462158203,
+        "topk_overlap": 0.6825352112676056,
+        "loss_delta_from_baseline": 0.8823862075805664
+      },
+      "calibrated": {
+        "loss": 7.5738654136657715,
+        "perplexity": 1946.650390625,
+        "logit_mse": 73.1396484375,
+        "kl_from_baseline": 3.066957712173462,
+        "topk_overlap": 0.35591549295774644,
+        "loss_delta_from_baseline": 3.3244447708129883
+      },
+      "calibrated_minus_identity": {
+        "kl": 2.1049959659576416,
+        "topk_overlap": -0.3266197183098592,
+        "loss_delta_abs": 2.442058563232422
+      }
+    },
+    {
+      "layer": 3,
+      "calibrated_param": {
+        "layer": 3,
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.19703476130962372,
+          "down_output_rel_mse": 0.17314934730529785
+        }
+      },
+      "identity": {
+        "loss": 4.375044345855713,
+        "perplexity": 79.443359375,
+        "logit_mse": 1.2401601076126099,
+        "kl_from_baseline": 0.08123721182346344,
+        "topk_overlap": 0.888450704225352,
+        "loss_delta_from_baseline": 0.1256237030029297
+      },
+      "calibrated": {
+        "loss": 4.28147029876709,
+        "perplexity": 72.34673309326172,
+        "logit_mse": 0.3578323721885681,
+        "kl_from_baseline": 0.017339840531349182,
+        "topk_overlap": 0.9438028169014084,
+        "loss_delta_from_baseline": 0.03204965591430664
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.06389737129211426,
+        "topk_overlap": 0.05535211267605644,
+        "loss_delta_abs": -0.09357404708862305
+      }
+    },
+    {
+      "layer": 4,
+      "calibrated_param": {
+        "layer": 4,
+        "rotation": "block_hadamard",
+        "alpha": 0.5,
+        "calibration": {
+          "activation_rel_mse": 0.19952112436294556,
+          "down_output_rel_mse": 0.171327605843544
+        }
+      },
+      "identity": {
+        "loss": 4.297394752502441,
+        "perplexity": 73.5080337524414,
+        "logit_mse": 0.9426166415214539,
+        "kl_from_baseline": 0.055436138063669205,
+        "topk_overlap": 0.8976056338028169,
+        "loss_delta_from_baseline": 0.0479741096496582
+      },
+      "calibrated": {
+        "loss": 4.26300048828125,
+        "perplexity": 71.02276611328125,
+        "logit_mse": 0.16999872028827667,
+        "kl_from_baseline": 0.012044043280184269,
+        "topk_overlap": 0.9449295774647887,
+        "loss_delta_from_baseline": 0.013579845428466797
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.043392094783484936,
+        "topk_overlap": 0.04732394366197179,
+        "loss_delta_abs": -0.034394264221191406
+      }
+    },
+    {
+      "layer": 5,
+      "calibrated_param": {
+        "layer": 5,
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.19725766777992249,
+          "down_output_rel_mse": 0.16136769950389862
+        }
+      },
+      "identity": {
+        "loss": 4.29617166519165,
+        "perplexity": 73.41818237304688,
+        "logit_mse": 0.9237097501754761,
+        "kl_from_baseline": 0.05813755467534065,
+        "topk_overlap": 0.8877464788732393,
+        "loss_delta_from_baseline": 0.04675102233886719
+      },
+      "calibrated": {
+        "loss": 4.258110046386719,
+        "perplexity": 70.67628479003906,
+        "logit_mse": 0.15739533305168152,
+        "kl_from_baseline": 0.00934002734720707,
+        "topk_overlap": 0.9498591549295774,
+        "loss_delta_from_baseline": 0.008689403533935547
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.04879752732813358,
+        "topk_overlap": 0.06211267605633808,
+        "loss_delta_abs": -0.03806161880493164
+      }
+    },
+    {
+      "layer": 6,
+      "calibrated_param": {
+        "layer": 6,
+        "rotation": "block_hadamard_sign_perm",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.21833740174770355,
+          "down_output_rel_mse": 0.17360788583755493
+        }
+      },
+      "identity": {
+        "loss": 4.30111837387085,
+        "perplexity": 73.78226470947266,
+        "logit_mse": 0.7273063063621521,
+        "kl_from_baseline": 0.04548076167702675,
+        "topk_overlap": 0.892112676056338,
+        "loss_delta_from_baseline": 0.051697731018066406
+      },
+      "calibrated": {
+        "loss": 4.258742332458496,
+        "perplexity": 70.72098541259766,
+        "logit_mse": 0.16572320461273193,
+        "kl_from_baseline": 0.01064193993806839,
+        "topk_overlap": 0.9474647887323945,
+        "loss_delta_from_baseline": 0.00932168960571289
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.03483882173895836,
+        "topk_overlap": 0.05535211267605644,
+        "loss_delta_abs": -0.042376041412353516
+      }
+    },
+    {
+      "layer": 7,
+      "calibrated_param": {
+        "layer": 7,
+        "rotation": "block_hadamard_sign_perm",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.1895064115524292,
+          "down_output_rel_mse": 0.17587164044380188
+        }
+      },
+      "identity": {
+        "loss": 4.298687934875488,
+        "perplexity": 73.60315704345703,
+        "logit_mse": 0.865024983882904,
+        "kl_from_baseline": 0.055620670318603516,
+        "topk_overlap": 0.8867605633802818,
+        "loss_delta_from_baseline": 0.04926729202270508
+      },
+      "calibrated": {
+        "loss": 4.274237155914307,
+        "perplexity": 71.82532501220703,
+        "logit_mse": 0.8506069183349609,
+        "kl_from_baseline": 0.02055852860212326,
+        "topk_overlap": 0.9298591549295775,
+        "loss_delta_from_baseline": 0.024816513061523438
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.035062141716480255,
+        "topk_overlap": 0.04309859154929574,
+        "loss_delta_abs": -0.02445077896118164
+      }
+    },
+    {
+      "layer": 8,
+      "calibrated_param": {
+        "layer": 8,
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.21446701884269714,
+          "down_output_rel_mse": 0.21095813810825348
+        }
+      },
+      "identity": {
+        "loss": 4.946384429931641,
+        "perplexity": 140.6654510498047,
+        "logit_mse": 16.5286865234375,
+        "kl_from_baseline": 0.7089728116989136,
+        "topk_overlap": 0.7343661971830986,
+        "loss_delta_from_baseline": 0.6969637870788574
+      },
+      "calibrated": {
+        "loss": 5.307046413421631,
+        "perplexity": 201.75344848632812,
+        "logit_mse": 10.874926567077637,
+        "kl_from_baseline": 1.1135826110839844,
+        "topk_overlap": 0.7767605633802817,
+        "loss_delta_from_baseline": 1.0576257705688477
+      },
+      "calibrated_minus_identity": {
+        "kl": 0.4046097993850708,
+        "topk_overlap": 0.042394366197183064,
+        "loss_delta_abs": 0.36066198348999023
+      }
+    },
+    {
+      "layer": 9,
+      "calibrated_param": {
+        "layer": 9,
+        "rotation": "block_hadamard",
+        "alpha": 1.0,
+        "calibration": {
+          "activation_rel_mse": 0.17970067262649536,
+          "down_output_rel_mse": 0.10578884184360504
+        }
+      },
+      "identity": {
+        "loss": 6.024762153625488,
+        "perplexity": 413.54327392578125,
+        "logit_mse": 38.32095718383789,
+        "kl_from_baseline": 1.5929123163223267,
+        "topk_overlap": 0.5949295774647887,
+        "loss_delta_from_baseline": 1.775341510772705
+      },
+      "calibrated": {
+        "loss": 6.192370891571045,
+        "perplexity": 489.0041198730469,
+        "logit_mse": 44.28654861450195,
+        "kl_from_baseline": 1.8884414434432983,
+        "topk_overlap": 0.5577464788732395,
+        "loss_delta_from_baseline": 1.9429502487182617
+      },
+      "calibrated_minus_identity": {
+        "kl": 0.2955291271209717,
+        "topk_overlap": -0.037183098591549224,
+        "loss_delta_abs": 0.16760873794555664
+      }
+    },
+    {
+      "layer": 10,
+      "calibrated_param": {
+        "layer": 10,
+        "rotation": "identity",
+        "alpha": 0.75,
+        "calibration": {
+          "activation_rel_mse": 0.1518576443195343,
+          "down_output_rel_mse": 0.08469129353761673
+        }
+      },
+      "identity": {
+        "loss": 4.953023433685303,
+        "perplexity": 141.60244750976562,
+        "logit_mse": 24.264822006225586,
+        "kl_from_baseline": 0.7086048722267151,
+        "topk_overlap": 0.6983098591549296,
+        "loss_delta_from_baseline": 0.7036027908325195
+      },
+      "calibrated": {
+        "loss": 4.813946723937988,
+        "perplexity": 123.21696472167969,
+        "logit_mse": 23.59272003173828,
+        "kl_from_baseline": 0.6118428707122803,
+        "topk_overlap": 0.7316901408450704,
+        "loss_delta_from_baseline": 0.5645260810852051
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.09676200151443481,
+        "topk_overlap": 0.033380281690140845,
+        "loss_delta_abs": -0.13907670974731445
+      }
+    },
+    {
+      "layer": 11,
+      "calibrated_param": {
+        "layer": 11,
+        "rotation": "block_hadamard",
+        "alpha": 1.0,
+        "calibration": {
+          "activation_rel_mse": 0.1558629423379898,
+          "down_output_rel_mse": 0.008809559047222137
+        }
+      },
+      "identity": {
+        "loss": 4.9774041175842285,
+        "perplexity": 145.0972442626953,
+        "logit_mse": 22.593093872070312,
+        "kl_from_baseline": 0.7950603365898132,
+        "topk_overlap": 0.7463380281690141,
+        "loss_delta_from_baseline": 0.7279834747314453
+      },
+      "calibrated": {
+        "loss": 4.960585117340088,
+        "perplexity": 142.67726135253906,
+        "logit_mse": 4.964598178863525,
+        "kl_from_baseline": 0.6483737826347351,
+        "topk_overlap": 0.7771830985915492,
+        "loss_delta_from_baseline": 0.7111644744873047
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.14668655395507812,
+        "topk_overlap": 0.030845070422535148,
+        "loss_delta_abs": -0.016819000244140625
+      }
+    },
+    {
+      "layer": 12,
+      "calibrated_param": {
+        "layer": 12,
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.19661229848861694,
+          "down_output_rel_mse": 0.18949107825756073
+        }
+      },
+      "identity": {
+        "loss": 4.3102874755859375,
+        "perplexity": 74.4618911743164,
+        "logit_mse": 0.8040868043899536,
+        "kl_from_baseline": 0.051920317113399506,
+        "topk_overlap": 0.8930985915492958,
+        "loss_delta_from_baseline": 0.0608668327331543
+      },
+      "calibrated": {
+        "loss": 4.2588701248168945,
+        "perplexity": 70.73001861572266,
+        "logit_mse": 0.13566337525844574,
+        "kl_from_baseline": 0.00865330919623375,
+        "topk_overlap": 0.9505633802816901,
+        "loss_delta_from_baseline": 0.009449481964111328
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.043267007917165756,
+        "topk_overlap": 0.057464788732394245,
+        "loss_delta_abs": -0.05141735076904297
+      }
+    },
+    {
+      "layer": 13,
+      "calibrated_param": {
+        "layer": 13,
+        "rotation": "block_hadamard_sign_perm",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.19889980554580688,
+          "down_output_rel_mse": 0.16596853733062744
+        }
+      },
+      "identity": {
+        "loss": 4.31845235824585,
+        "perplexity": 75.07234954833984,
+        "logit_mse": 0.8624857068061829,
+        "kl_from_baseline": 0.04464399814605713,
+        "topk_overlap": 0.889718309859155,
+        "loss_delta_from_baseline": 0.0690317153930664
+      },
+      "calibrated": {
+        "loss": 4.257667541503906,
+        "perplexity": 70.64501190185547,
+        "logit_mse": 0.16613803803920746,
+        "kl_from_baseline": 0.008843117393553257,
+        "topk_overlap": 0.9483098591549295,
+        "loss_delta_from_baseline": 0.008246898651123047
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.03580088075250387,
+        "topk_overlap": 0.05859154929577448,
+        "loss_delta_abs": -0.06078481674194336
+      }
+    },
+    {
+      "layer": 14,
+      "calibrated_param": {
+        "layer": 14,
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.1939985603094101,
+          "down_output_rel_mse": 0.1587567776441574
+        }
+      },
+      "identity": {
+        "loss": 4.302474498748779,
+        "perplexity": 73.88239288330078,
+        "logit_mse": 0.8444369435310364,
+        "kl_from_baseline": 0.04181661456823349,
+        "topk_overlap": 0.8956338028169014,
+        "loss_delta_from_baseline": 0.053053855895996094
+      },
+      "calibrated": {
+        "loss": 4.254558086395264,
+        "perplexity": 70.42568969726562,
+        "logit_mse": 0.1701761782169342,
+        "kl_from_baseline": 0.009023184888064861,
+        "topk_overlap": 0.9440845070422534,
+        "loss_delta_from_baseline": 0.005137443542480469
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.03279342968016863,
+        "topk_overlap": 0.048450704225352026,
+        "loss_delta_abs": -0.047916412353515625
+      }
+    },
+    {
+      "layer": 15,
+      "calibrated_param": {
+        "layer": 15,
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.19602586328983307,
+          "down_output_rel_mse": 0.19086980819702148
+        }
+      },
+      "identity": {
+        "loss": 4.308780670166016,
+        "perplexity": 74.34977722167969,
+        "logit_mse": 0.6354302763938904,
+        "kl_from_baseline": 0.03605252131819725,
+        "topk_overlap": 0.9002816901408451,
+        "loss_delta_from_baseline": 0.05936002731323242
+      },
+      "calibrated": {
+        "loss": 4.255715847015381,
+        "perplexity": 70.50727081298828,
+        "logit_mse": 0.15687960386276245,
+        "kl_from_baseline": 0.007693416904658079,
+        "topk_overlap": 0.9514084507042253,
+        "loss_delta_from_baseline": 0.006295204162597656
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.02835910441353917,
+        "topk_overlap": 0.05112676056338017,
+        "loss_delta_abs": -0.053064823150634766
+      }
+    },
+    {
+      "layer": 16,
+      "calibrated_param": {
+        "layer": 16,
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.19620700180530548,
+          "down_output_rel_mse": 0.1915735900402069
+        }
+      },
+      "identity": {
+        "loss": 4.290464878082275,
+        "perplexity": 73.00039672851562,
+        "logit_mse": 0.5167123675346375,
+        "kl_from_baseline": 0.029030630365014076,
+        "topk_overlap": 0.9087323943661972,
+        "loss_delta_from_baseline": 0.04104423522949219
+      },
+      "calibrated": {
+        "loss": 4.249246597290039,
+        "perplexity": 70.0526123046875,
+        "logit_mse": 0.11534403264522552,
+        "kl_from_baseline": 0.0066179875284433365,
+        "topk_overlap": 0.9528169014084507,
+        "loss_delta_from_baseline": -0.00017404556274414062
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.02241264283657074,
+        "topk_overlap": 0.04408450704225342,
+        "loss_delta_abs": -0.04087018966674805
+      }
+    },
+    {
+      "layer": 17,
+      "calibrated_param": {
+        "layer": 17,
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.19606547057628632,
+          "down_output_rel_mse": 0.2111840546131134
+        }
+      },
+      "identity": {
+        "loss": 4.266039848327637,
+        "perplexity": 71.23896026611328,
+        "logit_mse": 0.5677265524864197,
+        "kl_from_baseline": 0.028998887166380882,
+        "topk_overlap": 0.9011267605633804,
+        "loss_delta_from_baseline": 0.016619205474853516
+      },
+      "calibrated": {
+        "loss": 4.257440567016602,
+        "perplexity": 70.62898254394531,
+        "logit_mse": 0.12204291671514511,
+        "kl_from_baseline": 0.006966010667383671,
+        "topk_overlap": 0.9556338028169014,
+        "loss_delta_from_baseline": 0.00801992416381836
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.02203287649899721,
+        "topk_overlap": 0.05450704225352099,
+        "loss_delta_abs": -0.008599281311035156
+      }
+    },
+    {
+      "layer": 18,
+      "calibrated_param": {
+        "layer": 18,
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.19677548110485077,
+          "down_output_rel_mse": 0.20329824090003967
+        }
+      },
+      "identity": {
+        "loss": 4.3085784912109375,
+        "perplexity": 74.33474731445312,
+        "logit_mse": 0.8636630177497864,
+        "kl_from_baseline": 0.037066590040922165,
+        "topk_overlap": 0.8947887323943663,
+        "loss_delta_from_baseline": 0.0591578483581543
+      },
+      "calibrated": {
+        "loss": 4.265690326690674,
+        "perplexity": 71.21406555175781,
+        "logit_mse": 0.20704285800457,
+        "kl_from_baseline": 0.010654768906533718,
+        "topk_overlap": 0.9415492957746479,
+        "loss_delta_from_baseline": 0.016269683837890625
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.026411821134388447,
+        "topk_overlap": 0.04676056338028156,
+        "loss_delta_abs": -0.04288816452026367
+      }
+    },
+    {
+      "layer": 19,
+      "calibrated_param": {
+        "layer": 19,
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.19689583778381348,
+          "down_output_rel_mse": 0.18567882478237152
+        }
+      },
+      "identity": {
+        "loss": 4.3261260986328125,
+        "perplexity": 75.6506576538086,
+        "logit_mse": 1.0890381336212158,
+        "kl_from_baseline": 0.043439123779535294,
+        "topk_overlap": 0.8814084507042255,
+        "loss_delta_from_baseline": 0.0767054557800293
+      },
+      "calibrated": {
+        "loss": 4.276646137237549,
+        "perplexity": 71.9985580444336,
+        "logit_mse": 0.2637079358100891,
+        "kl_from_baseline": 0.01059030182659626,
+        "topk_overlap": 0.9387323943661972,
+        "loss_delta_from_baseline": 0.027225494384765625
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.032848821952939034,
+        "topk_overlap": 0.05732394366197169,
+        "loss_delta_abs": -0.04947996139526367
+      }
+    },
+    {
+      "layer": 20,
+      "calibrated_param": {
+        "layer": 20,
+        "rotation": "block_hadamard_sign_perm",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.19848495721817017,
+          "down_output_rel_mse": 0.1989099681377411
+        }
+      },
+      "identity": {
+        "loss": 4.345685958862305,
+        "perplexity": 77.14493560791016,
+        "logit_mse": 1.429330587387085,
+        "kl_from_baseline": 0.06823092699050903,
+        "topk_overlap": 0.8611267605633802,
+        "loss_delta_from_baseline": 0.09626531600952148
+      },
+      "calibrated": {
+        "loss": 4.260589599609375,
+        "perplexity": 70.85174560546875,
+        "logit_mse": 0.3721359372138977,
+        "kl_from_baseline": 0.017060652375221252,
+        "topk_overlap": 0.9236619718309859,
+        "loss_delta_from_baseline": 0.011168956756591797
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.05117027461528778,
+        "topk_overlap": 0.06253521126760564,
+        "loss_delta_abs": -0.08509635925292969
+      }
+    },
+    {
+      "layer": 21,
+      "calibrated_param": {
+        "layer": 21,
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.1966899186372757,
+          "down_output_rel_mse": 0.1814972460269928
+        }
+      },
+      "identity": {
+        "loss": 4.340811252593994,
+        "perplexity": 76.76979064941406,
+        "logit_mse": 1.0661879777908325,
+        "kl_from_baseline": 0.05184020847082138,
+        "topk_overlap": 0.8760563380281691,
+        "loss_delta_from_baseline": 0.09139060974121094
+      },
+      "calibrated": {
+        "loss": 4.274750232696533,
+        "perplexity": 71.86219024658203,
+        "logit_mse": 0.21944984793663025,
+        "kl_from_baseline": 0.012671097181737423,
+        "topk_overlap": 0.9328169014084506,
+        "loss_delta_from_baseline": 0.02532958984375
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.03916911128908396,
+        "topk_overlap": 0.05676056338028157,
+        "loss_delta_abs": -0.06606101989746094
+      }
+    },
+    {
+      "layer": 22,
+      "calibrated_param": {
+        "layer": 22,
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.1981590837240219,
+          "down_output_rel_mse": 0.19217145442962646
+        }
+      },
+      "identity": {
+        "loss": 4.345026969909668,
+        "perplexity": 77.0941162109375,
+        "logit_mse": 1.9235913753509521,
+        "kl_from_baseline": 0.07504228502511978,
+        "topk_overlap": 0.8538028169014085,
+        "loss_delta_from_baseline": 0.09560632705688477
+      },
+      "calibrated": {
+        "loss": 4.262242794036865,
+        "perplexity": 70.9689712524414,
+        "logit_mse": 0.3714132308959961,
+        "kl_from_baseline": 0.017726270481944084,
+        "topk_overlap": 0.923943661971831,
+        "loss_delta_from_baseline": 0.012822151184082031
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.0573160145431757,
+        "topk_overlap": 0.07014084507042251,
+        "loss_delta_abs": -0.08278417587280273
+      }
+    },
+    {
+      "layer": 23,
+      "calibrated_param": {
+        "layer": 23,
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.19468624889850616,
+          "down_output_rel_mse": 0.16122768819332123
+        }
+      },
+      "identity": {
+        "loss": 4.345439910888672,
+        "perplexity": 77.12596130371094,
+        "logit_mse": 1.4423248767852783,
+        "kl_from_baseline": 0.07688605040311813,
+        "topk_overlap": 0.8632394366197182,
+        "loss_delta_from_baseline": 0.09601926803588867
+      },
+      "calibrated": {
+        "loss": 4.285812854766846,
+        "perplexity": 72.66158294677734,
+        "logit_mse": 0.2639474868774414,
+        "kl_from_baseline": 0.017481839284300804,
+        "topk_overlap": 0.9284507042253521,
+        "loss_delta_from_baseline": 0.0363922119140625
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.05940421111881733,
+        "topk_overlap": 0.0652112676056339,
+        "loss_delta_abs": -0.05962705612182617
+      }
+    },
+    {
+      "layer": 24,
+      "calibrated_param": {
+        "layer": 24,
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.1977182775735855,
+          "down_output_rel_mse": 0.18835850059986115
+        }
+      },
+      "identity": {
+        "loss": 4.367934226989746,
+        "perplexity": 78.8805160522461,
+        "logit_mse": 2.6019701957702637,
+        "kl_from_baseline": 0.0732174813747406,
+        "topk_overlap": 0.8701408450704224,
+        "loss_delta_from_baseline": 0.11851358413696289
+      },
+      "calibrated": {
+        "loss": 4.27700662612915,
+        "perplexity": 72.02452087402344,
+        "logit_mse": 0.3241010904312134,
+        "kl_from_baseline": 0.017153529450297356,
+        "topk_overlap": 0.9271830985915492,
+        "loss_delta_from_baseline": 0.027585983276367188
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.056063951924443245,
+        "topk_overlap": 0.057042253521126796,
+        "loss_delta_abs": -0.0909276008605957
+      }
+    },
+    {
+      "layer": 25,
+      "calibrated_param": {
+        "layer": 25,
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.19771260023117065,
+          "down_output_rel_mse": 0.20653094351291656
+        }
+      },
+      "identity": {
+        "loss": 4.339596271514893,
+        "perplexity": 76.67657470703125,
+        "logit_mse": 0.8102671504020691,
+        "kl_from_baseline": 0.06447618454694748,
+        "topk_overlap": 0.8753521126760564,
+        "loss_delta_from_baseline": 0.09017562866210938
+      },
+      "calibrated": {
+        "loss": 4.276893138885498,
+        "perplexity": 72.01634979248047,
+        "logit_mse": 0.1886465698480606,
+        "kl_from_baseline": 0.015541271306574345,
+        "topk_overlap": 0.9347887323943662,
+        "loss_delta_from_baseline": 0.027472496032714844
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.048934913240373135,
+        "topk_overlap": 0.059436619718309824,
+        "loss_delta_abs": -0.06270313262939453
+      }
+    },
+    {
+      "layer": 26,
+      "calibrated_param": {
+        "layer": 26,
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.19676685333251953,
+          "down_output_rel_mse": 0.202534019947052
+        }
+      },
+      "identity": {
+        "loss": 4.308465003967285,
+        "perplexity": 74.32630920410156,
+        "logit_mse": 0.9627797603607178,
+        "kl_from_baseline": 0.05828549712896347,
+        "topk_overlap": 0.8774647887323944,
+        "loss_delta_from_baseline": 0.05904436111450195
+      },
+      "calibrated": {
+        "loss": 4.265622138977051,
+        "perplexity": 71.2092056274414,
+        "logit_mse": 0.2598491311073303,
+        "kl_from_baseline": 0.014027327299118042,
+        "topk_overlap": 0.9325352112676056,
+        "loss_delta_from_baseline": 0.016201496124267578
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.04425816982984543,
+        "topk_overlap": 0.055070422535211216,
+        "loss_delta_abs": -0.042842864990234375
+      }
+    },
+    {
+      "layer": 27,
+      "calibrated_param": {
+        "layer": 27,
+        "rotation": "block_hadamard_sign_perm",
+        "alpha": 0.75,
+        "calibration": {
+          "activation_rel_mse": 0.09313007444143295,
+          "down_output_rel_mse": 0.0458131767809391
+        }
+      },
+      "identity": {
+        "loss": 4.325918674468994,
+        "perplexity": 75.63496398925781,
+        "logit_mse": 1.9448262453079224,
+        "kl_from_baseline": 0.09037964791059494,
+        "topk_overlap": 0.832112676056338,
+        "loss_delta_from_baseline": 0.07649803161621094
+      },
+      "calibrated": {
+        "loss": 4.3221845626831055,
+        "perplexity": 75.35306549072266,
+        "logit_mse": 1.0170313119888306,
+        "kl_from_baseline": 0.06392785906791687,
+        "topk_overlap": 0.8618309859154929,
+        "loss_delta_from_baseline": 0.07276391983032227
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.02645178884267807,
+        "topk_overlap": 0.029718309859154912,
+        "loss_delta_abs": -0.003734111785888672
+      }
+    },
+    {
+      "layer": 28,
+      "calibrated_param": {
+        "layer": 28,
+        "rotation": "block_hadamard_sign_perm",
+        "alpha": 1.0,
+        "calibration": {
+          "activation_rel_mse": 0.01956493780016899,
+          "down_output_rel_mse": 0.0014107113238424063
+        }
+      },
+      "identity": {
+        "loss": 5.212944030761719,
+        "perplexity": 183.63388061523438,
+        "logit_mse": 11.067934036254883,
+        "kl_from_baseline": 0.9264485836029053,
+        "topk_overlap": 0.7273239436619718,
+        "loss_delta_from_baseline": 0.9635233879089355
+      },
+      "calibrated": {
+        "loss": 5.250657081604004,
+        "perplexity": 190.6915283203125,
+        "logit_mse": 4.614306449890137,
+        "kl_from_baseline": 0.9517301321029663,
+        "topk_overlap": 0.693943661971831,
+        "loss_delta_from_baseline": 1.0012364387512207
+      },
+      "calibrated_minus_identity": {
+        "kl": 0.025281548500061035,
+        "topk_overlap": -0.033380281690140845,
+        "loss_delta_abs": 0.037713050842285156
+      }
+    },
+    {
+      "layer": 29,
+      "calibrated_param": {
+        "layer": 29,
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "calibration": {
+          "activation_rel_mse": 0.18903347849845886,
+          "down_output_rel_mse": 0.12571954727172852
+        }
+      },
+      "identity": {
+        "loss": 5.3616132736206055,
+        "perplexity": 213.0684051513672,
+        "logit_mse": 57.57008361816406,
+        "kl_from_baseline": 1.22420072555542,
+        "topk_overlap": 0.5895774647887324,
+        "loss_delta_from_baseline": 1.1121926307678223
+      },
+      "calibrated": {
+        "loss": 5.043042182922363,
+        "perplexity": 154.94065856933594,
+        "logit_mse": 17.28841209411621,
+        "kl_from_baseline": 0.7392451167106628,
+        "topk_overlap": 0.6577464788732394,
+        "loss_delta_from_baseline": 0.7936215400695801
+      },
+      "calibrated_minus_identity": {
+        "kl": -0.4849556088447571,
+        "topk_overlap": 0.06816901408450704,
+        "loss_delta_abs": -0.3185710906982422
+      }
+    }
+  ],
+  "stacks": [
+    {
+      "threshold": 0.01,
+      "layers": [
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "metrics": {
+        "loss": 4.3258771896362305,
+        "perplexity": 75.63182830810547,
+        "logit_mse": 1.2044655084609985,
+        "kl_from_baseline": 0.06330925226211548,
+        "topk_overlap": 0.8649295774647887,
+        "loss_delta_from_baseline": 0.07645654678344727
+      }
+    },
+    {
+      "threshold": 0.02,
+      "layers": [
+        3,
+        4,
+        5,
+        6,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "metrics": {
+        "loss": 4.613815784454346,
+        "perplexity": 100.8683090209961,
+        "logit_mse": 5.13826322555542,
+        "kl_from_baseline": 0.2832936644554138,
+        "topk_overlap": 0.74,
+        "loss_delta_from_baseline": 0.3643951416015625
+      }
+    },
+    {
+      "threshold": 0.05,
+      "layers": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "metrics": {
+        "loss": 4.65371036529541,
+        "perplexity": 104.9737548828125,
+        "logit_mse": 6.197307109832764,
+        "kl_from_baseline": 0.31504425406455994,
+        "topk_overlap": 0.7188732394366197,
+        "loss_delta_from_baseline": 0.40428972244262695
+      }
+    },
+    {
+      "threshold": 0.1,
+      "layers": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "metrics": {
+        "loss": 4.719809532165527,
+        "perplexity": 112.14688873291016,
+        "logit_mse": 7.723402500152588,
+        "kl_from_baseline": 0.37763091921806335,
+        "topk_overlap": 0.6864788732394366,
+        "loss_delta_from_baseline": 0.47038888931274414
+      }
+    },
+    {
+      "top_count": 4,
+      "layers": [
+        16,
+        17,
+        15,
+        12
+      ],
+      "metrics": {
+        "loss": 4.26938533782959,
+        "perplexity": 71.4776840209961,
+        "logit_mse": 0.5680898427963257,
+        "kl_from_baseline": 0.03143542632460594,
+        "topk_overlap": 0.9043661971830986,
+        "loss_delta_from_baseline": 0.01996469497680664
+      }
+    },
+    {
+      "top_count": 8,
+      "layers": [
+        16,
+        17,
+        15,
+        12,
+        13,
+        14,
+        5,
+        19
+      ],
+      "metrics": {
+        "loss": 4.347702980041504,
+        "perplexity": 77.30069732666016,
+        "logit_mse": 1.496168851852417,
+        "kl_from_baseline": 0.0754956379532814,
+        "topk_overlap": 0.8509859154929578,
+        "loss_delta_from_baseline": 0.0982823371887207
+      }
+    },
+    {
+      "top_count": 12,
+      "layers": [
+        16,
+        17,
+        15,
+        12,
+        13,
+        14,
+        5,
+        19,
+        6,
+        18,
+        4,
+        21
+      ],
+      "metrics": {
+        "loss": 4.425440311431885,
+        "perplexity": 83.5495834350586,
+        "logit_mse": 2.399538040161133,
+        "kl_from_baseline": 0.13576151430606842,
+        "topk_overlap": 0.813943661971831,
+        "loss_delta_from_baseline": 0.17601966857910156
+      }
+    }
+  ]
+}

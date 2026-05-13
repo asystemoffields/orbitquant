@@ -1,0 +1,7 @@
+accelerate
+huggingface_hub
+modal
+safetensors
+sentencepiece
+torch
+transformers

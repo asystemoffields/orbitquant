@@ -1,0 +1,143 @@
+{
+  "format": "smol135-fused-activation-policy-v1",
+  "created_utc": "2026-05-13T21:27:39.120735+00:00",
+  "base_model": "HuggingFaceTB/SmolLM2-135M",
+  "source_result": "C:\\Users\\power\\Documents\\Codex\\2026-05-12\\i-m-on-a-mission-to\\results\\modal_smol135_fused_policy_search_20260513_211243.json",
+  "profile": "quality16",
+  "seed": 1234,
+  "selected_policy": {
+    "total_buses": 16,
+    "kv_layers": [
+      {
+        "layer": 28,
+        "bits": 3,
+        "rotation": "hadamard",
+        "alpha": 0.75
+      },
+      {
+        "layer": 24,
+        "bits": 3,
+        "rotation": "hadamard",
+        "alpha": 0.75
+      },
+      {
+        "layer": 26,
+        "bits": 3,
+        "rotation": "hadamard",
+        "alpha": 0.75
+      },
+      {
+        "layer": 14,
+        "bits": 3,
+        "rotation": "hadamard",
+        "alpha": 0.75
+      },
+      {
+        "layer": 15,
+        "bits": 3,
+        "rotation": "hadamard",
+        "alpha": 0.75
+      },
+      {
+        "layer": 9,
+        "bits": 3,
+        "rotation": "hadamard",
+        "alpha": 0.75
+      },
+      {
+        "layer": 13,
+        "bits": 3,
+        "rotation": "hadamard",
+        "alpha": 0.75
+      }
+    ],
+    "mlp_choices": [
+      {
+        "layer": 16,
+        "bits": 2,
+        "primitive": "plain",
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "block_size": 512
+      },
+      {
+        "layer": 17,
+        "bits": 2,
+        "primitive": "plus",
+        "rotation": "preperm_activation_max_hadamard",
+        "alpha": 0.375,
+        "block_size": 512
+      },
+      {
+        "layer": 15,
+        "bits": 2,
+        "primitive": "plain",
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "block_size": 512
+      },
+      {
+        "layer": 12,
+        "bits": 2,
+        "primitive": "plain",
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "block_size": 512
+      },
+      {
+        "layer": 5,
+        "bits": 2,
+        "primitive": "plus",
+        "rotation": "preperm_boundary_rms_hadamard",
+        "alpha": 0.375,
+        "block_size": 512
+      },
+      {
+        "layer": 14,
+        "bits": 2,
+        "primitive": "plain",
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "block_size": 512
+      },
+      {
+        "layer": 13,
+        "bits": 2,
+        "primitive": "plain",
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "block_size": 512
+      },
+      {
+        "layer": 19,
+        "bits": 2,
+        "primitive": "plain",
+        "rotation": "block_hadamard",
+        "alpha": 0.375,
+        "block_size": 512
+      },
+      {
+        "layer": 18,
+        "bits": 2,
+        "primitive": "plus",
+        "rotation": "preperm_activation_rms_hadamard",
+        "alpha": 0.375,
+        "block_size": 512
+      }
+    ]
+  },
+  "evaluation": {
+    "kl_from_baseline": 0.1324543058872223,
+    "topk_overlap": 0.7994366197183079,
+    "loss_delta": 0.017879486083984375,
+    "estimated_saved_mb": 9.8426513671875,
+    "max_length": 64,
+    "calibration_prompts": "prompts/broad_calibration.txt",
+    "eval_prompts": "prompts/broad_eval.txt"
+  },
+  "method": {
+    "kv_cache": "Rotate K/V activations with Hadamard before 3-bit scalar quantization.",
+    "mlp_intermediate": "Rotate SwiGLU intermediate activations before calibrated 2-bit quantization, then invert before down_proj.",
+    "primitive_choice": "MLP layers may choose plain block-Hadamard or activation/down-proj-aware Hadamard-plus."
+  }
+}

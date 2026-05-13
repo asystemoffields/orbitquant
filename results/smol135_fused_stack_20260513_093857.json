@@ -1,0 +1,147 @@
+{
+  "experiment": "fused_stack_probe",
+  "repo": "HuggingFaceTB/SmolLM2-135M",
+  "kv_layers": [
+    28,
+    24,
+    26,
+    14,
+    17,
+    15,
+    13,
+    25
+  ],
+  "kv_bits": 3,
+  "kv_rotation": "hadamard",
+  "mlp_layers": [
+    16,
+    17,
+    15,
+    12
+  ],
+  "mlp_bits": 2,
+  "block_size": 512,
+  "calibration_prompt_count": 78,
+  "eval_prompt_count": 78,
+  "baseline_eval": {
+    "loss": 4.249420642852783,
+    "perplexity": 70.06481170654297
+  },
+  "calibrated_mlp_params": [
+    {
+      "layer": 16,
+      "rotation": "block_hadamard",
+      "alpha": 0.375,
+      "calibration": {
+        "activation_rel_mse": 0.19620700180530548,
+        "down_output_rel_mse": 0.1915735900402069
+      }
+    },
+    {
+      "layer": 17,
+      "rotation": "block_hadamard",
+      "alpha": 0.375,
+      "calibration": {
+        "activation_rel_mse": 0.19606547057628632,
+        "down_output_rel_mse": 0.2111840546131134
+      }
+    },
+    {
+      "layer": 15,
+      "rotation": "block_hadamard",
+      "alpha": 0.375,
+      "calibration": {
+        "activation_rel_mse": 0.19602586328983307,
+        "down_output_rel_mse": 0.19086980819702148
+      }
+    },
+    {
+      "layer": 12,
+      "rotation": "block_hadamard",
+      "alpha": 0.375,
+      "calibration": {
+        "activation_rel_mse": 0.19661229848861694,
+        "down_output_rel_mse": 0.18949107825756073
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "candidate": "kv_identity_3bit",
+      "metrics": {
+        "loss": 4.072352409362793,
+        "perplexity": 58.69487380981445,
+        "logit_mse": 2.238006353378296,
+        "kl_from_baseline": 0.14353050291538239,
+        "topk_overlap": 0.8030985915492959,
+        "loss_delta_from_baseline": -0.17706823348999023
+      }
+    },
+    {
+      "candidate": "kv_hadamard_3bit",
+      "metrics": {
+        "loss": 4.148402214050293,
+        "perplexity": 63.332725524902344,
+        "logit_mse": 1.4934595823287964,
+        "kl_from_baseline": 0.0757456049323082,
+        "topk_overlap": 0.8580281690140845,
+        "loss_delta_from_baseline": -0.10101842880249023
+      }
+    },
+    {
+      "candidate": "mlp_identity_absmax_2bit",
+      "metrics": {
+        "loss": 4.484354496002197,
+        "perplexity": 88.6197280883789,
+        "logit_mse": 3.7485084533691406,
+        "kl_from_baseline": 0.20171977579593658,
+        "topk_overlap": 0.7746478873239436,
+        "loss_delta_from_baseline": 0.23493385314941406
+      }
+    },
+    {
+      "candidate": "mlp_identity_alpha_0.375_2bit",
+      "metrics": {
+        "loss": 4.341009616851807,
+        "perplexity": 76.78502655029297,
+        "logit_mse": 2.1669907569885254,
+        "kl_from_baseline": 0.10631130635738373,
+        "topk_overlap": 0.836056338028169,
+        "loss_delta_from_baseline": 0.09158897399902344
+      }
+    },
+    {
+      "candidate": "mlp_calibrated_rotation_2bit",
+      "metrics": {
+        "loss": 4.26938533782959,
+        "perplexity": 71.4776840209961,
+        "logit_mse": 0.5680898427963257,
+        "kl_from_baseline": 0.03143542632460594,
+        "topk_overlap": 0.9043661971830986,
+        "loss_delta_from_baseline": 0.01996469497680664
+      }
+    },
+    {
+      "candidate": "fused_kv_hadamard_3bit_mlp_calibrated_2bit",
+      "metrics": {
+        "loss": 4.171947956085205,
+        "perplexity": 64.84163665771484,
+        "logit_mse": 2.0922858715057373,
+        "kl_from_baseline": 0.10651969164609909,
+        "topk_overlap": 0.8187323943661972,
+        "loss_delta_from_baseline": -0.07747268676757812
+      }
+    },
+    {
+      "candidate": "fused_kv_identity_3bit_mlp_identity_absmax_2bit",
+      "metrics": {
+        "loss": 4.34760856628418,
+        "perplexity": 77.29339599609375,
+        "logit_mse": 5.912695407867432,
+        "kl_from_baseline": 0.34322383999824524,
+        "topk_overlap": 0.6945070422535211,
+        "loss_delta_from_baseline": 0.09818792343139648
+      }
+    }
+  ]
+}

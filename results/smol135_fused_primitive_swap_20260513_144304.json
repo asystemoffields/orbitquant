@@ -1,0 +1,3781 @@
+{
+  "experiment": "fused_primitive_swap_probe",
+  "repo": "HuggingFaceTB/SmolLM2-135M",
+  "local_result": "results\\smol135_mlp_hadamard_plus_2bit_20260513_131208.json",
+  "kv_layers": [
+    28,
+    24,
+    26,
+    14,
+    13,
+    8,
+    17
+  ],
+  "kv_rotation": "hadamard",
+  "mlp_layers": [
+    16,
+    17,
+    15,
+    12,
+    13,
+    19,
+    6,
+    14,
+    5
+  ],
+  "baseline_eval": {
+    "loss": 4.249420642852783,
+    "perplexity": 70.06481170654297
+  },
+  "initial_plain_metrics": null,
+  "final_metrics": {
+    "loss": 4.240749359130859,
+    "perplexity": 69.45988464355469,
+    "logit_mse": 2.66512393951416,
+    "kl_from_baseline": 0.1349075734615326,
+    "topk_overlap": 0.7923943661971832,
+    "loss_delta_from_baseline": -0.008671283721923828
+  },
+  "final_params": [
+    {
+      "layer": 16,
+      "primitive": "plus",
+      "rotation": "preperm_activation_max_hadamard",
+      "alpha": 0.375
+    },
+    {
+      "layer": 17,
+      "primitive": "plus",
+      "rotation": "preperm_activation_max_hadamard",
+      "alpha": 0.375
+    },
+    {
+      "layer": 15,
+      "primitive": "plain",
+      "rotation": "block_hadamard",
+      "alpha": 0.375
+    },
+    {
+      "layer": 12,
+      "primitive": "plain",
+      "rotation": "block_hadamard",
+      "alpha": 0.375
+    },
+    {
+      "layer": 13,
+      "primitive": "plain",
+      "rotation": "block_hadamard",
+      "alpha": 0.375
+    },
+    {
+      "layer": 19,
+      "primitive": "plus",
+      "rotation": "preperm_activation_rms_hadamard",
+      "alpha": 0.375
+    },
+    {
+      "layer": 6,
+      "primitive": "plain",
+      "rotation": "block_hadamard",
+      "alpha": 0.375
+    },
+    {
+      "layer": 14,
+      "primitive": "plain",
+      "rotation": "block_hadamard",
+      "alpha": 0.375
+    },
+    {
+      "layer": 5,
+      "primitive": "plain",
+      "rotation": "block_hadamard",
+      "alpha": 0.375
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "best": {
+        "layer": 19,
+        "metrics": {
+          "loss": 4.227066516876221,
+          "perplexity": 68.51594543457031,
+          "logit_mse": 2.660299777984619,
+          "kl_from_baseline": 0.13534431159496307,
+          "topk_overlap": 0.7908450704225352,
+          "loss_delta_from_baseline": -0.0223541259765625
+        },
+        "delta_vs_current": {
+          "kl": -0.0007784813642501831,
+          "topk_overlap": 0.0009859154929577896,
+          "loss_delta_from_baseline": -0.010883331298828125
+        },
+        "params": [
+          {
+            "layer": 16,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 17,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 15,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 12,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 13,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 19,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 6,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 14,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 5,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          }
+        ]
+      },
+      "candidates": [
+        {
+          "layer": 5,
+          "metrics": {
+            "loss": 4.233222484588623,
+            "perplexity": 68.93902587890625,
+            "logit_mse": 2.7337114810943604,
+            "kl_from_baseline": 0.14123983681201935,
+            "topk_overlap": 0.7940845070422534,
+            "loss_delta_from_baseline": -0.016198158264160156
+          },
+          "delta_vs_current": {
+            "kl": 0.005117043852806091,
+            "topk_overlap": 0.004225352112676051,
+            "loss_delta_from_baseline": -0.004727363586425781
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plus",
+              "rotation": "preperm_boundary_rms_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 6,
+          "metrics": {
+            "loss": 4.243567943572998,
+            "perplexity": 69.65593719482422,
+            "logit_mse": 2.662872791290283,
+            "kl_from_baseline": 0.14492206275463104,
+            "topk_overlap": 0.7819718309859156,
+            "loss_delta_from_baseline": -0.005852699279785156
+          },
+          "delta_vs_current": {
+            "kl": 0.008799269795417786,
+            "topk_overlap": -0.007887323943661761,
+            "loss_delta_from_baseline": 0.005618095397949219
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plus",
+              "rotation": "preperm_down_norm_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 12,
+          "metrics": {
+            "loss": 4.220970153808594,
+            "perplexity": 68.09951782226562,
+            "logit_mse": 2.908391237258911,
+            "kl_from_baseline": 0.1404920071363449,
+            "topk_overlap": 0.7898591549295774,
+            "loss_delta_from_baseline": -0.028450489044189453
+          },
+          "delta_vs_current": {
+            "kl": 0.004369214177131653,
+            "topk_overlap": 0.0,
+            "loss_delta_from_baseline": -0.016979694366455078
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 13,
+          "metrics": {
+            "loss": 4.24238395690918,
+            "perplexity": 69.57351684570312,
+            "logit_mse": 3.008873224258423,
+            "kl_from_baseline": 0.14501623809337616,
+            "topk_overlap": 0.7828169014084506,
+            "loss_delta_from_baseline": -0.007036685943603516
+          },
+          "delta_vs_current": {
+            "kl": 0.008893445134162903,
+            "topk_overlap": -0.007042253521126751,
+            "loss_delta_from_baseline": 0.004434108734130859
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 14,
+          "metrics": {
+            "loss": 4.234452247619629,
+            "perplexity": 69.02385711669922,
+            "logit_mse": 2.6717545986175537,
+            "kl_from_baseline": 0.14180287718772888,
+            "topk_overlap": 0.7843661971830985,
+            "loss_delta_from_baseline": -0.014968395233154297
+          },
+          "delta_vs_current": {
+            "kl": 0.005680084228515625,
+            "topk_overlap": -0.005492957746478844,
+            "loss_delta_from_baseline": -0.003497600555419922
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 15,
+          "metrics": {
+            "loss": 4.2561235427856445,
+            "perplexity": 70.53602600097656,
+            "logit_mse": 2.7067723274230957,
+            "kl_from_baseline": 0.13838236033916473,
+            "topk_overlap": 0.7916901408450705,
+            "loss_delta_from_baseline": 0.006702899932861328
+          },
+          "delta_vs_current": {
+            "kl": 0.002259567379951477,
+            "topk_overlap": 0.001830985915493133,
+            "loss_delta_from_baseline": 0.018173694610595703
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plus",
+              "rotation": "interleave_boundary_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 16,
+          "metrics": {
+            "loss": 4.249258518218994,
+            "perplexity": 70.05345153808594,
+            "logit_mse": 2.6286144256591797,
+            "kl_from_baseline": 0.13577638566493988,
+            "topk_overlap": 0.7860563380281691,
+            "loss_delta_from_baseline": -0.0001621246337890625
+          },
+          "delta_vs_current": {
+            "kl": -0.00034640729427337646,
+            "topk_overlap": -0.003802816901408268,
+            "loss_delta_from_baseline": 0.011308670043945312
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 17,
+          "metrics": {
+            "loss": 4.242831707000732,
+            "perplexity": 69.60467529296875,
+            "logit_mse": 2.671595335006714,
+            "kl_from_baseline": 0.13681641221046448,
+            "topk_overlap": 0.7881690140845071,
+            "loss_delta_from_baseline": -0.006588935852050781
+          },
+          "delta_vs_current": {
+            "kl": 0.0006936192512512207,
+            "topk_overlap": -0.0016901408450702426,
+            "loss_delta_from_baseline": 0.004881858825683594
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 19,
+          "metrics": {
+            "loss": 4.227066516876221,
+            "perplexity": 68.51594543457031,
+            "logit_mse": 2.660299777984619,
+            "kl_from_baseline": 0.13534431159496307,
+            "topk_overlap": 0.7908450704225352,
+            "loss_delta_from_baseline": -0.0223541259765625
+          },
+          "delta_vs_current": {
+            "kl": -0.0007784813642501831,
+            "topk_overlap": 0.0009859154929577896,
+            "loss_delta_from_baseline": -0.010883331298828125
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "best": {
+        "layer": 16,
+        "metrics": {
+          "loss": 4.240499973297119,
+          "perplexity": 69.44256591796875,
+          "logit_mse": 2.6703927516937256,
+          "kl_from_baseline": 0.1350984424352646,
+          "topk_overlap": 0.7887323943661971,
+          "loss_delta_from_baseline": -0.008920669555664062
+        },
+        "delta_vs_current": {
+          "kl": -0.00024586915969848633,
+          "topk_overlap": -0.0021126760563380254,
+          "loss_delta_from_baseline": 0.013433456420898438
+        },
+        "params": [
+          {
+            "layer": 16,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 17,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 15,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 12,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 13,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 19,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 6,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 14,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 5,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          }
+        ]
+      },
+      "candidates": [
+        {
+          "layer": 5,
+          "metrics": {
+            "loss": 4.234287738800049,
+            "perplexity": 69.01250457763672,
+            "logit_mse": 2.710437297821045,
+            "kl_from_baseline": 0.14167159795761108,
+            "topk_overlap": 0.7932394366197184,
+            "loss_delta_from_baseline": -0.015132904052734375
+          },
+          "delta_vs_current": {
+            "kl": 0.00632728636264801,
+            "topk_overlap": 0.002394366197183251,
+            "loss_delta_from_baseline": 0.007221221923828125
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plus",
+              "rotation": "preperm_boundary_rms_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 6,
+          "metrics": {
+            "loss": 4.233850479125977,
+            "perplexity": 68.98233795166016,
+            "logit_mse": 2.596064567565918,
+            "kl_from_baseline": 0.14462551474571228,
+            "topk_overlap": 0.7805633802816903,
+            "loss_delta_from_baseline": -0.01557016372680664
+          },
+          "delta_vs_current": {
+            "kl": 0.009281203150749207,
+            "topk_overlap": -0.010281690140844901,
+            "loss_delta_from_baseline": 0.006783962249755859
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plus",
+              "rotation": "preperm_down_norm_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 12,
+          "metrics": {
+            "loss": 4.226244926452637,
+            "perplexity": 68.45967864990234,
+            "logit_mse": 3.0493500232696533,
+            "kl_from_baseline": 0.14269401133060455,
+            "topk_overlap": 0.7873239436619718,
+            "loss_delta_from_baseline": -0.023175716400146484
+          },
+          "delta_vs_current": {
+            "kl": 0.0073496997356414795,
+            "topk_overlap": -0.0035211267605633756,
+            "loss_delta_from_baseline": -0.0008215904235839844
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 13,
+          "metrics": {
+            "loss": 4.243439674377441,
+            "perplexity": 69.64700317382812,
+            "logit_mse": 2.9048311710357666,
+            "kl_from_baseline": 0.1421058475971222,
+            "topk_overlap": 0.7836619718309858,
+            "loss_delta_from_baseline": -0.005980968475341797
+          },
+          "delta_vs_current": {
+            "kl": 0.006761536002159119,
+            "topk_overlap": -0.007183098591549308,
+            "loss_delta_from_baseline": 0.016373157501220703
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 14,
+          "metrics": {
+            "loss": 4.232560157775879,
+            "perplexity": 68.89338684082031,
+            "logit_mse": 2.6647565364837646,
+            "kl_from_baseline": 0.14243145287036896,
+            "topk_overlap": 0.7822535211267605,
+            "loss_delta_from_baseline": -0.016860485076904297
+          },
+          "delta_vs_current": {
+            "kl": 0.007087141275405884,
+            "topk_overlap": -0.008591549295774659,
+            "loss_delta_from_baseline": 0.005493640899658203
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 15,
+          "metrics": {
+            "loss": 4.251217365264893,
+            "perplexity": 70.19081115722656,
+            "logit_mse": 2.734442710876465,
+            "kl_from_baseline": 0.1387448012828827,
+            "topk_overlap": 0.7850704225352112,
+            "loss_delta_from_baseline": 0.001796722412109375
+          },
+          "delta_vs_current": {
+            "kl": 0.0034004896879196167,
+            "topk_overlap": -0.005774647887323958,
+            "loss_delta_from_baseline": 0.024150848388671875
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plus",
+              "rotation": "interleave_boundary_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 16,
+          "metrics": {
+            "loss": 4.240499973297119,
+            "perplexity": 69.44256591796875,
+            "logit_mse": 2.6703927516937256,
+            "kl_from_baseline": 0.1350984424352646,
+            "topk_overlap": 0.7887323943661971,
+            "loss_delta_from_baseline": -0.008920669555664062
+          },
+          "delta_vs_current": {
+            "kl": -0.00024586915969848633,
+            "topk_overlap": -0.0021126760563380254,
+            "loss_delta_from_baseline": 0.013433456420898438
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 17,
+          "metrics": {
+            "loss": 4.240105628967285,
+            "perplexity": 69.4151840209961,
+            "logit_mse": 2.6609036922454834,
+            "kl_from_baseline": 0.13649173080921173,
+            "topk_overlap": 0.7892957746478872,
+            "loss_delta_from_baseline": -0.009315013885498047
+          },
+          "delta_vs_current": {
+            "kl": 0.0011474192142486572,
+            "topk_overlap": -0.0015492957746479075,
+            "loss_delta_from_baseline": 0.013039112091064453
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "best": {
+        "layer": 17,
+        "metrics": {
+          "loss": 4.240749359130859,
+          "perplexity": 69.45988464355469,
+          "logit_mse": 2.66512393951416,
+          "kl_from_baseline": 0.1349075734615326,
+          "topk_overlap": 0.7923943661971832,
+          "loss_delta_from_baseline": -0.008671283721923828
+        },
+        "delta_vs_current": {
+          "kl": -0.00019086897373199463,
+          "topk_overlap": 0.003661971830986044,
+          "loss_delta_from_baseline": 0.0002493858337402344
+        },
+        "params": [
+          {
+            "layer": 16,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 17,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 15,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 12,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 13,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 19,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 6,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 14,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 5,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          }
+        ]
+      },
+      "candidates": [
+        {
+          "layer": 5,
+          "metrics": {
+            "loss": 4.226640224456787,
+            "perplexity": 68.48674774169922,
+            "logit_mse": 2.7586710453033447,
+            "kl_from_baseline": 0.13846197724342346,
+            "topk_overlap": 0.7899999999999999,
+            "loss_delta_from_baseline": -0.022780418395996094
+          },
+          "delta_vs_current": {
+            "kl": 0.0033635348081588745,
+            "topk_overlap": 0.001267605633802793,
+            "loss_delta_from_baseline": -0.013859748840332031
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plus",
+              "rotation": "preperm_boundary_rms_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 6,
+          "metrics": {
+            "loss": 4.239197254180908,
+            "perplexity": 69.35215759277344,
+            "logit_mse": 2.6258370876312256,
+            "kl_from_baseline": 0.14154891669750214,
+            "topk_overlap": 0.7857746478873239,
+            "loss_delta_from_baseline": -0.010223388671875
+          },
+          "delta_vs_current": {
+            "kl": 0.006450474262237549,
+            "topk_overlap": -0.0029577464788732577,
+            "loss_delta_from_baseline": -0.0013027191162109375
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plus",
+              "rotation": "preperm_down_norm_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 12,
+          "metrics": {
+            "loss": 4.222268104553223,
+            "perplexity": 68.1879653930664,
+            "logit_mse": 3.1333823204040527,
+            "kl_from_baseline": 0.14388824999332428,
+            "topk_overlap": 0.7829577464788732,
+            "loss_delta_from_baseline": -0.027152538299560547
+          },
+          "delta_vs_current": {
+            "kl": 0.008789807558059692,
+            "topk_overlap": -0.005774647887323958,
+            "loss_delta_from_baseline": -0.018231868743896484
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 13,
+          "metrics": {
+            "loss": 4.247737884521484,
+            "perplexity": 69.94700622558594,
+            "logit_mse": 2.911536931991577,
+            "kl_from_baseline": 0.14404574036598206,
+            "topk_overlap": 0.7857746478873239,
+            "loss_delta_from_baseline": -0.0016827583312988281
+          },
+          "delta_vs_current": {
+            "kl": 0.008947297930717468,
+            "topk_overlap": -0.0029577464788732577,
+            "loss_delta_from_baseline": 0.007237911224365234
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 14,
+          "metrics": {
+            "loss": 4.230192184448242,
+            "perplexity": 68.73043823242188,
+            "logit_mse": 2.71852445602417,
+            "kl_from_baseline": 0.13746434450149536,
+            "topk_overlap": 0.7832394366197183,
+            "loss_delta_from_baseline": -0.019228458404541016
+          },
+          "delta_vs_current": {
+            "kl": 0.002365902066230774,
+            "topk_overlap": -0.005492957746478844,
+            "loss_delta_from_baseline": -0.010307788848876953
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 15,
+          "metrics": {
+            "loss": 4.248276233673096,
+            "perplexity": 69.98467254638672,
+            "logit_mse": 2.7772181034088135,
+            "kl_from_baseline": 0.13704603910446167,
+            "topk_overlap": 0.7829577464788732,
+            "loss_delta_from_baseline": -0.0011444091796875
+          },
+          "delta_vs_current": {
+            "kl": 0.0019475966691970825,
+            "topk_overlap": -0.005774647887323958,
+            "loss_delta_from_baseline": 0.0077762603759765625
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plus",
+              "rotation": "interleave_boundary_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 17,
+          "metrics": {
+            "loss": 4.240749359130859,
+            "perplexity": 69.45988464355469,
+            "logit_mse": 2.66512393951416,
+            "kl_from_baseline": 0.1349075734615326,
+            "topk_overlap": 0.7923943661971832,
+            "loss_delta_from_baseline": -0.008671283721923828
+          },
+          "delta_vs_current": {
+            "kl": -0.00019086897373199463,
+            "topk_overlap": 0.003661971830986044,
+            "loss_delta_from_baseline": 0.0002493858337402344
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "best": {
+        "layer": 14,
+        "metrics": {
+          "loss": 4.231870174407959,
+          "perplexity": 68.84586334228516,
+          "logit_mse": 2.7637569904327393,
+          "kl_from_baseline": 0.13618353009223938,
+          "topk_overlap": 0.7846478873239437,
+          "loss_delta_from_baseline": -0.01755046844482422
+        },
+        "delta_vs_current": {
+          "kl": 0.0012759566307067871,
+          "topk_overlap": -0.007746478873239426,
+          "loss_delta_from_baseline": -0.00887918472290039
+        },
+        "params": [
+          {
+            "layer": 16,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 17,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 15,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 12,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 13,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 19,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 6,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 14,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 5,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          }
+        ]
+      },
+      "candidates": [
+        {
+          "layer": 5,
+          "metrics": {
+            "loss": 4.238001346588135,
+            "perplexity": 69.26927185058594,
+            "logit_mse": 2.625365972518921,
+            "kl_from_baseline": 0.14309370517730713,
+            "topk_overlap": 0.7890140845070424,
+            "loss_delta_from_baseline": -0.011419296264648438
+          },
+          "delta_vs_current": {
+            "kl": 0.008186131715774536,
+            "topk_overlap": -0.0033802816901408184,
+            "loss_delta_from_baseline": -0.0027480125427246094
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plus",
+              "rotation": "preperm_boundary_rms_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 6,
+          "metrics": {
+            "loss": 4.230569362640381,
+            "perplexity": 68.7563705444336,
+            "logit_mse": 2.649909734725952,
+            "kl_from_baseline": 0.1451754868030548,
+            "topk_overlap": 0.787605633802817,
+            "loss_delta_from_baseline": -0.018851280212402344
+          },
+          "delta_vs_current": {
+            "kl": 0.010267913341522217,
+            "topk_overlap": -0.004788732394366169,
+            "loss_delta_from_baseline": -0.010179996490478516
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plus",
+              "rotation": "preperm_down_norm_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 12,
+          "metrics": {
+            "loss": 4.223897457122803,
+            "perplexity": 68.29915618896484,
+            "logit_mse": 3.2072036266326904,
+            "kl_from_baseline": 0.14506228268146515,
+            "topk_overlap": 0.7835211267605633,
+            "loss_delta_from_baseline": -0.02552318572998047
+          },
+          "delta_vs_current": {
+            "kl": 0.010154709219932556,
+            "topk_overlap": -0.008873239436619884,
+            "loss_delta_from_baseline": -0.01685190200805664
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 13,
+          "metrics": {
+            "loss": 4.240719795227051,
+            "perplexity": 69.45783233642578,
+            "logit_mse": 2.841825008392334,
+            "kl_from_baseline": 0.1440819650888443,
+            "topk_overlap": 0.7867605633802818,
+            "loss_delta_from_baseline": -0.008700847625732422
+          },
+          "delta_vs_current": {
+            "kl": 0.009174391627311707,
+            "topk_overlap": -0.005633802816901401,
+            "loss_delta_from_baseline": -2.956390380859375e-05
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 14,
+          "metrics": {
+            "loss": 4.231870174407959,
+            "perplexity": 68.84586334228516,
+            "logit_mse": 2.7637569904327393,
+            "kl_from_baseline": 0.13618353009223938,
+            "topk_overlap": 0.7846478873239437,
+            "loss_delta_from_baseline": -0.01755046844482422
+          },
+          "delta_vs_current": {
+            "kl": 0.0012759566307067871,
+            "topk_overlap": -0.007746478873239426,
+            "loss_delta_from_baseline": -0.00887918472290039
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layer": 15,
+          "metrics": {
+            "loss": 4.256955623626709,
+            "perplexity": 70.59474182128906,
+            "logit_mse": 2.9148318767547607,
+            "kl_from_baseline": 0.13639281690120697,
+            "topk_overlap": 0.7878873239436619,
+            "loss_delta_from_baseline": 0.007534980773925781
+          },
+          "delta_vs_current": {
+            "kl": 0.0014852434396743774,
+            "topk_overlap": -0.004507042253521276,
+            "loss_delta_from_baseline": 0.01620626449584961
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plus",
+              "rotation": "interleave_boundary_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": "4_pair",
+      "best_pair": {
+        "layers": [
+          5,
+          12
+        ],
+        "metrics": {
+          "loss": 4.235390663146973,
+          "perplexity": 69.08866119384766,
+          "logit_mse": 2.5129008293151855,
+          "kl_from_baseline": 0.1374918669462204,
+          "topk_overlap": 0.7939436619718311,
+          "loss_delta_from_baseline": -0.014029979705810547
+        },
+        "delta_vs_current": {
+          "kl": 0.002584293484687805,
+          "topk_overlap": 0.0015492957746479075,
+          "loss_delta_from_baseline": -0.005358695983886719
+        },
+        "params": [
+          {
+            "layer": 16,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 17,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 15,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 12,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 13,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 19,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 6,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 14,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 5,
+            "primitive": "plus",
+            "rotation": "preperm_boundary_rms_hadamard",
+            "alpha": 0.375
+          }
+        ]
+      },
+      "pair_candidates": [
+        {
+          "layers": [
+            5,
+            6
+          ],
+          "metrics": {
+            "loss": 4.253735065460205,
+            "perplexity": 70.36775207519531,
+            "logit_mse": 2.6893253326416016,
+            "kl_from_baseline": 0.14867092669010162,
+            "topk_overlap": 0.7843661971830985,
+            "loss_delta_from_baseline": 0.004314422607421875
+          },
+          "delta_vs_current": {
+            "kl": 0.01376335322856903,
+            "topk_overlap": -0.008028169014084652,
+            "loss_delta_from_baseline": 0.012985706329345703
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plus",
+              "rotation": "preperm_down_norm_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plus",
+              "rotation": "preperm_boundary_rms_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layers": [
+            5,
+            12
+          ],
+          "metrics": {
+            "loss": 4.235390663146973,
+            "perplexity": 69.08866119384766,
+            "logit_mse": 2.5129008293151855,
+            "kl_from_baseline": 0.1374918669462204,
+            "topk_overlap": 0.7939436619718311,
+            "loss_delta_from_baseline": -0.014029979705810547
+          },
+          "delta_vs_current": {
+            "kl": 0.002584293484687805,
+            "topk_overlap": 0.0015492957746479075,
+            "loss_delta_from_baseline": -0.005358695983886719
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plus",
+              "rotation": "preperm_boundary_rms_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layers": [
+            5,
+            13
+          ],
+          "metrics": {
+            "loss": 4.236056804656982,
+            "perplexity": 69.13470458984375,
+            "logit_mse": 2.6526782512664795,
+            "kl_from_baseline": 0.14269448816776276,
+            "topk_overlap": 0.7869014084507043,
+            "loss_delta_from_baseline": -0.013363838195800781
+          },
+          "delta_vs_current": {
+            "kl": 0.007786914706230164,
+            "topk_overlap": -0.005492957746478844,
+            "loss_delta_from_baseline": -0.004692554473876953
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plus",
+              "rotation": "preperm_boundary_rms_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layers": [
+            5,
+            14
+          ],
+          "metrics": {
+            "loss": 4.231874942779541,
+            "perplexity": 68.84619140625,
+            "logit_mse": 2.4937632083892822,
+            "kl_from_baseline": 0.14264772832393646,
+            "topk_overlap": 0.7877464788732393,
+            "loss_delta_from_baseline": -0.017545700073242188
+          },
+          "delta_vs_current": {
+            "kl": 0.00774015486240387,
+            "topk_overlap": -0.004647887323943833,
+            "loss_delta_from_baseline": -0.00887441635131836
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plus",
+              "rotation": "preperm_boundary_rms_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layers": [
+            5,
+            15
+          ],
+          "metrics": {
+            "loss": 4.220947265625,
+            "perplexity": 68.09796142578125,
+            "logit_mse": 2.690047025680542,
+            "kl_from_baseline": 0.14015187323093414,
+            "topk_overlap": 0.7869014084507043,
+            "loss_delta_from_baseline": -0.028473377227783203
+          },
+          "delta_vs_current": {
+            "kl": 0.00524429976940155,
+            "topk_overlap": -0.005492957746478844,
+            "loss_delta_from_baseline": -0.019802093505859375
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plus",
+              "rotation": "interleave_boundary_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plus",
+              "rotation": "preperm_boundary_rms_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layers": [
+            6,
+            12
+          ],
+          "metrics": {
+            "loss": 4.230133056640625,
+            "perplexity": 68.72637939453125,
+            "logit_mse": 2.862950563430786,
+            "kl_from_baseline": 0.14409419894218445,
+            "topk_overlap": 0.7836619718309858,
+            "loss_delta_from_baseline": -0.019287586212158203
+          },
+          "delta_vs_current": {
+            "kl": 0.009186625480651855,
+            "topk_overlap": -0.008732394366197327,
+            "loss_delta_from_baseline": -0.010616302490234375
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plus",
+              "rotation": "preperm_down_norm_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layers": [
+            6,
+            13
+          ],
+          "metrics": {
+            "loss": 4.22581672668457,
+            "perplexity": 68.43036651611328,
+            "logit_mse": 2.490447759628296,
+            "kl_from_baseline": 0.14329780638217926,
+            "topk_overlap": 0.7807042253521126,
+            "loss_delta_from_baseline": -0.02360391616821289
+          },
+          "delta_vs_current": {
+            "kl": 0.008390232920646667,
+            "topk_overlap": -0.011690140845070585,
+            "loss_delta_from_baseline": -0.014932632446289062
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plus",
+              "rotation": "preperm_down_norm_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layers": [
+            6,
+            14
+          ],
+          "metrics": {
+            "loss": 4.221132755279541,
+            "perplexity": 68.110595703125,
+            "logit_mse": 2.699765205383301,
+            "kl_from_baseline": 0.14741884171962738,
+            "topk_overlap": 0.7836619718309858,
+            "loss_delta_from_baseline": -0.028287887573242188
+          },
+          "delta_vs_current": {
+            "kl": 0.012511268258094788,
+            "topk_overlap": -0.008732394366197327,
+            "loss_delta_from_baseline": -0.01961660385131836
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plus",
+              "rotation": "preperm_down_norm_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layers": [
+            6,
+            15
+          ],
+          "metrics": {
+            "loss": 4.236843109130859,
+            "perplexity": 69.1890869140625,
+            "logit_mse": 2.4958677291870117,
+            "kl_from_baseline": 0.14702138304710388,
+            "topk_overlap": 0.7811267605633803,
+            "loss_delta_from_baseline": -0.012577533721923828
+          },
+          "delta_vs_current": {
+            "kl": 0.012113809585571289,
+            "topk_overlap": -0.011267605633802913,
+            "loss_delta_from_baseline": -0.00390625
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plus",
+              "rotation": "interleave_boundary_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plus",
+              "rotation": "preperm_down_norm_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layers": [
+            12,
+            13
+          ],
+          "metrics": {
+            "loss": 4.226977825164795,
+            "perplexity": 68.50987243652344,
+            "logit_mse": 3.0388638973236084,
+            "kl_from_baseline": 0.1454227864742279,
+            "topk_overlap": 0.7828169014084506,
+            "loss_delta_from_baseline": -0.02244281768798828
+          },
+          "delta_vs_current": {
+            "kl": 0.010515213012695312,
+            "topk_overlap": -0.00957746478873256,
+            "loss_delta_from_baseline": -0.013771533966064453
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layers": [
+            12,
+            14
+          ],
+          "metrics": {
+            "loss": 4.231494426727295,
+            "perplexity": 68.81999969482422,
+            "logit_mse": 2.9281976222991943,
+            "kl_from_baseline": 0.1451020985841751,
+            "topk_overlap": 0.784225352112676,
+            "loss_delta_from_baseline": -0.01792621612548828
+          },
+          "delta_vs_current": {
+            "kl": 0.010194525122642517,
+            "topk_overlap": -0.008169014084507209,
+            "loss_delta_from_baseline": -0.009254932403564453
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layers": [
+            12,
+            15
+          ],
+          "metrics": {
+            "loss": 4.208984851837158,
+            "perplexity": 67.28820037841797,
+            "logit_mse": 3.0082266330718994,
+            "kl_from_baseline": 0.144569531083107,
+            "topk_overlap": 0.7829577464788732,
+            "loss_delta_from_baseline": -0.040435791015625
+          },
+          "delta_vs_current": {
+            "kl": 0.009661957621574402,
+            "topk_overlap": -0.009436619718310002,
+            "loss_delta_from_baseline": -0.03176450729370117
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plus",
+              "rotation": "interleave_boundary_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layers": [
+            13,
+            14
+          ],
+          "metrics": {
+            "loss": 4.233456134796143,
+            "perplexity": 68.95513916015625,
+            "logit_mse": 2.767642021179199,
+            "kl_from_baseline": 0.1380033940076828,
+            "topk_overlap": 0.792112676056338,
+            "loss_delta_from_baseline": -0.015964508056640625
+          },
+          "delta_vs_current": {
+            "kl": 0.0030958205461502075,
+            "topk_overlap": -0.0002816901408452255,
+            "loss_delta_from_baseline": -0.007293224334716797
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layers": [
+            13,
+            15
+          ],
+          "metrics": {
+            "loss": 4.224856376647949,
+            "perplexity": 68.36468505859375,
+            "logit_mse": 2.9538016319274902,
+            "kl_from_baseline": 0.13981126248836517,
+            "topk_overlap": 0.7852112676056338,
+            "loss_delta_from_baseline": -0.024564266204833984
+          },
+          "delta_vs_current": {
+            "kl": 0.004903689026832581,
+            "topk_overlap": -0.007183098591549419,
+            "loss_delta_from_baseline": -0.015892982482910156
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plus",
+              "rotation": "interleave_boundary_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        },
+        {
+          "layers": [
+            14,
+            15
+          ],
+          "metrics": {
+            "loss": 4.258998394012451,
+            "perplexity": 70.73909759521484,
+            "logit_mse": 2.797011375427246,
+            "kl_from_baseline": 0.13862021267414093,
+            "topk_overlap": 0.7835211267605633,
+            "loss_delta_from_baseline": 0.009577751159667969
+          },
+          "delta_vs_current": {
+            "kl": 0.0037126392126083374,
+            "topk_overlap": -0.008873239436619884,
+            "loss_delta_from_baseline": 0.018249034881591797
+          },
+          "params": [
+            {
+              "layer": 16,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plus",
+              "rotation": "interleave_boundary_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 14,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "final_kl": 0.1349075734615326,
+    "final_topk": 0.7923943661971832,
+    "final_loss_delta": -0.008671283721923828,
+    "accepted_swaps": [
+      19,
+      16,
+      17
+    ],
+    "accepted_pair_swaps": []
+  }
+}

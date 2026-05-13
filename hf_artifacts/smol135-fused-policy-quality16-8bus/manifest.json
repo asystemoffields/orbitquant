@@ -1,0 +1,10 @@
+{
+  "artifact_type": "compression_policy",
+  "format": "smol135-fused-activation-policy-v1",
+  "base_model": "HuggingFaceTB/SmolLM2-135M",
+  "result_profile": "quality16",
+  "selected_total_buses": 8,
+  "kl_from_baseline": 0.05794595927000046,
+  "topk_overlap": 0.8561971830985874,
+  "stopped_reason": null
+}

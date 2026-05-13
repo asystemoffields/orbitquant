@@ -1,0 +1,4380 @@
+{
+  "experiment": "fused_choice_allocator",
+  "repo": "HuggingFaceTB/SmolLM2-135M",
+  "kv_impact_result": "results\\smol135_kv_impact_3bit_20260513_084903.json",
+  "local_result": "results\\smol135_mlp_hadamard_plus_2bit_20260513_131208.json",
+  "mlp_choice_impact_result": "results\\smol135_mlp_hadamard_plus_impact_2bit_20260513_132208.json",
+  "base_kv_items": [
+    {
+      "kind": "kv",
+      "layer": 28,
+      "rotation": "hadamard",
+      "independent_kl": 0.0025391215458512306
+    },
+    {
+      "kind": "kv",
+      "layer": 24,
+      "rotation": "hadamard",
+      "independent_kl": 0.006191312801092863
+    },
+    {
+      "kind": "kv",
+      "layer": 26,
+      "rotation": "hadamard",
+      "independent_kl": 0.007855546660721302
+    },
+    {
+      "kind": "kv",
+      "layer": 14,
+      "rotation": "hadamard",
+      "independent_kl": 0.00816287286579609
+    }
+  ],
+  "base_mlp_choices": [
+    {
+      "kind": "mlp",
+      "layer": 16,
+      "primitive": "plain",
+      "independent_kl": 0.0066179875284433365
+    },
+    {
+      "kind": "mlp",
+      "layer": 17,
+      "primitive": "plain",
+      "independent_kl": 0.006966010667383671
+    },
+    {
+      "kind": "mlp",
+      "layer": 15,
+      "primitive": "plain",
+      "independent_kl": 0.007693416904658079
+    },
+    {
+      "kind": "mlp",
+      "layer": 12,
+      "primitive": "plain",
+      "independent_kl": 0.00865330919623375
+    }
+  ],
+  "kv_candidates": [
+    {
+      "kind": "kv",
+      "layer": 17,
+      "rotation": "hadamard",
+      "independent_kl": 0.009512627497315407
+    },
+    {
+      "kind": "kv",
+      "layer": 15,
+      "rotation": "hadamard",
+      "independent_kl": 0.009670657105743885
+    },
+    {
+      "kind": "kv",
+      "layer": 13,
+      "rotation": "hadamard",
+      "independent_kl": 0.009795324876904488
+    },
+    {
+      "kind": "kv",
+      "layer": 25,
+      "rotation": "hadamard",
+      "independent_kl": 0.010618847794830799
+    },
+    {
+      "kind": "kv",
+      "layer": 8,
+      "rotation": "hadamard",
+      "independent_kl": 0.010669583454728127
+    },
+    {
+      "kind": "kv",
+      "layer": 16,
+      "rotation": "hadamard",
+      "independent_kl": 0.011670161969959736
+    },
+    {
+      "kind": "kv",
+      "layer": 4,
+      "rotation": "hadamard",
+      "independent_kl": 0.012321076355874538
+    },
+    {
+      "kind": "kv",
+      "layer": 9,
+      "rotation": "hadamard",
+      "independent_kl": 0.012326641008257866
+    }
+  ],
+  "mlp_candidates": [
+    {
+      "kind": "mlp",
+      "layer": 13,
+      "primitive": "plus",
+      "independent_kl": 0.008426794782280922
+    },
+    {
+      "kind": "mlp",
+      "layer": 13,
+      "primitive": "plain",
+      "independent_kl": 0.00884309969842434
+    },
+    {
+      "kind": "mlp",
+      "layer": 14,
+      "primitive": "plain",
+      "independent_kl": 0.009023184888064861
+    },
+    {
+      "kind": "mlp",
+      "layer": 5,
+      "primitive": "plain",
+      "independent_kl": 0.00934002734720707
+    },
+    {
+      "kind": "mlp",
+      "layer": 14,
+      "primitive": "plus",
+      "independent_kl": 0.009388110600411892
+    },
+    {
+      "kind": "mlp",
+      "layer": 19,
+      "primitive": "plus",
+      "independent_kl": 0.009982659481465816
+    },
+    {
+      "kind": "mlp",
+      "layer": 18,
+      "primitive": "plus",
+      "independent_kl": 0.010411743074655533
+    },
+    {
+      "kind": "mlp",
+      "layer": 19,
+      "primitive": "plain",
+      "independent_kl": 0.01059030182659626
+    },
+    {
+      "kind": "mlp",
+      "layer": 6,
+      "primitive": "plain",
+      "independent_kl": 0.010641932487487793
+    },
+    {
+      "kind": "mlp",
+      "layer": 18,
+      "primitive": "plain",
+      "independent_kl": 0.010654768906533718
+    },
+    {
+      "kind": "mlp",
+      "layer": 6,
+      "primitive": "plus",
+      "independent_kl": 0.011501291766762733
+    },
+    {
+      "kind": "mlp",
+      "layer": 5,
+      "primitive": "plus",
+      "independent_kl": 0.01178254559636116
+    },
+    {
+      "kind": "mlp",
+      "layer": 4,
+      "primitive": "plain",
+      "independent_kl": 0.012044043280184269
+    },
+    {
+      "kind": "mlp",
+      "layer": 21,
+      "primitive": "plus",
+      "independent_kl": 0.012259503826498985
+    },
+    {
+      "kind": "mlp",
+      "layer": 4,
+      "primitive": "plus",
+      "independent_kl": 0.012627133168280125
+    },
+    {
+      "kind": "mlp",
+      "layer": 21,
+      "primitive": "plain",
+      "independent_kl": 0.012671097181737423
+    }
+  ],
+  "baseline_eval": {
+    "loss": 4.249420642852783,
+    "perplexity": 70.06481170654297
+  },
+  "beam": {
+    "base": null,
+    "frontiers": [
+      {
+        "added_buses": 1,
+        "best": {
+          "kv_layers": [
+            28,
+            24,
+            26,
+            14
+          ],
+          "mlp_choices": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            }
+          ],
+          "metrics": {
+            "loss": 4.223367691040039,
+            "perplexity": 68.26298522949219,
+            "logit_mse": 1.2805696725845337,
+            "kl_from_baseline": 0.067637138068676,
+            "topk_overlap": 0.8481690140845071,
+            "loss_delta_from_baseline": -0.02605295181274414
+          },
+          "path": [
+            {
+              "add": "mlp_13_plus",
+              "kind": "mlp",
+              "layer": 13,
+              "primitive": "plus",
+              "independent_kl": 0.008426794782280922,
+              "stack_kl": 0.067637138068676,
+              "stack_topk": 0.8481690140845071
+            }
+          ]
+        },
+        "beam": [
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 13,
+                "primitive": "plus",
+                "rotation": "preperm_activation_max_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.223367691040039,
+              "perplexity": 68.26298522949219,
+              "logit_mse": 1.2805696725845337,
+              "kl_from_baseline": 0.067637138068676,
+              "topk_overlap": 0.8481690140845071,
+              "loss_delta_from_baseline": -0.02605295181274414
+            },
+            "path": [
+              {
+                "add": "mlp_13_plus",
+                "kind": "mlp",
+                "layer": 13,
+                "primitive": "plus",
+                "independent_kl": 0.008426794782280922,
+                "stack_kl": 0.067637138068676,
+                "stack_topk": 0.8481690140845071
+              }
+            ]
+          },
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              9
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.225758075714111,
+              "perplexity": 68.42635345458984,
+              "logit_mse": 1.3190048933029175,
+              "kl_from_baseline": 0.06797610223293304,
+              "topk_overlap": 0.8561971830985915,
+              "loss_delta_from_baseline": -0.023662567138671875
+            },
+            "path": [
+              {
+                "add": "kv_9_hadamard",
+                "kind": "kv",
+                "layer": 9,
+                "primitive": null,
+                "independent_kl": 0.012326641008257866,
+                "stack_kl": 0.06797610223293304,
+                "stack_topk": 0.8561971830985915
+              }
+            ]
+          },
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              13
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.219291687011719,
+              "perplexity": 67.98531341552734,
+              "logit_mse": 1.3042724132537842,
+              "kl_from_baseline": 0.06842510402202606,
+              "topk_overlap": 0.8488732394366197,
+              "loss_delta_from_baseline": -0.030128955841064453
+            },
+            "path": [
+              {
+                "add": "kv_13_hadamard",
+                "kind": "kv",
+                "layer": 13,
+                "primitive": null,
+                "independent_kl": 0.009795324876904488,
+                "stack_kl": 0.06842510402202606,
+                "stack_topk": 0.8488732394366197
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "added_buses": 2,
+        "best": {
+          "kv_layers": [
+            28,
+            24,
+            26,
+            14,
+            13,
+            8
+          ],
+          "mlp_choices": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ],
+          "metrics": {
+            "loss": 4.217097282409668,
+            "perplexity": 67.83628845214844,
+            "logit_mse": 1.4038543701171875,
+            "kl_from_baseline": 0.07615479826927185,
+            "topk_overlap": 0.8371830985915493,
+            "loss_delta_from_baseline": -0.032323360443115234
+          },
+          "path": [
+            {
+              "add": "kv_13_hadamard",
+              "kind": "kv",
+              "layer": 13,
+              "primitive": null,
+              "independent_kl": 0.009795324876904488,
+              "stack_kl": 0.06842510402202606,
+              "stack_topk": 0.8488732394366197
+            },
+            {
+              "add": "kv_8_hadamard",
+              "kind": "kv",
+              "layer": 8,
+              "primitive": null,
+              "independent_kl": 0.010669583454728127,
+              "stack_kl": 0.07615479826927185,
+              "stack_topk": 0.8371830985915493
+            }
+          ]
+        },
+        "beam": [
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              13,
+              8
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.217097282409668,
+              "perplexity": 67.83628845214844,
+              "logit_mse": 1.4038543701171875,
+              "kl_from_baseline": 0.07615479826927185,
+              "topk_overlap": 0.8371830985915493,
+              "loss_delta_from_baseline": -0.032323360443115234
+            },
+            "path": [
+              {
+                "add": "kv_13_hadamard",
+                "kind": "kv",
+                "layer": 13,
+                "primitive": null,
+                "independent_kl": 0.009795324876904488,
+                "stack_kl": 0.06842510402202606,
+                "stack_topk": 0.8488732394366197
+              },
+              {
+                "add": "kv_8_hadamard",
+                "kind": "kv",
+                "layer": 8,
+                "primitive": null,
+                "independent_kl": 0.010669583454728127,
+                "stack_kl": 0.07615479826927185,
+                "stack_topk": 0.8371830985915493
+              }
+            ]
+          },
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              9
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 18,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.241910934448242,
+              "perplexity": 69.54061126708984,
+              "logit_mse": 1.4764275550842285,
+              "kl_from_baseline": 0.07725252956151962,
+              "topk_overlap": 0.8470422535211267,
+              "loss_delta_from_baseline": -0.007509708404541016
+            },
+            "path": [
+              {
+                "add": "kv_9_hadamard",
+                "kind": "kv",
+                "layer": 9,
+                "primitive": null,
+                "independent_kl": 0.012326641008257866,
+                "stack_kl": 0.06797610223293304,
+                "stack_topk": 0.8561971830985915
+              },
+              {
+                "add": "mlp_18_plain",
+                "kind": "mlp",
+                "layer": 18,
+                "primitive": "plain",
+                "independent_kl": 0.010654768906533718,
+                "stack_kl": 0.07725252956151962,
+                "stack_topk": 0.8470422535211267
+              }
+            ]
+          },
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              9
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 13,
+                "primitive": "plus",
+                "rotation": "preperm_activation_max_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.223145484924316,
+              "perplexity": 68.24781799316406,
+              "logit_mse": 1.4809600114822388,
+              "kl_from_baseline": 0.07772642374038696,
+              "topk_overlap": 0.8415492957746479,
+              "loss_delta_from_baseline": -0.026275157928466797
+            },
+            "path": [
+              {
+                "add": "mlp_13_plus",
+                "kind": "mlp",
+                "layer": 13,
+                "primitive": "plus",
+                "independent_kl": 0.008426794782280922,
+                "stack_kl": 0.067637138068676,
+                "stack_topk": 0.8481690140845071
+              },
+              {
+                "add": "kv_9_hadamard",
+                "kind": "kv",
+                "layer": 9,
+                "primitive": null,
+                "independent_kl": 0.012326641008257866,
+                "stack_kl": 0.07772642374038696,
+                "stack_topk": 0.8415492957746479
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "added_buses": 3,
+        "best": {
+          "kv_layers": [
+            28,
+            24,
+            26,
+            14,
+            9,
+            17
+          ],
+          "mlp_choices": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            }
+          ],
+          "metrics": {
+            "loss": 4.177815914154053,
+            "perplexity": 65.2232437133789,
+            "logit_mse": 1.691391944885254,
+            "kl_from_baseline": 0.08620596677064896,
+            "topk_overlap": 0.8350704225352112,
+            "loss_delta_from_baseline": -0.07160472869873047
+          },
+          "path": [
+            {
+              "add": "mlp_13_plus",
+              "kind": "mlp",
+              "layer": 13,
+              "primitive": "plus",
+              "independent_kl": 0.008426794782280922,
+              "stack_kl": 0.067637138068676,
+              "stack_topk": 0.8481690140845071
+            },
+            {
+              "add": "kv_9_hadamard",
+              "kind": "kv",
+              "layer": 9,
+              "primitive": null,
+              "independent_kl": 0.012326641008257866,
+              "stack_kl": 0.07772642374038696,
+              "stack_topk": 0.8415492957746479
+            },
+            {
+              "add": "kv_17_hadamard",
+              "kind": "kv",
+              "layer": 17,
+              "primitive": null,
+              "independent_kl": 0.009512627497315407,
+              "stack_kl": 0.08620596677064896,
+              "stack_topk": 0.8350704225352112
+            }
+          ]
+        },
+        "beam": [
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              9,
+              17
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 13,
+                "primitive": "plus",
+                "rotation": "preperm_activation_max_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.177815914154053,
+              "perplexity": 65.2232437133789,
+              "logit_mse": 1.691391944885254,
+              "kl_from_baseline": 0.08620596677064896,
+              "topk_overlap": 0.8350704225352112,
+              "loss_delta_from_baseline": -0.07160472869873047
+            },
+            "path": [
+              {
+                "add": "mlp_13_plus",
+                "kind": "mlp",
+                "layer": 13,
+                "primitive": "plus",
+                "independent_kl": 0.008426794782280922,
+                "stack_kl": 0.067637138068676,
+                "stack_topk": 0.8481690140845071
+              },
+              {
+                "add": "kv_9_hadamard",
+                "kind": "kv",
+                "layer": 9,
+                "primitive": null,
+                "independent_kl": 0.012326641008257866,
+                "stack_kl": 0.07772642374038696,
+                "stack_topk": 0.8415492957746479
+              },
+              {
+                "add": "kv_17_hadamard",
+                "kind": "kv",
+                "layer": 17,
+                "primitive": null,
+                "independent_kl": 0.009512627497315407,
+                "stack_kl": 0.08620596677064896,
+                "stack_topk": 0.8350704225352112
+              }
+            ]
+          },
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              13,
+              8
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 13,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.245938301086426,
+              "perplexity": 69.82124328613281,
+              "logit_mse": 1.5345360040664673,
+              "kl_from_baseline": 0.08660167455673218,
+              "topk_overlap": 0.8274647887323944,
+              "loss_delta_from_baseline": -0.003482341766357422
+            },
+            "path": [
+              {
+                "add": "kv_13_hadamard",
+                "kind": "kv",
+                "layer": 13,
+                "primitive": null,
+                "independent_kl": 0.009795324876904488,
+                "stack_kl": 0.06842510402202606,
+                "stack_topk": 0.8488732394366197
+              },
+              {
+                "add": "kv_8_hadamard",
+                "kind": "kv",
+                "layer": 8,
+                "primitive": null,
+                "independent_kl": 0.010669583454728127,
+                "stack_kl": 0.07615479826927185,
+                "stack_topk": 0.8371830985915493
+              },
+              {
+                "add": "mlp_13_plain",
+                "kind": "mlp",
+                "layer": 13,
+                "primitive": "plain",
+                "independent_kl": 0.00884309969842434,
+                "stack_kl": 0.08660167455673218,
+                "stack_topk": 0.8274647887323944
+              }
+            ]
+          },
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              13,
+              8
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 18,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.236715793609619,
+              "perplexity": 69.1802749633789,
+              "logit_mse": 1.6456738710403442,
+              "kl_from_baseline": 0.08675666898488998,
+              "topk_overlap": 0.8276056338028169,
+              "loss_delta_from_baseline": -0.012704849243164062
+            },
+            "path": [
+              {
+                "add": "kv_13_hadamard",
+                "kind": "kv",
+                "layer": 13,
+                "primitive": null,
+                "independent_kl": 0.009795324876904488,
+                "stack_kl": 0.06842510402202606,
+                "stack_topk": 0.8488732394366197
+              },
+              {
+                "add": "kv_8_hadamard",
+                "kind": "kv",
+                "layer": 8,
+                "primitive": null,
+                "independent_kl": 0.010669583454728127,
+                "stack_kl": 0.07615479826927185,
+                "stack_topk": 0.8371830985915493
+              },
+              {
+                "add": "mlp_18_plus",
+                "kind": "mlp",
+                "layer": 18,
+                "primitive": "plus",
+                "independent_kl": 0.010411743074655533,
+                "stack_kl": 0.08675666898488998,
+                "stack_topk": 0.8276056338028169
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "added_buses": 4,
+        "best": {
+          "kv_layers": [
+            28,
+            24,
+            26,
+            14,
+            9,
+            17
+          ],
+          "mlp_choices": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 18,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            }
+          ],
+          "metrics": {
+            "loss": 4.198812007904053,
+            "perplexity": 66.6071548461914,
+            "logit_mse": 1.7305171489715576,
+            "kl_from_baseline": 0.0964794009923935,
+            "topk_overlap": 0.8263380281690141,
+            "loss_delta_from_baseline": -0.05060863494873047
+          },
+          "path": [
+            {
+              "add": "mlp_13_plus",
+              "kind": "mlp",
+              "layer": 13,
+              "primitive": "plus",
+              "independent_kl": 0.008426794782280922,
+              "stack_kl": 0.067637138068676,
+              "stack_topk": 0.8481690140845071
+            },
+            {
+              "add": "kv_9_hadamard",
+              "kind": "kv",
+              "layer": 9,
+              "primitive": null,
+              "independent_kl": 0.012326641008257866,
+              "stack_kl": 0.07772642374038696,
+              "stack_topk": 0.8415492957746479
+            },
+            {
+              "add": "kv_17_hadamard",
+              "kind": "kv",
+              "layer": 17,
+              "primitive": null,
+              "independent_kl": 0.009512627497315407,
+              "stack_kl": 0.08620596677064896,
+              "stack_topk": 0.8350704225352112
+            },
+            {
+              "add": "mlp_18_plus",
+              "kind": "mlp",
+              "layer": 18,
+              "primitive": "plus",
+              "independent_kl": 0.010411743074655533,
+              "stack_kl": 0.0964794009923935,
+              "stack_topk": 0.8263380281690141
+            }
+          ]
+        },
+        "beam": [
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              9,
+              17
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 13,
+                "primitive": "plus",
+                "rotation": "preperm_activation_max_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 18,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.198812007904053,
+              "perplexity": 66.6071548461914,
+              "logit_mse": 1.7305171489715576,
+              "kl_from_baseline": 0.0964794009923935,
+              "topk_overlap": 0.8263380281690141,
+              "loss_delta_from_baseline": -0.05060863494873047
+            },
+            "path": [
+              {
+                "add": "mlp_13_plus",
+                "kind": "mlp",
+                "layer": 13,
+                "primitive": "plus",
+                "independent_kl": 0.008426794782280922,
+                "stack_kl": 0.067637138068676,
+                "stack_topk": 0.8481690140845071
+              },
+              {
+                "add": "kv_9_hadamard",
+                "kind": "kv",
+                "layer": 9,
+                "primitive": null,
+                "independent_kl": 0.012326641008257866,
+                "stack_kl": 0.07772642374038696,
+                "stack_topk": 0.8415492957746479
+              },
+              {
+                "add": "kv_17_hadamard",
+                "kind": "kv",
+                "layer": 17,
+                "primitive": null,
+                "independent_kl": 0.009512627497315407,
+                "stack_kl": 0.08620596677064896,
+                "stack_topk": 0.8350704225352112
+              },
+              {
+                "add": "mlp_18_plus",
+                "kind": "mlp",
+                "layer": 18,
+                "primitive": "plus",
+                "independent_kl": 0.010411743074655533,
+                "stack_kl": 0.0964794009923935,
+                "stack_topk": 0.8263380281690141
+              }
+            ]
+          },
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              13,
+              8
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 18,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 19,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.261967182159424,
+              "perplexity": 70.94941711425781,
+              "logit_mse": 1.8951655626296997,
+              "kl_from_baseline": 0.0964987725019455,
+              "topk_overlap": 0.8170422535211268,
+              "loss_delta_from_baseline": 0.012546539306640625
+            },
+            "path": [
+              {
+                "add": "kv_13_hadamard",
+                "kind": "kv",
+                "layer": 13,
+                "primitive": null,
+                "independent_kl": 0.009795324876904488,
+                "stack_kl": 0.06842510402202606,
+                "stack_topk": 0.8488732394366197
+              },
+              {
+                "add": "kv_8_hadamard",
+                "kind": "kv",
+                "layer": 8,
+                "primitive": null,
+                "independent_kl": 0.010669583454728127,
+                "stack_kl": 0.07615479826927185,
+                "stack_topk": 0.8371830985915493
+              },
+              {
+                "add": "mlp_18_plus",
+                "kind": "mlp",
+                "layer": 18,
+                "primitive": "plus",
+                "independent_kl": 0.010411743074655533,
+                "stack_kl": 0.08675666898488998,
+                "stack_topk": 0.8276056338028169
+              },
+              {
+                "add": "mlp_19_plus",
+                "kind": "mlp",
+                "layer": 19,
+                "primitive": "plus",
+                "independent_kl": 0.009982659481465816,
+                "stack_kl": 0.0964987725019455,
+                "stack_topk": 0.8170422535211268
+              }
+            ]
+          },
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              9,
+              17
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 13,
+                "primitive": "plus",
+                "rotation": "preperm_activation_max_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 19,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.200192928314209,
+              "perplexity": 66.6991958618164,
+              "logit_mse": 2.0175771713256836,
+              "kl_from_baseline": 0.0967199057340622,
+              "topk_overlap": 0.826056338028169,
+              "loss_delta_from_baseline": -0.04922771453857422
+            },
+            "path": [
+              {
+                "add": "mlp_13_plus",
+                "kind": "mlp",
+                "layer": 13,
+                "primitive": "plus",
+                "independent_kl": 0.008426794782280922,
+                "stack_kl": 0.067637138068676,
+                "stack_topk": 0.8481690140845071
+              },
+              {
+                "add": "kv_9_hadamard",
+                "kind": "kv",
+                "layer": 9,
+                "primitive": null,
+                "independent_kl": 0.012326641008257866,
+                "stack_kl": 0.07772642374038696,
+                "stack_topk": 0.8415492957746479
+              },
+              {
+                "add": "kv_17_hadamard",
+                "kind": "kv",
+                "layer": 17,
+                "primitive": null,
+                "independent_kl": 0.009512627497315407,
+                "stack_kl": 0.08620596677064896,
+                "stack_topk": 0.8350704225352112
+              },
+              {
+                "add": "mlp_19_plain",
+                "kind": "mlp",
+                "layer": 19,
+                "primitive": "plain",
+                "independent_kl": 0.01059030182659626,
+                "stack_kl": 0.0967199057340622,
+                "stack_topk": 0.826056338028169
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "added_buses": 5,
+        "best": {
+          "kv_layers": [
+            28,
+            24,
+            26,
+            14,
+            13,
+            8
+          ],
+          "mlp_choices": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 18,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            }
+          ],
+          "metrics": {
+            "loss": 4.280639171600342,
+            "perplexity": 72.28662872314453,
+            "logit_mse": 2.0577080249786377,
+            "kl_from_baseline": 0.10663120448589325,
+            "topk_overlap": 0.8095774647887324,
+            "loss_delta_from_baseline": 0.031218528747558594
+          },
+          "path": [
+            {
+              "add": "kv_13_hadamard",
+              "kind": "kv",
+              "layer": 13,
+              "primitive": null,
+              "independent_kl": 0.009795324876904488,
+              "stack_kl": 0.06842510402202606,
+              "stack_topk": 0.8488732394366197
+            },
+            {
+              "add": "kv_8_hadamard",
+              "kind": "kv",
+              "layer": 8,
+              "primitive": null,
+              "independent_kl": 0.010669583454728127,
+              "stack_kl": 0.07615479826927185,
+              "stack_topk": 0.8371830985915493
+            },
+            {
+              "add": "mlp_18_plus",
+              "kind": "mlp",
+              "layer": 18,
+              "primitive": "plus",
+              "independent_kl": 0.010411743074655533,
+              "stack_kl": 0.08675666898488998,
+              "stack_topk": 0.8276056338028169
+            },
+            {
+              "add": "mlp_19_plus",
+              "kind": "mlp",
+              "layer": 19,
+              "primitive": "plus",
+              "independent_kl": 0.009982659481465816,
+              "stack_kl": 0.0964987725019455,
+              "stack_topk": 0.8170422535211268
+            },
+            {
+              "add": "mlp_13_plus",
+              "kind": "mlp",
+              "layer": 13,
+              "primitive": "plus",
+              "independent_kl": 0.008426794782280922,
+              "stack_kl": 0.10663120448589325,
+              "stack_topk": 0.8095774647887324
+            }
+          ]
+        },
+        "beam": [
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              13,
+              8
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 18,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 19,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 13,
+                "primitive": "plus",
+                "rotation": "preperm_activation_max_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.280639171600342,
+              "perplexity": 72.28662872314453,
+              "logit_mse": 2.0577080249786377,
+              "kl_from_baseline": 0.10663120448589325,
+              "topk_overlap": 0.8095774647887324,
+              "loss_delta_from_baseline": 0.031218528747558594
+            },
+            "path": [
+              {
+                "add": "kv_13_hadamard",
+                "kind": "kv",
+                "layer": 13,
+                "primitive": null,
+                "independent_kl": 0.009795324876904488,
+                "stack_kl": 0.06842510402202606,
+                "stack_topk": 0.8488732394366197
+              },
+              {
+                "add": "kv_8_hadamard",
+                "kind": "kv",
+                "layer": 8,
+                "primitive": null,
+                "independent_kl": 0.010669583454728127,
+                "stack_kl": 0.07615479826927185,
+                "stack_topk": 0.8371830985915493
+              },
+              {
+                "add": "mlp_18_plus",
+                "kind": "mlp",
+                "layer": 18,
+                "primitive": "plus",
+                "independent_kl": 0.010411743074655533,
+                "stack_kl": 0.08675666898488998,
+                "stack_topk": 0.8276056338028169
+              },
+              {
+                "add": "mlp_19_plus",
+                "kind": "mlp",
+                "layer": 19,
+                "primitive": "plus",
+                "independent_kl": 0.009982659481465816,
+                "stack_kl": 0.0964987725019455,
+                "stack_topk": 0.8170422535211268
+              },
+              {
+                "add": "mlp_13_plus",
+                "kind": "mlp",
+                "layer": 13,
+                "primitive": "plus",
+                "independent_kl": 0.008426794782280922,
+                "stack_kl": 0.10663120448589325,
+                "stack_topk": 0.8095774647887324
+              }
+            ]
+          },
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              9,
+              17
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 13,
+                "primitive": "plus",
+                "rotation": "preperm_activation_max_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 18,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 5,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.195809841156006,
+              "perplexity": 66.40748596191406,
+              "logit_mse": 1.789523720741272,
+              "kl_from_baseline": 0.10726408660411835,
+              "topk_overlap": 0.8221126760563381,
+              "loss_delta_from_baseline": -0.053610801696777344
+            },
+            "path": [
+              {
+                "add": "mlp_13_plus",
+                "kind": "mlp",
+                "layer": 13,
+                "primitive": "plus",
+                "independent_kl": 0.008426794782280922,
+                "stack_kl": 0.067637138068676,
+                "stack_topk": 0.8481690140845071
+              },
+              {
+                "add": "kv_9_hadamard",
+                "kind": "kv",
+                "layer": 9,
+                "primitive": null,
+                "independent_kl": 0.012326641008257866,
+                "stack_kl": 0.07772642374038696,
+                "stack_topk": 0.8415492957746479
+              },
+              {
+                "add": "kv_17_hadamard",
+                "kind": "kv",
+                "layer": 17,
+                "primitive": null,
+                "independent_kl": 0.009512627497315407,
+                "stack_kl": 0.08620596677064896,
+                "stack_topk": 0.8350704225352112
+              },
+              {
+                "add": "mlp_18_plus",
+                "kind": "mlp",
+                "layer": 18,
+                "primitive": "plus",
+                "independent_kl": 0.010411743074655533,
+                "stack_kl": 0.0964794009923935,
+                "stack_topk": 0.8263380281690141
+              },
+              {
+                "add": "mlp_5_plain",
+                "kind": "mlp",
+                "layer": 5,
+                "primitive": "plain",
+                "independent_kl": 0.00934002734720707,
+                "stack_kl": 0.10726408660411835,
+                "stack_topk": 0.8221126760563381
+              }
+            ]
+          },
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              9,
+              17
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 13,
+                "primitive": "plus",
+                "rotation": "preperm_activation_max_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 19,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 5,
+                "primitive": "plus",
+                "rotation": "preperm_boundary_rms_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.215275764465332,
+              "perplexity": 67.71283721923828,
+              "logit_mse": 2.031785011291504,
+              "kl_from_baseline": 0.1074938029050827,
+              "topk_overlap": 0.8198591549295775,
+              "loss_delta_from_baseline": -0.03414487838745117
+            },
+            "path": [
+              {
+                "add": "mlp_13_plus",
+                "kind": "mlp",
+                "layer": 13,
+                "primitive": "plus",
+                "independent_kl": 0.008426794782280922,
+                "stack_kl": 0.067637138068676,
+                "stack_topk": 0.8481690140845071
+              },
+              {
+                "add": "kv_9_hadamard",
+                "kind": "kv",
+                "layer": 9,
+                "primitive": null,
+                "independent_kl": 0.012326641008257866,
+                "stack_kl": 0.07772642374038696,
+                "stack_topk": 0.8415492957746479
+              },
+              {
+                "add": "kv_17_hadamard",
+                "kind": "kv",
+                "layer": 17,
+                "primitive": null,
+                "independent_kl": 0.009512627497315407,
+                "stack_kl": 0.08620596677064896,
+                "stack_topk": 0.8350704225352112
+              },
+              {
+                "add": "mlp_19_plain",
+                "kind": "mlp",
+                "layer": 19,
+                "primitive": "plain",
+                "independent_kl": 0.01059030182659626,
+                "stack_kl": 0.0967199057340622,
+                "stack_topk": 0.826056338028169
+              },
+              {
+                "add": "mlp_5_plus",
+                "kind": "mlp",
+                "layer": 5,
+                "primitive": "plus",
+                "independent_kl": 0.01178254559636116,
+                "stack_kl": 0.1074938029050827,
+                "stack_topk": 0.8198591549295775
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "added_buses": 6,
+        "best": {
+          "kv_layers": [
+            28,
+            24,
+            26,
+            14,
+            13,
+            8,
+            17
+          ],
+          "mlp_choices": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 18,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            }
+          ],
+          "metrics": {
+            "loss": 4.222021579742432,
+            "perplexity": 68.17115783691406,
+            "logit_mse": 2.2582221031188965,
+            "kl_from_baseline": 0.11693611741065979,
+            "topk_overlap": 0.8021126760563381,
+            "loss_delta_from_baseline": -0.027399063110351562
+          },
+          "path": [
+            {
+              "add": "kv_13_hadamard",
+              "kind": "kv",
+              "layer": 13,
+              "primitive": null,
+              "independent_kl": 0.009795324876904488,
+              "stack_kl": 0.06842510402202606,
+              "stack_topk": 0.8488732394366197
+            },
+            {
+              "add": "kv_8_hadamard",
+              "kind": "kv",
+              "layer": 8,
+              "primitive": null,
+              "independent_kl": 0.010669583454728127,
+              "stack_kl": 0.07615479826927185,
+              "stack_topk": 0.8371830985915493
+            },
+            {
+              "add": "mlp_18_plus",
+              "kind": "mlp",
+              "layer": 18,
+              "primitive": "plus",
+              "independent_kl": 0.010411743074655533,
+              "stack_kl": 0.08675666898488998,
+              "stack_topk": 0.8276056338028169
+            },
+            {
+              "add": "mlp_19_plus",
+              "kind": "mlp",
+              "layer": 19,
+              "primitive": "plus",
+              "independent_kl": 0.009982659481465816,
+              "stack_kl": 0.0964987725019455,
+              "stack_topk": 0.8170422535211268
+            },
+            {
+              "add": "mlp_13_plus",
+              "kind": "mlp",
+              "layer": 13,
+              "primitive": "plus",
+              "independent_kl": 0.008426794782280922,
+              "stack_kl": 0.10663120448589325,
+              "stack_topk": 0.8095774647887324
+            },
+            {
+              "add": "kv_17_hadamard",
+              "kind": "kv",
+              "layer": 17,
+              "primitive": null,
+              "independent_kl": 0.009512627497315407,
+              "stack_kl": 0.11693611741065979,
+              "stack_topk": 0.8021126760563381
+            }
+          ]
+        },
+        "beam": [
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              13,
+              8,
+              17
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 18,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 19,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 13,
+                "primitive": "plus",
+                "rotation": "preperm_activation_max_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.222021579742432,
+              "perplexity": 68.17115783691406,
+              "logit_mse": 2.2582221031188965,
+              "kl_from_baseline": 0.11693611741065979,
+              "topk_overlap": 0.8021126760563381,
+              "loss_delta_from_baseline": -0.027399063110351562
+            },
+            "path": [
+              {
+                "add": "kv_13_hadamard",
+                "kind": "kv",
+                "layer": 13,
+                "primitive": null,
+                "independent_kl": 0.009795324876904488,
+                "stack_kl": 0.06842510402202606,
+                "stack_topk": 0.8488732394366197
+              },
+              {
+                "add": "kv_8_hadamard",
+                "kind": "kv",
+                "layer": 8,
+                "primitive": null,
+                "independent_kl": 0.010669583454728127,
+                "stack_kl": 0.07615479826927185,
+                "stack_topk": 0.8371830985915493
+              },
+              {
+                "add": "mlp_18_plus",
+                "kind": "mlp",
+                "layer": 18,
+                "primitive": "plus",
+                "independent_kl": 0.010411743074655533,
+                "stack_kl": 0.08675666898488998,
+                "stack_topk": 0.8276056338028169
+              },
+              {
+                "add": "mlp_19_plus",
+                "kind": "mlp",
+                "layer": 19,
+                "primitive": "plus",
+                "independent_kl": 0.009982659481465816,
+                "stack_kl": 0.0964987725019455,
+                "stack_topk": 0.8170422535211268
+              },
+              {
+                "add": "mlp_13_plus",
+                "kind": "mlp",
+                "layer": 13,
+                "primitive": "plus",
+                "independent_kl": 0.008426794782280922,
+                "stack_kl": 0.10663120448589325,
+                "stack_topk": 0.8095774647887324
+              },
+              {
+                "add": "kv_17_hadamard",
+                "kind": "kv",
+                "layer": 17,
+                "primitive": null,
+                "independent_kl": 0.009512627497315407,
+                "stack_kl": 0.11693611741065979,
+                "stack_topk": 0.8021126760563381
+              }
+            ]
+          },
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              9,
+              17
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 13,
+                "primitive": "plus",
+                "rotation": "preperm_activation_max_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 19,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 5,
+                "primitive": "plus",
+                "rotation": "preperm_boundary_rms_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 6,
+                "primitive": "plus",
+                "rotation": "preperm_down_norm_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.226892948150635,
+              "perplexity": 68.50405883789062,
+              "logit_mse": 2.108781576156616,
+              "kl_from_baseline": 0.11812332272529602,
+              "topk_overlap": 0.8138028169014084,
+              "loss_delta_from_baseline": -0.022527694702148438
+            },
+            "path": [
+              {
+                "add": "mlp_13_plus",
+                "kind": "mlp",
+                "layer": 13,
+                "primitive": "plus",
+                "independent_kl": 0.008426794782280922,
+                "stack_kl": 0.067637138068676,
+                "stack_topk": 0.8481690140845071
+              },
+              {
+                "add": "kv_9_hadamard",
+                "kind": "kv",
+                "layer": 9,
+                "primitive": null,
+                "independent_kl": 0.012326641008257866,
+                "stack_kl": 0.07772642374038696,
+                "stack_topk": 0.8415492957746479
+              },
+              {
+                "add": "kv_17_hadamard",
+                "kind": "kv",
+                "layer": 17,
+                "primitive": null,
+                "independent_kl": 0.009512627497315407,
+                "stack_kl": 0.08620596677064896,
+                "stack_topk": 0.8350704225352112
+              },
+              {
+                "add": "mlp_19_plain",
+                "kind": "mlp",
+                "layer": 19,
+                "primitive": "plain",
+                "independent_kl": 0.01059030182659626,
+                "stack_kl": 0.0967199057340622,
+                "stack_topk": 0.826056338028169
+              },
+              {
+                "add": "mlp_5_plus",
+                "kind": "mlp",
+                "layer": 5,
+                "primitive": "plus",
+                "independent_kl": 0.01178254559636116,
+                "stack_kl": 0.1074938029050827,
+                "stack_topk": 0.8198591549295775
+              },
+              {
+                "add": "mlp_6_plus",
+                "kind": "mlp",
+                "layer": 6,
+                "primitive": "plus",
+                "independent_kl": 0.011501291766762733,
+                "stack_kl": 0.11812332272529602,
+                "stack_topk": 0.8138028169014084
+              }
+            ]
+          },
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              9,
+              17,
+              25
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 13,
+                "primitive": "plus",
+                "rotation": "preperm_activation_max_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 18,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 5,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.213385105133057,
+              "perplexity": 67.5849380493164,
+              "logit_mse": 1.9093430042266846,
+              "kl_from_baseline": 0.1184116080403328,
+              "topk_overlap": 0.8149295774647888,
+              "loss_delta_from_baseline": -0.03603553771972656
+            },
+            "path": [
+              {
+                "add": "mlp_13_plus",
+                "kind": "mlp",
+                "layer": 13,
+                "primitive": "plus",
+                "independent_kl": 0.008426794782280922,
+                "stack_kl": 0.067637138068676,
+                "stack_topk": 0.8481690140845071
+              },
+              {
+                "add": "kv_9_hadamard",
+                "kind": "kv",
+                "layer": 9,
+                "primitive": null,
+                "independent_kl": 0.012326641008257866,
+                "stack_kl": 0.07772642374038696,
+                "stack_topk": 0.8415492957746479
+              },
+              {
+                "add": "kv_17_hadamard",
+                "kind": "kv",
+                "layer": 17,
+                "primitive": null,
+                "independent_kl": 0.009512627497315407,
+                "stack_kl": 0.08620596677064896,
+                "stack_topk": 0.8350704225352112
+              },
+              {
+                "add": "mlp_18_plus",
+                "kind": "mlp",
+                "layer": 18,
+                "primitive": "plus",
+                "independent_kl": 0.010411743074655533,
+                "stack_kl": 0.0964794009923935,
+                "stack_topk": 0.8263380281690141
+              },
+              {
+                "add": "mlp_5_plain",
+                "kind": "mlp",
+                "layer": 5,
+                "primitive": "plain",
+                "independent_kl": 0.00934002734720707,
+                "stack_kl": 0.10726408660411835,
+                "stack_topk": 0.8221126760563381
+              },
+              {
+                "add": "kv_25_hadamard",
+                "kind": "kv",
+                "layer": 25,
+                "primitive": null,
+                "independent_kl": 0.010618847794830799,
+                "stack_kl": 0.1184116080403328,
+                "stack_topk": 0.8149295774647888
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "added_buses": 7,
+        "best": {
+          "kv_layers": [
+            28,
+            24,
+            26,
+            14,
+            13,
+            8,
+            17
+          ],
+          "mlp_choices": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 18,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ],
+          "metrics": {
+            "loss": 4.216833591461182,
+            "perplexity": 67.81840515136719,
+            "logit_mse": 2.356912851333618,
+            "kl_from_baseline": 0.12833240628242493,
+            "topk_overlap": 0.7987323943661973,
+            "loss_delta_from_baseline": -0.03258705139160156
+          },
+          "path": [
+            {
+              "add": "kv_13_hadamard",
+              "kind": "kv",
+              "layer": 13,
+              "primitive": null,
+              "independent_kl": 0.009795324876904488,
+              "stack_kl": 0.06842510402202606,
+              "stack_topk": 0.8488732394366197
+            },
+            {
+              "add": "kv_8_hadamard",
+              "kind": "kv",
+              "layer": 8,
+              "primitive": null,
+              "independent_kl": 0.010669583454728127,
+              "stack_kl": 0.07615479826927185,
+              "stack_topk": 0.8371830985915493
+            },
+            {
+              "add": "mlp_18_plus",
+              "kind": "mlp",
+              "layer": 18,
+              "primitive": "plus",
+              "independent_kl": 0.010411743074655533,
+              "stack_kl": 0.08675666898488998,
+              "stack_topk": 0.8276056338028169
+            },
+            {
+              "add": "mlp_19_plus",
+              "kind": "mlp",
+              "layer": 19,
+              "primitive": "plus",
+              "independent_kl": 0.009982659481465816,
+              "stack_kl": 0.0964987725019455,
+              "stack_topk": 0.8170422535211268
+            },
+            {
+              "add": "mlp_13_plus",
+              "kind": "mlp",
+              "layer": 13,
+              "primitive": "plus",
+              "independent_kl": 0.008426794782280922,
+              "stack_kl": 0.10663120448589325,
+              "stack_topk": 0.8095774647887324
+            },
+            {
+              "add": "kv_17_hadamard",
+              "kind": "kv",
+              "layer": 17,
+              "primitive": null,
+              "independent_kl": 0.009512627497315407,
+              "stack_kl": 0.11693611741065979,
+              "stack_topk": 0.8021126760563381
+            },
+            {
+              "add": "mlp_5_plain",
+              "kind": "mlp",
+              "layer": 5,
+              "primitive": "plain",
+              "independent_kl": 0.00934002734720707,
+              "stack_kl": 0.12833240628242493,
+              "stack_topk": 0.7987323943661973
+            }
+          ]
+        },
+        "beam": [
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              13,
+              8,
+              17
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 18,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 19,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 13,
+                "primitive": "plus",
+                "rotation": "preperm_activation_max_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 5,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.216833591461182,
+              "perplexity": 67.81840515136719,
+              "logit_mse": 2.356912851333618,
+              "kl_from_baseline": 0.12833240628242493,
+              "topk_overlap": 0.7987323943661973,
+              "loss_delta_from_baseline": -0.03258705139160156
+            },
+            "path": [
+              {
+                "add": "kv_13_hadamard",
+                "kind": "kv",
+                "layer": 13,
+                "primitive": null,
+                "independent_kl": 0.009795324876904488,
+                "stack_kl": 0.06842510402202606,
+                "stack_topk": 0.8488732394366197
+              },
+              {
+                "add": "kv_8_hadamard",
+                "kind": "kv",
+                "layer": 8,
+                "primitive": null,
+                "independent_kl": 0.010669583454728127,
+                "stack_kl": 0.07615479826927185,
+                "stack_topk": 0.8371830985915493
+              },
+              {
+                "add": "mlp_18_plus",
+                "kind": "mlp",
+                "layer": 18,
+                "primitive": "plus",
+                "independent_kl": 0.010411743074655533,
+                "stack_kl": 0.08675666898488998,
+                "stack_topk": 0.8276056338028169
+              },
+              {
+                "add": "mlp_19_plus",
+                "kind": "mlp",
+                "layer": 19,
+                "primitive": "plus",
+                "independent_kl": 0.009982659481465816,
+                "stack_kl": 0.0964987725019455,
+                "stack_topk": 0.8170422535211268
+              },
+              {
+                "add": "mlp_13_plus",
+                "kind": "mlp",
+                "layer": 13,
+                "primitive": "plus",
+                "independent_kl": 0.008426794782280922,
+                "stack_kl": 0.10663120448589325,
+                "stack_topk": 0.8095774647887324
+              },
+              {
+                "add": "kv_17_hadamard",
+                "kind": "kv",
+                "layer": 17,
+                "primitive": null,
+                "independent_kl": 0.009512627497315407,
+                "stack_kl": 0.11693611741065979,
+                "stack_topk": 0.8021126760563381
+              },
+              {
+                "add": "mlp_5_plain",
+                "kind": "mlp",
+                "layer": 5,
+                "primitive": "plain",
+                "independent_kl": 0.00934002734720707,
+                "stack_kl": 0.12833240628242493,
+                "stack_topk": 0.7987323943661973
+              }
+            ]
+          },
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              9,
+              17
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 13,
+                "primitive": "plus",
+                "rotation": "preperm_activation_max_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 19,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 5,
+                "primitive": "plus",
+                "rotation": "preperm_boundary_rms_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 6,
+                "primitive": "plus",
+                "rotation": "preperm_down_norm_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 18,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.247580528259277,
+              "perplexity": 69.93599700927734,
+              "logit_mse": 2.29529070854187,
+              "kl_from_baseline": 0.1292765587568283,
+              "topk_overlap": 0.8042253521126761,
+              "loss_delta_from_baseline": -0.0018401145935058594
+            },
+            "path": [
+              {
+                "add": "mlp_13_plus",
+                "kind": "mlp",
+                "layer": 13,
+                "primitive": "plus",
+                "independent_kl": 0.008426794782280922,
+                "stack_kl": 0.067637138068676,
+                "stack_topk": 0.8481690140845071
+              },
+              {
+                "add": "kv_9_hadamard",
+                "kind": "kv",
+                "layer": 9,
+                "primitive": null,
+                "independent_kl": 0.012326641008257866,
+                "stack_kl": 0.07772642374038696,
+                "stack_topk": 0.8415492957746479
+              },
+              {
+                "add": "kv_17_hadamard",
+                "kind": "kv",
+                "layer": 17,
+                "primitive": null,
+                "independent_kl": 0.009512627497315407,
+                "stack_kl": 0.08620596677064896,
+                "stack_topk": 0.8350704225352112
+              },
+              {
+                "add": "mlp_19_plain",
+                "kind": "mlp",
+                "layer": 19,
+                "primitive": "plain",
+                "independent_kl": 0.01059030182659626,
+                "stack_kl": 0.0967199057340622,
+                "stack_topk": 0.826056338028169
+              },
+              {
+                "add": "mlp_5_plus",
+                "kind": "mlp",
+                "layer": 5,
+                "primitive": "plus",
+                "independent_kl": 0.01178254559636116,
+                "stack_kl": 0.1074938029050827,
+                "stack_topk": 0.8198591549295775
+              },
+              {
+                "add": "mlp_6_plus",
+                "kind": "mlp",
+                "layer": 6,
+                "primitive": "plus",
+                "independent_kl": 0.011501291766762733,
+                "stack_kl": 0.11812332272529602,
+                "stack_topk": 0.8138028169014084
+              },
+              {
+                "add": "mlp_18_plus",
+                "kind": "mlp",
+                "layer": 18,
+                "primitive": "plus",
+                "independent_kl": 0.010411743074655533,
+                "stack_kl": 0.1292765587568283,
+                "stack_topk": 0.8042253521126761
+              }
+            ]
+          },
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              9,
+              17,
+              25
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 13,
+                "primitive": "plus",
+                "rotation": "preperm_activation_max_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 18,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 5,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 19,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.238312721252441,
+              "perplexity": 69.29084014892578,
+              "logit_mse": 2.267850637435913,
+              "kl_from_baseline": 0.12934893369674683,
+              "topk_overlap": 0.8008450704225353,
+              "loss_delta_from_baseline": -0.011107921600341797
+            },
+            "path": [
+              {
+                "add": "mlp_13_plus",
+                "kind": "mlp",
+                "layer": 13,
+                "primitive": "plus",
+                "independent_kl": 0.008426794782280922,
+                "stack_kl": 0.067637138068676,
+                "stack_topk": 0.8481690140845071
+              },
+              {
+                "add": "kv_9_hadamard",
+                "kind": "kv",
+                "layer": 9,
+                "primitive": null,
+                "independent_kl": 0.012326641008257866,
+                "stack_kl": 0.07772642374038696,
+                "stack_topk": 0.8415492957746479
+              },
+              {
+                "add": "kv_17_hadamard",
+                "kind": "kv",
+                "layer": 17,
+                "primitive": null,
+                "independent_kl": 0.009512627497315407,
+                "stack_kl": 0.08620596677064896,
+                "stack_topk": 0.8350704225352112
+              },
+              {
+                "add": "mlp_18_plus",
+                "kind": "mlp",
+                "layer": 18,
+                "primitive": "plus",
+                "independent_kl": 0.010411743074655533,
+                "stack_kl": 0.0964794009923935,
+                "stack_topk": 0.8263380281690141
+              },
+              {
+                "add": "mlp_5_plain",
+                "kind": "mlp",
+                "layer": 5,
+                "primitive": "plain",
+                "independent_kl": 0.00934002734720707,
+                "stack_kl": 0.10726408660411835,
+                "stack_topk": 0.8221126760563381
+              },
+              {
+                "add": "kv_25_hadamard",
+                "kind": "kv",
+                "layer": 25,
+                "primitive": null,
+                "independent_kl": 0.010618847794830799,
+                "stack_kl": 0.1184116080403328,
+                "stack_topk": 0.8149295774647888
+              },
+              {
+                "add": "mlp_19_plus",
+                "kind": "mlp",
+                "layer": 19,
+                "primitive": "plus",
+                "independent_kl": 0.009982659481465816,
+                "stack_kl": 0.12934893369674683,
+                "stack_topk": 0.8008450704225353
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "added_buses": 8,
+        "best": {
+          "kv_layers": [
+            28,
+            24,
+            26,
+            14,
+            13,
+            8,
+            17
+          ],
+          "mlp_choices": [
+            {
+              "layer": 16,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 17,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 15,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 12,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 18,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 19,
+              "primitive": "plus",
+              "rotation": "preperm_activation_rms_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 13,
+              "primitive": "plus",
+              "rotation": "preperm_activation_max_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 5,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            },
+            {
+              "layer": 6,
+              "primitive": "plain",
+              "rotation": "block_hadamard",
+              "alpha": 0.375
+            }
+          ],
+          "metrics": {
+            "loss": 4.236158847808838,
+            "perplexity": 69.14175415039062,
+            "logit_mse": 2.805445909500122,
+            "kl_from_baseline": 0.13869118690490723,
+            "topk_overlap": 0.7885915492957746,
+            "loss_delta_from_baseline": -0.013261795043945312
+          },
+          "path": [
+            {
+              "add": "kv_13_hadamard",
+              "kind": "kv",
+              "layer": 13,
+              "primitive": null,
+              "independent_kl": 0.009795324876904488,
+              "stack_kl": 0.06842510402202606,
+              "stack_topk": 0.8488732394366197
+            },
+            {
+              "add": "kv_8_hadamard",
+              "kind": "kv",
+              "layer": 8,
+              "primitive": null,
+              "independent_kl": 0.010669583454728127,
+              "stack_kl": 0.07615479826927185,
+              "stack_topk": 0.8371830985915493
+            },
+            {
+              "add": "mlp_18_plus",
+              "kind": "mlp",
+              "layer": 18,
+              "primitive": "plus",
+              "independent_kl": 0.010411743074655533,
+              "stack_kl": 0.08675666898488998,
+              "stack_topk": 0.8276056338028169
+            },
+            {
+              "add": "mlp_19_plus",
+              "kind": "mlp",
+              "layer": 19,
+              "primitive": "plus",
+              "independent_kl": 0.009982659481465816,
+              "stack_kl": 0.0964987725019455,
+              "stack_topk": 0.8170422535211268
+            },
+            {
+              "add": "mlp_13_plus",
+              "kind": "mlp",
+              "layer": 13,
+              "primitive": "plus",
+              "independent_kl": 0.008426794782280922,
+              "stack_kl": 0.10663120448589325,
+              "stack_topk": 0.8095774647887324
+            },
+            {
+              "add": "kv_17_hadamard",
+              "kind": "kv",
+              "layer": 17,
+              "primitive": null,
+              "independent_kl": 0.009512627497315407,
+              "stack_kl": 0.11693611741065979,
+              "stack_topk": 0.8021126760563381
+            },
+            {
+              "add": "mlp_5_plain",
+              "kind": "mlp",
+              "layer": 5,
+              "primitive": "plain",
+              "independent_kl": 0.00934002734720707,
+              "stack_kl": 0.12833240628242493,
+              "stack_topk": 0.7987323943661973
+            },
+            {
+              "add": "mlp_6_plain",
+              "kind": "mlp",
+              "layer": 6,
+              "primitive": "plain",
+              "independent_kl": 0.010641932487487793,
+              "stack_kl": 0.13869118690490723,
+              "stack_topk": 0.7885915492957746
+            }
+          ]
+        },
+        "beam": [
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              13,
+              8,
+              17
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 18,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 19,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 13,
+                "primitive": "plus",
+                "rotation": "preperm_activation_max_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 5,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 6,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.236158847808838,
+              "perplexity": 69.14175415039062,
+              "logit_mse": 2.805445909500122,
+              "kl_from_baseline": 0.13869118690490723,
+              "topk_overlap": 0.7885915492957746,
+              "loss_delta_from_baseline": -0.013261795043945312
+            },
+            "path": [
+              {
+                "add": "kv_13_hadamard",
+                "kind": "kv",
+                "layer": 13,
+                "primitive": null,
+                "independent_kl": 0.009795324876904488,
+                "stack_kl": 0.06842510402202606,
+                "stack_topk": 0.8488732394366197
+              },
+              {
+                "add": "kv_8_hadamard",
+                "kind": "kv",
+                "layer": 8,
+                "primitive": null,
+                "independent_kl": 0.010669583454728127,
+                "stack_kl": 0.07615479826927185,
+                "stack_topk": 0.8371830985915493
+              },
+              {
+                "add": "mlp_18_plus",
+                "kind": "mlp",
+                "layer": 18,
+                "primitive": "plus",
+                "independent_kl": 0.010411743074655533,
+                "stack_kl": 0.08675666898488998,
+                "stack_topk": 0.8276056338028169
+              },
+              {
+                "add": "mlp_19_plus",
+                "kind": "mlp",
+                "layer": 19,
+                "primitive": "plus",
+                "independent_kl": 0.009982659481465816,
+                "stack_kl": 0.0964987725019455,
+                "stack_topk": 0.8170422535211268
+              },
+              {
+                "add": "mlp_13_plus",
+                "kind": "mlp",
+                "layer": 13,
+                "primitive": "plus",
+                "independent_kl": 0.008426794782280922,
+                "stack_kl": 0.10663120448589325,
+                "stack_topk": 0.8095774647887324
+              },
+              {
+                "add": "kv_17_hadamard",
+                "kind": "kv",
+                "layer": 17,
+                "primitive": null,
+                "independent_kl": 0.009512627497315407,
+                "stack_kl": 0.11693611741065979,
+                "stack_topk": 0.8021126760563381
+              },
+              {
+                "add": "mlp_5_plain",
+                "kind": "mlp",
+                "layer": 5,
+                "primitive": "plain",
+                "independent_kl": 0.00934002734720707,
+                "stack_kl": 0.12833240628242493,
+                "stack_topk": 0.7987323943661973
+              },
+              {
+                "add": "mlp_6_plain",
+                "kind": "mlp",
+                "layer": 6,
+                "primitive": "plain",
+                "independent_kl": 0.010641932487487793,
+                "stack_kl": 0.13869118690490723,
+                "stack_topk": 0.7885915492957746
+              }
+            ]
+          },
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              13,
+              8,
+              17,
+              25
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 18,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 19,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 13,
+                "primitive": "plus",
+                "rotation": "preperm_activation_max_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 5,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.234455585479736,
+              "perplexity": 69.02409362792969,
+              "logit_mse": 2.5833520889282227,
+              "kl_from_baseline": 0.13994818925857544,
+              "topk_overlap": 0.7923943661971832,
+              "loss_delta_from_baseline": -0.014965057373046875
+            },
+            "path": [
+              {
+                "add": "kv_13_hadamard",
+                "kind": "kv",
+                "layer": 13,
+                "primitive": null,
+                "independent_kl": 0.009795324876904488,
+                "stack_kl": 0.06842510402202606,
+                "stack_topk": 0.8488732394366197
+              },
+              {
+                "add": "kv_8_hadamard",
+                "kind": "kv",
+                "layer": 8,
+                "primitive": null,
+                "independent_kl": 0.010669583454728127,
+                "stack_kl": 0.07615479826927185,
+                "stack_topk": 0.8371830985915493
+              },
+              {
+                "add": "mlp_18_plus",
+                "kind": "mlp",
+                "layer": 18,
+                "primitive": "plus",
+                "independent_kl": 0.010411743074655533,
+                "stack_kl": 0.08675666898488998,
+                "stack_topk": 0.8276056338028169
+              },
+              {
+                "add": "mlp_19_plus",
+                "kind": "mlp",
+                "layer": 19,
+                "primitive": "plus",
+                "independent_kl": 0.009982659481465816,
+                "stack_kl": 0.0964987725019455,
+                "stack_topk": 0.8170422535211268
+              },
+              {
+                "add": "mlp_13_plus",
+                "kind": "mlp",
+                "layer": 13,
+                "primitive": "plus",
+                "independent_kl": 0.008426794782280922,
+                "stack_kl": 0.10663120448589325,
+                "stack_topk": 0.8095774647887324
+              },
+              {
+                "add": "kv_17_hadamard",
+                "kind": "kv",
+                "layer": 17,
+                "primitive": null,
+                "independent_kl": 0.009512627497315407,
+                "stack_kl": 0.11693611741065979,
+                "stack_topk": 0.8021126760563381
+              },
+              {
+                "add": "mlp_5_plain",
+                "kind": "mlp",
+                "layer": 5,
+                "primitive": "plain",
+                "independent_kl": 0.00934002734720707,
+                "stack_kl": 0.12833240628242493,
+                "stack_topk": 0.7987323943661973
+              },
+              {
+                "add": "kv_25_hadamard",
+                "kind": "kv",
+                "layer": 25,
+                "primitive": null,
+                "independent_kl": 0.010618847794830799,
+                "stack_kl": 0.13994818925857544,
+                "stack_topk": 0.7923943661971832
+              }
+            ]
+          },
+          {
+            "kv_layers": [
+              28,
+              24,
+              26,
+              14,
+              9,
+              17,
+              25
+            ],
+            "mlp_choices": [
+              {
+                "layer": 16,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 17,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 15,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 12,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 13,
+                "primitive": "plus",
+                "rotation": "preperm_activation_max_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 19,
+                "primitive": "plain",
+                "rotation": "block_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 5,
+                "primitive": "plus",
+                "rotation": "preperm_boundary_rms_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 6,
+                "primitive": "plus",
+                "rotation": "preperm_down_norm_hadamard",
+                "alpha": 0.375
+              },
+              {
+                "layer": 18,
+                "primitive": "plus",
+                "rotation": "preperm_activation_rms_hadamard",
+                "alpha": 0.375
+              }
+            ],
+            "metrics": {
+              "loss": 4.263891696929932,
+              "perplexity": 71.08609008789062,
+              "logit_mse": 2.3966991901397705,
+              "kl_from_baseline": 0.13996557891368866,
+              "topk_overlap": 0.7974647887323945,
+              "loss_delta_from_baseline": 0.014471054077148438
+            },
+            "path": [
+              {
+                "add": "mlp_13_plus",
+                "kind": "mlp",
+                "layer": 13,
+                "primitive": "plus",
+                "independent_kl": 0.008426794782280922,
+                "stack_kl": 0.067637138068676,
+                "stack_topk": 0.8481690140845071
+              },
+              {
+                "add": "kv_9_hadamard",
+                "kind": "kv",
+                "layer": 9,
+                "primitive": null,
+                "independent_kl": 0.012326641008257866,
+                "stack_kl": 0.07772642374038696,
+                "stack_topk": 0.8415492957746479
+              },
+              {
+                "add": "kv_17_hadamard",
+                "kind": "kv",
+                "layer": 17,
+                "primitive": null,
+                "independent_kl": 0.009512627497315407,
+                "stack_kl": 0.08620596677064896,
+                "stack_topk": 0.8350704225352112
+              },
+              {
+                "add": "mlp_19_plain",
+                "kind": "mlp",
+                "layer": 19,
+                "primitive": "plain",
+                "independent_kl": 0.01059030182659626,
+                "stack_kl": 0.0967199057340622,
+                "stack_topk": 0.826056338028169
+              },
+              {
+                "add": "mlp_5_plus",
+                "kind": "mlp",
+                "layer": 5,
+                "primitive": "plus",
+                "independent_kl": 0.01178254559636116,
+                "stack_kl": 0.1074938029050827,
+                "stack_topk": 0.8198591549295775
+              },
+              {
+                "add": "mlp_6_plus",
+                "kind": "mlp",
+                "layer": 6,
+                "primitive": "plus",
+                "independent_kl": 0.011501291766762733,
+                "stack_kl": 0.11812332272529602,
+                "stack_topk": 0.8138028169014084
+              },
+              {
+                "add": "mlp_18_plus",
+                "kind": "mlp",
+                "layer": 18,
+                "primitive": "plus",
+                "independent_kl": 0.010411743074655533,
+                "stack_kl": 0.1292765587568283,
+                "stack_topk": 0.8042253521126761
+              },
+              {
+                "add": "kv_25_hadamard",
+                "kind": "kv",
+                "layer": 25,
+                "primitive": null,
+                "independent_kl": 0.010618847794830799,
+                "stack_kl": 0.13996557891368866,
+                "stack_topk": 0.7974647887323945
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "final_beam": [
+      {
+        "kv_layers": [
+          28,
+          24,
+          26,
+          14,
+          13,
+          8,
+          17
+        ],
+        "mlp_choices": [
+          {
+            "layer": 16,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 17,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 15,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 12,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 18,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 19,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 13,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 5,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 6,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          }
+        ],
+        "metrics": {
+          "loss": 4.236158847808838,
+          "perplexity": 69.14175415039062,
+          "logit_mse": 2.805445909500122,
+          "kl_from_baseline": 0.13869118690490723,
+          "topk_overlap": 0.7885915492957746,
+          "loss_delta_from_baseline": -0.013261795043945312
+        },
+        "path": [
+          {
+            "add": "kv_13_hadamard",
+            "kind": "kv",
+            "layer": 13,
+            "primitive": null,
+            "independent_kl": 0.009795324876904488,
+            "stack_kl": 0.06842510402202606,
+            "stack_topk": 0.8488732394366197
+          },
+          {
+            "add": "kv_8_hadamard",
+            "kind": "kv",
+            "layer": 8,
+            "primitive": null,
+            "independent_kl": 0.010669583454728127,
+            "stack_kl": 0.07615479826927185,
+            "stack_topk": 0.8371830985915493
+          },
+          {
+            "add": "mlp_18_plus",
+            "kind": "mlp",
+            "layer": 18,
+            "primitive": "plus",
+            "independent_kl": 0.010411743074655533,
+            "stack_kl": 0.08675666898488998,
+            "stack_topk": 0.8276056338028169
+          },
+          {
+            "add": "mlp_19_plus",
+            "kind": "mlp",
+            "layer": 19,
+            "primitive": "plus",
+            "independent_kl": 0.009982659481465816,
+            "stack_kl": 0.0964987725019455,
+            "stack_topk": 0.8170422535211268
+          },
+          {
+            "add": "mlp_13_plus",
+            "kind": "mlp",
+            "layer": 13,
+            "primitive": "plus",
+            "independent_kl": 0.008426794782280922,
+            "stack_kl": 0.10663120448589325,
+            "stack_topk": 0.8095774647887324
+          },
+          {
+            "add": "kv_17_hadamard",
+            "kind": "kv",
+            "layer": 17,
+            "primitive": null,
+            "independent_kl": 0.009512627497315407,
+            "stack_kl": 0.11693611741065979,
+            "stack_topk": 0.8021126760563381
+          },
+          {
+            "add": "mlp_5_plain",
+            "kind": "mlp",
+            "layer": 5,
+            "primitive": "plain",
+            "independent_kl": 0.00934002734720707,
+            "stack_kl": 0.12833240628242493,
+            "stack_topk": 0.7987323943661973
+          },
+          {
+            "add": "mlp_6_plain",
+            "kind": "mlp",
+            "layer": 6,
+            "primitive": "plain",
+            "independent_kl": 0.010641932487487793,
+            "stack_kl": 0.13869118690490723,
+            "stack_topk": 0.7885915492957746
+          }
+        ]
+      },
+      {
+        "kv_layers": [
+          28,
+          24,
+          26,
+          14,
+          13,
+          8,
+          17,
+          25
+        ],
+        "mlp_choices": [
+          {
+            "layer": 16,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 17,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 15,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 12,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 18,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 19,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 13,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 5,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          }
+        ],
+        "metrics": {
+          "loss": 4.234455585479736,
+          "perplexity": 69.02409362792969,
+          "logit_mse": 2.5833520889282227,
+          "kl_from_baseline": 0.13994818925857544,
+          "topk_overlap": 0.7923943661971832,
+          "loss_delta_from_baseline": -0.014965057373046875
+        },
+        "path": [
+          {
+            "add": "kv_13_hadamard",
+            "kind": "kv",
+            "layer": 13,
+            "primitive": null,
+            "independent_kl": 0.009795324876904488,
+            "stack_kl": 0.06842510402202606,
+            "stack_topk": 0.8488732394366197
+          },
+          {
+            "add": "kv_8_hadamard",
+            "kind": "kv",
+            "layer": 8,
+            "primitive": null,
+            "independent_kl": 0.010669583454728127,
+            "stack_kl": 0.07615479826927185,
+            "stack_topk": 0.8371830985915493
+          },
+          {
+            "add": "mlp_18_plus",
+            "kind": "mlp",
+            "layer": 18,
+            "primitive": "plus",
+            "independent_kl": 0.010411743074655533,
+            "stack_kl": 0.08675666898488998,
+            "stack_topk": 0.8276056338028169
+          },
+          {
+            "add": "mlp_19_plus",
+            "kind": "mlp",
+            "layer": 19,
+            "primitive": "plus",
+            "independent_kl": 0.009982659481465816,
+            "stack_kl": 0.0964987725019455,
+            "stack_topk": 0.8170422535211268
+          },
+          {
+            "add": "mlp_13_plus",
+            "kind": "mlp",
+            "layer": 13,
+            "primitive": "plus",
+            "independent_kl": 0.008426794782280922,
+            "stack_kl": 0.10663120448589325,
+            "stack_topk": 0.8095774647887324
+          },
+          {
+            "add": "kv_17_hadamard",
+            "kind": "kv",
+            "layer": 17,
+            "primitive": null,
+            "independent_kl": 0.009512627497315407,
+            "stack_kl": 0.11693611741065979,
+            "stack_topk": 0.8021126760563381
+          },
+          {
+            "add": "mlp_5_plain",
+            "kind": "mlp",
+            "layer": 5,
+            "primitive": "plain",
+            "independent_kl": 0.00934002734720707,
+            "stack_kl": 0.12833240628242493,
+            "stack_topk": 0.7987323943661973
+          },
+          {
+            "add": "kv_25_hadamard",
+            "kind": "kv",
+            "layer": 25,
+            "primitive": null,
+            "independent_kl": 0.010618847794830799,
+            "stack_kl": 0.13994818925857544,
+            "stack_topk": 0.7923943661971832
+          }
+        ]
+      },
+      {
+        "kv_layers": [
+          28,
+          24,
+          26,
+          14,
+          9,
+          17,
+          25
+        ],
+        "mlp_choices": [
+          {
+            "layer": 16,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 17,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 15,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 12,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 13,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 19,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 5,
+            "primitive": "plus",
+            "rotation": "preperm_boundary_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 6,
+            "primitive": "plus",
+            "rotation": "preperm_down_norm_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 18,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          }
+        ],
+        "metrics": {
+          "loss": 4.263891696929932,
+          "perplexity": 71.08609008789062,
+          "logit_mse": 2.3966991901397705,
+          "kl_from_baseline": 0.13996557891368866,
+          "topk_overlap": 0.7974647887323945,
+          "loss_delta_from_baseline": 0.014471054077148438
+        },
+        "path": [
+          {
+            "add": "mlp_13_plus",
+            "kind": "mlp",
+            "layer": 13,
+            "primitive": "plus",
+            "independent_kl": 0.008426794782280922,
+            "stack_kl": 0.067637138068676,
+            "stack_topk": 0.8481690140845071
+          },
+          {
+            "add": "kv_9_hadamard",
+            "kind": "kv",
+            "layer": 9,
+            "primitive": null,
+            "independent_kl": 0.012326641008257866,
+            "stack_kl": 0.07772642374038696,
+            "stack_topk": 0.8415492957746479
+          },
+          {
+            "add": "kv_17_hadamard",
+            "kind": "kv",
+            "layer": 17,
+            "primitive": null,
+            "independent_kl": 0.009512627497315407,
+            "stack_kl": 0.08620596677064896,
+            "stack_topk": 0.8350704225352112
+          },
+          {
+            "add": "mlp_19_plain",
+            "kind": "mlp",
+            "layer": 19,
+            "primitive": "plain",
+            "independent_kl": 0.01059030182659626,
+            "stack_kl": 0.0967199057340622,
+            "stack_topk": 0.826056338028169
+          },
+          {
+            "add": "mlp_5_plus",
+            "kind": "mlp",
+            "layer": 5,
+            "primitive": "plus",
+            "independent_kl": 0.01178254559636116,
+            "stack_kl": 0.1074938029050827,
+            "stack_topk": 0.8198591549295775
+          },
+          {
+            "add": "mlp_6_plus",
+            "kind": "mlp",
+            "layer": 6,
+            "primitive": "plus",
+            "independent_kl": 0.011501291766762733,
+            "stack_kl": 0.11812332272529602,
+            "stack_topk": 0.8138028169014084
+          },
+          {
+            "add": "mlp_18_plus",
+            "kind": "mlp",
+            "layer": 18,
+            "primitive": "plus",
+            "independent_kl": 0.010411743074655533,
+            "stack_kl": 0.1292765587568283,
+            "stack_topk": 0.8042253521126761
+          },
+          {
+            "add": "kv_25_hadamard",
+            "kind": "kv",
+            "layer": 25,
+            "primitive": null,
+            "independent_kl": 0.010618847794830799,
+            "stack_kl": 0.13996557891368866,
+            "stack_topk": 0.7974647887323945
+          }
+        ]
+      }
+    ],
+    "base_metrics": {
+      "loss": 4.216037750244141,
+      "perplexity": 67.76445007324219,
+      "logit_mse": 1.2218527793884277,
+      "kl_from_baseline": 0.059404872357845306,
+      "topk_overlap": 0.8583098591549295,
+      "loss_delta_from_baseline": -0.03338289260864258
+    }
+  },
+  "summary": {
+    "frontier": [
+      {
+        "added_buses": 1,
+        "kv_layers": [
+          28,
+          24,
+          26,
+          14
+        ],
+        "mlp_choices": [
+          {
+            "layer": 16,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 17,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 15,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 12,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 13,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375
+          }
+        ],
+        "kl": 0.067637138068676,
+        "topk": 0.8481690140845071,
+        "loss_delta": -0.02605295181274414
+      },
+      {
+        "added_buses": 2,
+        "kv_layers": [
+          28,
+          24,
+          26,
+          14,
+          13,
+          8
+        ],
+        "mlp_choices": [
+          {
+            "layer": 16,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 17,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 15,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 12,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          }
+        ],
+        "kl": 0.07615479826927185,
+        "topk": 0.8371830985915493,
+        "loss_delta": -0.032323360443115234
+      },
+      {
+        "added_buses": 3,
+        "kv_layers": [
+          28,
+          24,
+          26,
+          14,
+          9,
+          17
+        ],
+        "mlp_choices": [
+          {
+            "layer": 16,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 17,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 15,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 12,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 13,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375
+          }
+        ],
+        "kl": 0.08620596677064896,
+        "topk": 0.8350704225352112,
+        "loss_delta": -0.07160472869873047
+      },
+      {
+        "added_buses": 4,
+        "kv_layers": [
+          28,
+          24,
+          26,
+          14,
+          9,
+          17
+        ],
+        "mlp_choices": [
+          {
+            "layer": 16,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 17,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 15,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 12,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 13,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 18,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          }
+        ],
+        "kl": 0.0964794009923935,
+        "topk": 0.8263380281690141,
+        "loss_delta": -0.05060863494873047
+      },
+      {
+        "added_buses": 5,
+        "kv_layers": [
+          28,
+          24,
+          26,
+          14,
+          13,
+          8
+        ],
+        "mlp_choices": [
+          {
+            "layer": 16,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 17,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 15,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 12,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 18,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 19,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 13,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375
+          }
+        ],
+        "kl": 0.10663120448589325,
+        "topk": 0.8095774647887324,
+        "loss_delta": 0.031218528747558594
+      },
+      {
+        "added_buses": 6,
+        "kv_layers": [
+          28,
+          24,
+          26,
+          14,
+          13,
+          8,
+          17
+        ],
+        "mlp_choices": [
+          {
+            "layer": 16,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 17,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 15,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 12,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 18,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 19,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 13,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375
+          }
+        ],
+        "kl": 0.11693611741065979,
+        "topk": 0.8021126760563381,
+        "loss_delta": -0.027399063110351562
+      },
+      {
+        "added_buses": 7,
+        "kv_layers": [
+          28,
+          24,
+          26,
+          14,
+          13,
+          8,
+          17
+        ],
+        "mlp_choices": [
+          {
+            "layer": 16,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 17,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 15,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 12,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 18,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 19,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 13,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 5,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          }
+        ],
+        "kl": 0.12833240628242493,
+        "topk": 0.7987323943661973,
+        "loss_delta": -0.03258705139160156
+      },
+      {
+        "added_buses": 8,
+        "kv_layers": [
+          28,
+          24,
+          26,
+          14,
+          13,
+          8,
+          17
+        ],
+        "mlp_choices": [
+          {
+            "layer": 16,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 17,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 15,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 12,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 18,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 19,
+            "primitive": "plus",
+            "rotation": "preperm_activation_rms_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 13,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 5,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          },
+          {
+            "layer": 6,
+            "primitive": "plain",
+            "rotation": "block_hadamard",
+            "alpha": 0.375
+          }
+        ],
+        "kl": 0.13869118690490723,
+        "topk": 0.7885915492957746,
+        "loss_delta": -0.013261795043945312
+      }
+    ]
+  }
+}
