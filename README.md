@@ -12,6 +12,33 @@ Current best practical artifact:
 hf_artifacts/smol135-fused-policy-quality16-14bus
 ```
 
+## Gemma4 PMRA Stack Check
+
+The first Gemma4 stack check applies a depth-scaled OrbitQuant 14-bus analog on top of the PMRA Gemma4 E2B-it knapsack artifact. It validates that the runtime OrbitQuant hooks and the PMRA-patched weight state compose in one model-forward evaluator.
+
+Result note:
+
+```text
+notes/gemma4_pmra_orbit_stack_result.md
+```
+
+Fetched Modal summary:
+
+```text
+results/modal_gemma4_pmra_orbit_stack_stack64_latest.json
+```
+
+Stack64 result on Wikitext test, 64 prompts:
+
+| Variant | NLL | Payload bpw |
+|---|---:|---:|
+| q3_k_s | 18.045771 | 5.326613 |
+| q3_k_s + OrbitQuant | 17.921134 | 5.326613 |
+| PMRA | 12.984226 | 5.326613 |
+| PMRA + OrbitQuant | 13.818808 | 5.326613 |
+
+The naive depth-scaled policy costs PMRA `0.834582` NLL while preserving about `83.5%` of PMRA's gain over uniform `q3_k_s`. The next allocator should select Gemma4/PMRA-native runtime buses instead of inheriting the SmolLM2 layer map.
+
 Quality16 14-bus result on the broad held-out prompt split:
 
 | Metric | Value |
