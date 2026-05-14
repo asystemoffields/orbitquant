@@ -19,6 +19,7 @@ results/modal_gemma4_pmra_orbit_stack_split64_latest.json
 results/modal_gemma4_pmra_orbit_layer_mlp_split64_latest.json
 results/modal_gemma4_pmra_orbit_stack_trim64_no14_15_latest.json
 results/modal_gemma4_pmra_orbit_stack_trim64_safe3_latest.json
+results/modal_gemma4_pmra_orbit_stack_trim128_safe3_latest.json
 ```
 
 ## Stack Split
@@ -64,15 +65,31 @@ The `safe3` stack is the current best Gemma4 PMRA + OrbitQuant operating point:
 - Full stack NLL is `0.075261` above PMRA on this check.
 - Full stack is `4.986283` NLL better than uniform `q3_k_s` at the same static payload.
 
+## 128-Prompt Validation
+
+Eval split: Wikitext test, 128 prompts, 24,058 tokens, max length 192
+
+Calibration split: Wikitext train, 24 prompts, max length 192
+
+| Variant | NLL | Delta vs PMRA | Saved memory estimate |
+|---|---:|---:|---:|
+| q3_k_s | 18.046307 | 5.227844 | n/a |
+| PMRA | 12.818462 | 0.000000 | n/a |
+| PMRA + KV-only OrbitQuant | 12.874908 | 0.056445 | 45.50 MiB |
+| PMRA + MLP-only safe3 | 13.005974 | 0.187512 | 3.28 MiB MLP side |
+| PMRA + safe3 OrbitQuant | 12.834083 | 0.015620 | 48.78 MiB |
+
+The 128-prompt check makes the `safe3` stack look substantially cleaner than the 64-prompt estimate. It keeps the same `5.326613` static payload bpw as PMRA and q3_k_s, adds `48.78 MiB` estimated runtime memory savings at context length 8192, and lands only `0.015620` NLL above PMRA on this validation.
+
 ## Read
 
 The strongest signal is allocator-shaped. Hadamard-style MLP activation rotation works where the bus is locally tolerant and becomes expensive where the down-projection boundary is sensitive. The prepermutation variants are doing useful work: the surviving MLP buses are all Hadamard-plus choices, while the removed buses are plain block-Hadamard choices.
 
-The next engineering target is a Gemma4-native OrbitQuant policy artifact that encodes:
+The packaged Gemma4-native OrbitQuant policy artifact encodes:
 
 ```text
 KV layers: 33,28,30,16,18,11,15
 MLP buses: 20:plus:preperm_activation_max_hadamard, 19:plus:preperm_activation_max_hadamard, 6:plus:preperm_boundary_rms_hadamard
 ```
 
-That policy can be packaged independently from the PMRA weights and then applied as a runtime compression overlay.
+The policy is packaged independently from the PMRA weights and applied as a runtime compression overlay.

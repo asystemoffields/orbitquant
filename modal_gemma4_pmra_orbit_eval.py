@@ -125,6 +125,15 @@ def profile_args(profile: str) -> dict:
             "memory_context_length": 8192,
             "mlp_choices": MLP20_CHOICES,
         },
+        "trim128_safe3": {
+            "variants": "fp16,q3_k_s,pmra,pmra_kv_only,pmra_mlp_only,pmra_orbitquant",
+            "prompt_count": 128,
+            "calib_prompt_count": 24,
+            "eval_max_length": 192,
+            "calib_max_length": 192,
+            "memory_context_length": 8192,
+            "mlp_choices": SAFE3_MLP_CHOICES,
+        },
         "stack128": {
             "variants": "fp16,q3_k_s,orbitquant,pmra,pmra_orbitquant",
             "prompt_count": 128,

@@ -1,0 +1,230 @@
+{
+  "output_dir": "/cache/results/orbitquant_gemma4_pmra_stack/trim128_safe3_20260514_005942",
+  "variants": {
+    "fp16": {
+      "tokens": 24058,
+      "nll": 14.271513900452396,
+      "ppl": 1577755.618387078,
+      "payload_bytes": 9294899782,
+      "payload_bpw": 16.0,
+      "delta_nll_vs_fp16": 0.0,
+      "static_base": "fp16",
+      "orbitquant": false,
+      "orbit_mode": null
+    },
+    "q3_k_s": {
+      "tokens": 24058,
+      "nll": 18.04630691050413,
+      "ppl": 68771977.11146176,
+      "last_logit_mse_to_fp16": 43.30833475664258,
+      "top10_overlap_to_fp16": 0.06015625,
+      "payload_bytes": 3094396044,
+      "payload_bpw": 5.32661328956758,
+      "delta_nll_vs_fp16": 3.7747930100517326,
+      "static_base": "q3_k_s",
+      "orbitquant": false,
+      "orbit_mode": null
+    },
+    "pmra": {
+      "tokens": 24058,
+      "nll": 12.818462451820967,
+      "ppl": 368966.98660346976,
+      "last_logit_mse_to_fp16": 68.15861310437322,
+      "top10_overlap_to_fp16": 0.13984375000000002,
+      "payload_bytes": 3094396044,
+      "payload_bpw": 5.32661328956758,
+      "delta_nll_vs_fp16": -1.4530514486314292,
+      "static_base": "c2_calib_knapsack_mixed",
+      "orbitquant": false,
+      "orbit_mode": null
+    },
+    "pmra_kv_only": {
+      "tokens": 24058,
+      "nll": 12.874907641530147,
+      "ppl": 390392.39040090516,
+      "last_logit_mse_to_fp16": 68.47578869387507,
+      "top10_overlap_to_fp16": 0.1453125,
+      "payload_bytes": 3094396044,
+      "payload_bpw": 5.32661328956758,
+      "delta_nll_vs_fp16": -1.3966062589222492,
+      "static_base": "c2_calib_knapsack_mixed",
+      "orbitquant": true,
+      "orbit_mode": "kv",
+      "orbit_audit": {
+        "mode": "kv",
+        "kv_layers": [
+          33,
+          28,
+          30,
+          16,
+          18,
+          11,
+          15
+        ],
+        "kv_bits": 3,
+        "kv_rotation": "hadamard",
+        "kv_alpha": 0.75,
+        "mlp_bits": 2,
+        "mlp_block_size": 512,
+        "mlp_choices": []
+      }
+    },
+    "pmra_mlp_only": {
+      "tokens": 24058,
+      "nll": 13.00597421196752,
+      "ppl": 445064.37427030137,
+      "last_logit_mse_to_fp16": 74.04801294952631,
+      "top10_overlap_to_fp16": 0.14375,
+      "payload_bytes": 3094396044,
+      "payload_bpw": 5.32661328956758,
+      "delta_nll_vs_fp16": -1.2655396884848766,
+      "static_base": "c2_calib_knapsack_mixed",
+      "orbitquant": true,
+      "orbit_mode": "mlp",
+      "orbit_audit": {
+        "mode": "mlp",
+        "kv_layers": [
+          33,
+          28,
+          30,
+          16,
+          18,
+          11,
+          15
+        ],
+        "kv_bits": 3,
+        "kv_rotation": "hadamard",
+        "kv_alpha": 0.75,
+        "mlp_bits": 2,
+        "mlp_block_size": 512,
+        "mlp_choices": [
+          {
+            "layer": 20,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375,
+            "rotation_summary": {
+              "name": "preperm_activation_max_hadamard",
+              "dim": 12288,
+              "block_size": 512,
+              "has_order": true
+            }
+          },
+          {
+            "layer": 19,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375,
+            "rotation_summary": {
+              "name": "preperm_activation_max_hadamard",
+              "dim": 12288,
+              "block_size": 512,
+              "has_order": true
+            }
+          },
+          {
+            "layer": 6,
+            "primitive": "plus",
+            "rotation": "preperm_boundary_rms_hadamard",
+            "alpha": 0.375,
+            "rotation_summary": {
+              "name": "preperm_boundary_rms_hadamard",
+              "dim": 6144,
+              "block_size": 512,
+              "has_order": true
+            }
+          }
+        ]
+      }
+    },
+    "pmra_orbitquant": {
+      "tokens": 24058,
+      "nll": 12.834082924860832,
+      "ppl": 374775.6745882302,
+      "last_logit_mse_to_fp16": 67.99472899734974,
+      "top10_overlap_to_fp16": 0.13593750000000002,
+      "payload_bytes": 3094396044,
+      "payload_bpw": 5.32661328956758,
+      "delta_nll_vs_fp16": -1.437430975591564,
+      "static_base": "c2_calib_knapsack_mixed",
+      "orbitquant": true,
+      "orbit_mode": "full",
+      "orbit_audit": {
+        "mode": "full",
+        "kv_layers": [
+          33,
+          28,
+          30,
+          16,
+          18,
+          11,
+          15
+        ],
+        "kv_bits": 3,
+        "kv_rotation": "hadamard",
+        "kv_alpha": 0.75,
+        "mlp_bits": 2,
+        "mlp_block_size": 512,
+        "mlp_choices": [
+          {
+            "layer": 20,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375,
+            "rotation_summary": {
+              "name": "preperm_activation_max_hadamard",
+              "dim": 12288,
+              "block_size": 512,
+              "has_order": true
+            }
+          },
+          {
+            "layer": 19,
+            "primitive": "plus",
+            "rotation": "preperm_activation_max_hadamard",
+            "alpha": 0.375,
+            "rotation_summary": {
+              "name": "preperm_activation_max_hadamard",
+              "dim": 12288,
+              "block_size": 512,
+              "has_order": true
+            }
+          },
+          {
+            "layer": 6,
+            "primitive": "plus",
+            "rotation": "preperm_boundary_rms_hadamard",
+            "alpha": 0.375,
+            "rotation_summary": {
+              "name": "preperm_boundary_rms_hadamard",
+              "dim": 6144,
+              "block_size": 512,
+              "has_order": true
+            }
+          }
+        ]
+      }
+    }
+  },
+  "baseline": {},
+  "rows": [],
+  "rows_by_delta_desc": [],
+  "rows_by_delta_asc": [],
+  "runtime_savings_estimate": {
+    "context_length": 8192,
+    "mlp_lifetime_tokens": 64,
+    "kv_saved_mib": 45.5,
+    "mlp_saved_mib": 3.28125,
+    "total_saved_mib": 48.78125,
+    "mlp_dims": [
+      12288,
+      12288,
+      6144
+    ]
+  },
+  "wall_time_seconds": 568.0799231529236,
+  "result_path": "/cache/results/orbitquant_gemma4_pmra_stack/trim128_safe3_20260514_005942/result.json",
+  "profile": "trim128_safe3",
+  "stdout_tail": "`torch_dtype` is deprecated! Use `dtype` instead!\n\nLoading weights:   0%|          | 0/2011 [00:00<?, ?it/s]\nLoading weights:   6%|\u258c         | 123/2011 [00:00<00:01, 1143.45it/s]\nLoading weights:  12%|\u2588\u258f        | 247/2011 [00:00<00:01, 1055.95it/s]\nLoading weights:  20%|\u2588\u2588        | 407/2011 [00:00<00:01, 1280.34it/s]\nLoading weights:  27%|\u2588\u2588\u258b       | 538/2011 [00:00<00:01, 1196.15it/s]\nLoading weights:  34%|\u2588\u2588\u2588\u258e      | 675/2011 [00:00<00:01, 1232.71it/s]\nLoading weights:  40%|\u2588\u2588\u2588\u2589      | 800/2011 [00:00<00:01, 658.55it/s] \nLoading weights:  44%|\u2588\u2588\u2588\u2588\u258d     | 894/2011 [00:01<00:02, 458.07it/s]\nLoading weights:  48%|\u2588\u2588\u2588\u2588\u258a     | 965/2011 [00:01<00:02, 375.48it/s]\nLoading weights:  51%|\u2588\u2588\u2588\u2588\u2588     | 1021/2011 [00:01<00:03, 298.67it/s]\nLoading weights:  53%|\u2588\u2588\u2588\u2588\u2588\u258e    | 1065/2011 [00:02<00:03, 253.52it/s]\nLoading weights:  55%|\u2588\u2588\u2588\u2588\u2588\u258d    | 1100/2011 [00:02<00:03, 247.39it/s]\nLoading weights:  56%|\u2588\u2588\u2588\u2588\u2588\u258c    | 1131/2011 [00:02<00:03, 226.66it/s]\nLoading weights:  58%|\u2588\u2588\u2588\u2588\u2588\u258a    | 1158/2011 [00:02<00:03, 223.05it/s]\nLoading weights:  59%|\u2588\u2588\u2588\u2588\u2588\u2589    | 1183/2011 [00:02<00:03, 210.76it/s]\nLoading weights:  60%|\u2588\u2588\u2588\u2588\u2588\u2589    | 1206/2011 [00:03<00:03, 212.94it/s]\nLoading weights:  61%|\u2588\u2588\u2588\u2588\u2588\u2588    | 1229/2011 [00:03<00:03, 206.54it/s]\nLoading weights:  62%|\u2588\u2588\u2588\u2588\u2588\u2588\u258f   | 1252/2011 [00:03<00:04, 182.72it/s]\nLoading weights:  63%|\u2588\u2588\u2588\u2588\u2588\u2588\u258e   | 1271/2011 [00:03<00:04, 175.40it/s]\nLoading weights:  68%|\u2588\u2588\u2588\u2588\u2588\u2588\u258a   | 1363/2011 [00:03<00:02, 320.89it/s]\nLoading weights:  78%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a  | 1567/2011 [00:03<00:00, 713.49it/s]\nLoading weights:  86%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c | 1732/2011 [00:03<00:00, 922.58it/s]\nLoading weights:  94%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d| 1895/2011 [00:03<00:00, 1093.76it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 2011/2011 [00:03<00:00, 514.14it/s] \n[c2] loading GGUF source iq4_xs: /cache/models/baselines/mradermacher__gemma-4-E2B-it-GGUF/gemma-4-E2B-it.IQ4_XS.gguf\n[c2] loading GGUF source q2_k: /cache/models/baselines/mradermacher__gemma-4-E2B-it-GGUF/gemma-4-E2B-it.Q2_K.gguf\n[c2] loading GGUF source q3_k_l: /cache/models/baselines/mradermacher__gemma-4-E2B-it-GGUF/gemma-4-E2B-it.Q3_K_L.gguf\n[c2] loading GGUF source q3_k_m: /cache/models/baselines/mradermacher__gemma-4-E2B-it-GGUF/gemma-4-E2B-it.Q3_K_M.gguf\n[c2] loading GGUF source q3_k_s: /cache/models/baselines/mradermacher__gemma-4-E2B-it-GGUF/gemma-4-E2B-it.Q3_K_S.gguf\n[c2] loading GGUF source q4_k_m: /cache/models/baselines/mradermacher__gemma-4-E2B-it-GGUF/gemma-4-E2B-it.Q4_K_M.gguf\nWarning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nGenerating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]\nGenerating test split: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 4358/4358 [00:00<00:00, 246407.80 examples/s]\n\nGenerating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]\nGenerating train split: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 36718/36718 [00:00<00:00, 574614.50 examples/s]\n\nGenerating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]\nGenerating validation split: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 3760/3760 [00:00<00:00, 369897.57 examples/s]\n[orbit-gemma4] evaluating fp16 base=fp16 orbit=none\n[orbit-gemma4] restoring fp16 reference weights\n[orbit-gemma4] evaluating q3_k_s base=q3_k_s orbit=none\n[orbit-gemma4] patching uniform source q3_k_s\n[orbit-gemma4] evaluating pmra base=c2_calib_knapsack_mixed orbit=none\n[orbit-gemma4] patching PMRA selection c2_calib_knapsack_mixed\n[orbit-gemma4] evaluating pmra_kv_only base=c2_calib_knapsack_mixed orbit=kv\n[orbit-gemma4] patching PMRA selection c2_calib_knapsack_mixed\n[orbit-gemma4] evaluating pmra_mlp_only base=c2_calib_knapsack_mixed orbit=mlp\n[orbit-gemma4] patching PMRA selection c2_calib_knapsack_mixed\n[orbit-gemma4] calibrating MLP layer 20 rotation=preperm_activation_max_hadamard alpha=0.375\n[orbit-gemma4] calibrating MLP layer 19 rotation=preperm_activation_max_hadamard alpha=0.375\n[orbit-gemma4] calibrating MLP layer 6 rotation=preperm_boundary_rms_hadamard alpha=0.375\n[orbit-gemma4] evaluating pmra_orbitquant base=c2_calib_knapsack_mixed orbit=full\n[orbit-gemma4] patching PMRA selection c2_calib_knapsack_mixed\n[orbit-gemma4] calibrating MLP layer 20 rotation=preperm_activation_max_hadamard alpha=0.375\n[orbit-gemma4] calibrating MLP layer 19 rotation=preperm_activation_max_hadamard alpha=0.375\n[orbit-gemma4] calibrating MLP layer 6 rotation=preperm_boundary_rms_hadamard alpha=0.375\n{\n  \"output_dir\": \"/cache/results/orbitquant_gemma4_pmra_stack/trim128_safe3_20260514_005942\",\n  \"variants\": {\n    \"fp16\": {\n      \"tokens\": 24058,\n      \"nll\": 14.271513900452396,\n      \"ppl\": 1577755.618387078,\n      \"payload_bytes\": 9294899782,\n      \"payload_bpw\": 16.0,\n      \"delta_nll_vs_fp16\": 0.0,\n      \"static_base\": \"fp16\",\n      \"orbitquant\": false,\n      \"orbit_mode\": null\n    },\n    \"q3_k_s\": {\n      \"tokens\": 24058,\n      \"nll\": 18.04630691050413,\n      \"ppl\": 68771977.11146176,\n      \"last_logit_mse_to_fp16\": 43.30833475664258,\n      \"top10_overlap_to_fp16\": 0.06015625,\n      \"payload_bytes\": 3094396044,\n      \"payload_bpw\": 5.32661328956758,\n      \"delta_nll_vs_fp16\": 3.7747930100517326,\n      \"static_base\": \"q3_k_s\",\n      \"orbitquant\": false,\n      \"orbit_mode\": null\n    },\n    \"pmra\": {\n      \"tokens\": 24058,\n      \"nll\": 12.818462451820967,\n      \"ppl\": 368966.98660346976,\n      \"last_logit_mse_to_fp16\": 68.15861310437322,\n      \"top10_overlap_to_fp16\": 0.13984375000000002,\n      \"payload_bytes\": 3094396044,\n      \"payload_bpw\": 5.32661328956758,\n      \"delta_nll_vs_fp16\": -1.4530514486314292,\n      \"static_base\": \"c2_calib_knapsack_mixed\",\n      \"orbitquant\": false,\n      \"orbit_mode\": null\n    },\n    \"pmra_kv_only\": {\n      \"tokens\": 24058,\n      \"nll\": 12.874907641530147,\n      \"ppl\": 390392.39040090516,\n      \"last_logit_mse_to_fp16\": 68.47578869387507,\n      \"top10_overlap_to_fp16\": 0.1453125,\n      \"payload_bytes\": 3094396044,\n      \"payload_bpw\": 5.32661328956758,\n      \"delta_nll_vs_fp16\": -1.3966062589222492,\n      \"static_base\": \"c2_calib_knapsack_mixed\",\n      \"orbitquant\": true,\n      \"orbit_mode\": \"kv\",\n      \"orbit_audit\": {\n        \"mode\": \"kv\",\n        \"kv_layers\": [\n          33,\n          28,\n          30,\n          16,\n          18,\n          11,\n          15\n        ],\n        \"kv_bits\": 3,\n        \"kv_rotation\": \"hadamard\",\n        \"kv_alpha\": 0.75,\n        \"mlp_bits\": 2,\n        \"mlp_block_size\": 512,\n        \"mlp_choices\": []\n      }\n    },\n    \"pmra_mlp_only\": {\n      \"tokens\": 24058,\n      \"nll\": 13.00597421196752,\n      \"ppl\": 445064.37427030137,\n      \"last_logit_mse_to_fp16\": 74.04801294952631,\n      \"top10_overlap_to_fp16\": 0.14375,\n      \"payload_bytes\": 3094396044,\n      \"payload_bpw\": 5.32661328956758,\n      \"delta_nll_vs_fp16\": -1.2655396884848766,\n      \"static_base\": \"c2_calib_knapsack_mixed\",\n      \"orbitquant\": true,\n      \"orbit_mode\": \"mlp\",\n      \"orbit_audit\": {\n        \"mode\": \"mlp\",\n        \"kv_layers\": [\n          33,\n          28,\n          30,\n          16,\n          18,\n          11,\n          15\n        ],\n        \"kv_bits\": 3,\n        \"kv_rotation\": \"hadamard\",\n        \"kv_alpha\": 0.75,\n        \"mlp_bits\": 2,\n        \"mlp_block_size\": 512,\n        \"mlp_choices\": [\n          {\n            \"layer\": 20,\n            \"primitive\": \"plus\",\n            \"rotation\": \"preperm_activation_max_hadamard\",\n            \"alpha\": 0.375,\n            \"rotation_summary\": {\n              \"name\": \"preperm_activation_max_hadamard\",\n              \"dim\": 12288,\n              \"block_size\": 512,\n              \"has_order\": true\n            }\n          },\n          {\n            \"layer\": 19,\n            \"primitive\": \"plus\",\n            \"rotation\": \"preperm_activation_max_hadamard\",\n            \"alpha\": 0.375,\n            \"rotation_summary\": {\n              \"name\": \"preperm_activation_max_hadamard\",\n              \"dim\": 12288,\n              \"block_size\": 512,\n              \"has_order\": true\n            }\n          },\n          {\n            \"layer\": 6,\n            \"primitive\": \"plus\",\n            \"rotation\": \"preperm_boundary_rms_hadamard\",\n            \"alpha\": 0.375,\n            \"rotation_summary\": {\n              \"name\": \"preperm_boundary_rms_hadamard\",\n              \"dim\": 6144,\n              \"block_size\": 512,\n              \"has_order\": true\n            }\n          }\n        ]\n      }\n    },\n    \"pmra_orbitquant\": {\n      \"tokens\": 24058,\n      \"nll\": 12.834082924860832,\n      \"ppl\": 374775.6745882302,\n      \"last_logit_mse_to_fp16\": 67.99472899734974,\n      \"top10_overlap_to_fp16\": 0.13593750000000002,\n      \"payload_bytes\": 3094396044,\n      \"payload_bpw\": 5.32661328956758,\n      \"delta_nll_vs_fp16\": -1.437430975591564,\n      \"static_base\": \"c2_calib_knapsack_mixed\",\n      \"orbitquant\": true,\n      \"orbit_mode\": \"full\",\n      \"orbit_audit\": {\n        \"mode\": \"full\",\n        \"kv_layers\": [\n          33,\n          28,\n          30,\n          16,\n          18,\n          11,\n          15\n        ],\n        \"kv_bits\": 3,\n        \"kv_rotation\": \"hadamard\",\n        \"kv_alpha\": 0.75,\n        \"mlp_bits\": 2,\n        \"mlp_block_size\": 512,\n        \"mlp_choices\": [\n          {\n            \"layer\": 20,\n            \"primitive\": \"plus\",\n            \"rotation\": \"preperm_activation_max_hadamard\",\n            \"alpha\": 0.375,\n            \"rotation_summary\": {\n              \"name\": \"preperm_activation_max_hadamard\",\n              \"dim\": 12288,\n              \"block_size\": 512,\n              \"has_order\": true\n            }\n          },\n          {\n            \"layer\": 19,\n            \"primitive\": \"plus\",\n            \"rotation\": \"preperm_activation_max_hadamard\",\n            \"alpha\": 0.375,\n            \"rotation_summary\": {\n              \"name\": \"preperm_activation_max_hadamard\",\n              \"dim\": 12288,\n              \"block_size\": 512,\n              \"has_order\": true\n            }\n          },\n          {\n            \"layer\": 6,\n            \"primitive\": \"plus\",\n            \"rotation\": \"preperm_boundary_rms_hadamard\",\n            \"alpha\": 0.375,\n            \"rotation_summary\": {\n              \"name\": \"preperm_boundary_rms_hadamard\",\n              \"dim\": 6144,\n              \"block_size\": 512,\n              \"has_order\": true\n            }\n          }\n        ]\n      }\n    }\n  }\n}\n[orbit-gemma4] wrote /cache/results/orbitquant_gemma4_pmra_stack/trim128_safe3_20260514_005942/result.md\n",
+  "persisted_volume": "codex-jmrc-cache"
+}

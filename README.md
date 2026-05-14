@@ -6,15 +6,16 @@ OrbitQuant explores allocation-aware quantization over equivalent activation bas
 - Rotated/clipped 2-bit MLP intermediate activation quantization.
 - A fused allocator that chooses layers and MLP primitives under held-out logit drift.
 
-Current best practical artifact:
+Current best practical artifacts:
 
 ```text
 hf_artifacts/smol135-fused-policy-quality16-14bus
+hf_artifacts/gemma4-pmra-orbitquant-safe3
 ```
 
 ## Gemma4 PMRA Stack Check
 
-The first Gemma4 stack check applies a depth-scaled OrbitQuant 14-bus analog on top of the PMRA Gemma4 E2B-it knapsack artifact. It validates that the runtime OrbitQuant hooks and the PMRA-patched weight state compose in one model-forward evaluator.
+The Gemma4 stack check applies OrbitQuant runtime activation compression on top of the PMRA Gemma4 E2B-it knapsack artifact. It validates that the runtime OrbitQuant hooks and the PMRA-patched weight state compose in one model-forward evaluator.
 
 Result note:
 
@@ -30,25 +31,38 @@ results/modal_gemma4_pmra_orbit_stack_stack64_latest.json
 results/modal_gemma4_pmra_orbit_stack_split64_latest.json
 results/modal_gemma4_pmra_orbit_layer_mlp_split64_latest.json
 results/modal_gemma4_pmra_orbit_stack_trim64_safe3_latest.json
+results/modal_gemma4_pmra_orbit_stack_trim128_safe3_latest.json
 ```
 
-Current Gemma4 PMRA + OrbitQuant operating point on Wikitext test, 64 prompts:
+Current Gemma4 PMRA + OrbitQuant operating point on Wikitext test, 128 prompts / 24,058 tokens:
 
 | Variant | NLL | Payload bpw |
 |---|---:|---:|
-| q3_k_s | 18.045771 | 5.326613 |
-| PMRA | 12.984226 | 5.326613 |
-| PMRA + KV-only OrbitQuant | 13.042898 | 5.326613 |
-| PMRA + OrbitQuant safe3 | 13.059487 | 5.326613 |
+| q3_k_s | 18.046307 | 5.326613 |
+| PMRA | 12.818462 | 5.326613 |
+| PMRA + KV-only OrbitQuant | 12.874908 | 5.326613 |
+| PMRA + OrbitQuant safe3 | 12.834083 | 5.326613 |
 
 The `safe3` stack keeps PMRA's static payload and adds a runtime overlay:
 
 - KV layers: `33,28,30,16,18,11,15`, 3-bit Hadamard.
 - MLP buses: `20:plus:preperm_activation_max_hadamard`, `19:plus:preperm_activation_max_hadamard`, `6:plus:preperm_boundary_rms_hadamard`, 2-bit.
 - Estimated runtime memory saved: `48.78 MiB` at context length 8192 with 64 live MLP tokens.
-- NLL cost over PMRA: `0.075261`.
+- NLL cost over PMRA: `0.015620`.
 
-The damage attribution run found that the original inherited MLP buses caused most of the stack loss. Dropping layers 14/15 recovered `0.375819` NLL; trimming to the safe three MLP buses recovered `0.597284` NLL versus the original split stack.
+The damage attribution run found that the original inherited MLP buses caused most of the stack loss. Dropping layers 14/15 recovered `0.375819` NLL; trimming to the safe three MLP buses recovered `0.597284` NLL versus the original split stack. The 128-prompt validation tightened the safe3 estimate from `+0.075261` to `+0.015620` NLL over PMRA.
+
+Export the Gemma4 policy artifact:
+
+```powershell
+python scripts/export_gemma4_orbit_policy_artifact.py --result results\modal_gemma4_pmra_orbit_stack_trim128_safe3_latest.json --name gemma4-pmra-orbitquant-safe3
+```
+
+Dry-run the packaged policy:
+
+```powershell
+python scripts/apply_gemma4_orbit_policy.py --config hf_artifacts\gemma4-pmra-orbitquant-safe3\compression_config.json --dry-run
+```
 
 Quality16 14-bus result on the broad held-out prompt split:
 

@@ -19,6 +19,7 @@ results/*
 !results/modal_gemma4_pmra_orbit_stack_trim64_no14_15_latest.json
 !results/modal_gemma4_pmra_orbit_stack_trim64_safe3_latest.json
 !results/modal_gemma4_pmra_orbit_stack_trim64_mlp20_latest.json
+!results/modal_gemma4_pmra_orbit_stack_trim128_safe3_latest.json
 
 results/modal_runs/
 *.log
