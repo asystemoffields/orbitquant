@@ -1,3 +1,15 @@
+---
+base_model: google/gemma-4-E2B-it
+library_name: transformers
+tags:
+  - orbitquant
+  - quantization
+  - activation-compression
+  - pmra
+  - gemma4
+pipeline_tag: text-generation
+---
+
 # Gemma4 PMRA OrbitQuant Safe3 Policy
 
 Base model: `google/gemma-4-E2B-it`

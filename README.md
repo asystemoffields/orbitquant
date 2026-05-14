@@ -13,6 +13,12 @@ hf_artifacts/smol135-fused-policy-quality16-14bus
 hf_artifacts/gemma4-pmra-orbitquant-safe3
 ```
 
+Published Gemma4 policy artifact:
+
+```text
+https://huggingface.co/Asystemoffields/gemma4-pmra-orbitquant-safe3
+```
+
 ## Gemma4 PMRA Stack Check
 
 The Gemma4 stack check applies OrbitQuant runtime activation compression on top of the PMRA Gemma4 E2B-it knapsack artifact. It validates that the runtime OrbitQuant hooks and the PMRA-patched weight state compose in one model-forward evaluator.

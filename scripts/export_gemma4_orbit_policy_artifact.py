@@ -139,7 +139,19 @@ def table_rows(items: list[dict], columns: list[str]) -> str:
 def make_readme(config: dict, manifest: dict) -> str:
     eval_info = config["evaluation"]
     savings = eval_info.get("runtime_savings_estimate", {})
-    return f"""# Gemma4 PMRA OrbitQuant Safe3 Policy
+    return f"""---
+base_model: {config["base_model"]}
+library_name: transformers
+tags:
+  - orbitquant
+  - quantization
+  - activation-compression
+  - pmra
+  - gemma4
+pipeline_tag: text-generation
+---
+
+# Gemma4 PMRA OrbitQuant Safe3 Policy
 
 Base model: `{config["base_model"]}`
 
