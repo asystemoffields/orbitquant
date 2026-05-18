@@ -28,6 +28,7 @@ Result note:
 ```text
 notes/gemma4_pmra_orbit_stack_result.md
 notes/gemma4_pmra_orbit_damage_attribution.md
+notes/orbitquant_production_optimization_map.md
 ```
 
 Fetched Modal summary:
