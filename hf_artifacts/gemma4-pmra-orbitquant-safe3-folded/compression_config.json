@@ -1,0 +1,121 @@
+{
+  "format": "gemma4-pmra-orbitquant-policy-v1",
+  "created_utc": "2026-05-18T01:57:46.802462+00:00",
+  "base_model": "google/gemma-4-E2B-it",
+  "source_result": "C:\\Users\\power\\Documents\\Codex\\2026-05-12\\i-m-on-a-mission-to\\orbitquant\\results\\modal_gemma4_pmra_orbit_stack_trim128_safe3_folded_latest.json",
+  "source_profile": "trim128_safe3_folded",
+  "static_weight_state": {
+    "method": "PMRA",
+    "variant": "c2_calib_knapsack_mixed",
+    "payload_bpw": 5.32661328956758,
+    "payload_bytes": 3094396044
+  },
+  "selected_policy": {
+    "name": "safe3",
+    "total_buses": 10,
+    "mlp_fold_down_proj": true,
+    "kv_layers": [
+      {
+        "layer": 33,
+        "bits": 3,
+        "rotation": "hadamard",
+        "alpha": 0.75
+      },
+      {
+        "layer": 28,
+        "bits": 3,
+        "rotation": "hadamard",
+        "alpha": 0.75
+      },
+      {
+        "layer": 30,
+        "bits": 3,
+        "rotation": "hadamard",
+        "alpha": 0.75
+      },
+      {
+        "layer": 16,
+        "bits": 3,
+        "rotation": "hadamard",
+        "alpha": 0.75
+      },
+      {
+        "layer": 18,
+        "bits": 3,
+        "rotation": "hadamard",
+        "alpha": 0.75
+      },
+      {
+        "layer": 11,
+        "bits": 3,
+        "rotation": "hadamard",
+        "alpha": 0.75
+      },
+      {
+        "layer": 15,
+        "bits": 3,
+        "rotation": "hadamard",
+        "alpha": 0.75
+      }
+    ],
+    "mlp_choices": [
+      {
+        "layer": 20,
+        "bits": 2,
+        "primitive": "plus",
+        "rotation": "preperm_activation_max_hadamard",
+        "alpha": 0.375,
+        "block_size": 512
+      },
+      {
+        "layer": 19,
+        "bits": 2,
+        "primitive": "plus",
+        "rotation": "preperm_activation_max_hadamard",
+        "alpha": 0.375,
+        "block_size": 512
+      },
+      {
+        "layer": 6,
+        "bits": 2,
+        "primitive": "plus",
+        "rotation": "preperm_boundary_rms_hadamard",
+        "alpha": 0.375,
+        "block_size": 512
+      }
+    ]
+  },
+  "evaluation": {
+    "tokens": 24058,
+    "dataset": "wikitext",
+    "dataset_config": "wikitext-2-raw-v1",
+    "prompt_count": 128,
+    "calibration_prompt_count": 24,
+    "eval_max_length": 192,
+    "calib_max_length": 192,
+    "pmra_nll": 12.818462451820967,
+    "q3_k_s_nll": 18.04630691050413,
+    "stack_nll": 12.800727092374421,
+    "delta_nll_vs_pmra": -0.017735359446545473,
+    "delta_nll_vs_q3_k_s": -5.245579818129707,
+    "last_logit_mse_to_fp16": 73.83603067323565,
+    "top10_overlap_to_fp16": 0.13203125,
+    "runtime_savings_estimate": {
+      "context_length": 8192,
+      "mlp_lifetime_tokens": 64,
+      "kv_saved_mib": 45.5,
+      "mlp_saved_mib": 3.28125,
+      "total_saved_mib": 48.78125,
+      "mlp_dims": [
+        12288,
+        12288,
+        6144
+      ]
+    }
+  },
+  "method": {
+    "kv_cache": "Rotate K/V activations with Hadamard before 3-bit scalar quantization.",
+    "mlp_intermediate": "Rotate Gemma4 MLP intermediate activations before calibrated 2-bit quantization, then consume the rotated basis with pre-rotated down_proj weights.",
+    "calibration": "Hadamard-plus MLP choices reconstruct prepermutation order from calibration activations and down-proj weights."
+  }
+}

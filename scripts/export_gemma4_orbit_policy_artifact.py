@@ -21,6 +21,12 @@ PROFILE_DEFAULTS = {
         "eval_max_length": 192,
         "calib_max_length": 192,
     },
+    "trim128_safe3_folded": {
+        "prompt_count": 128,
+        "calibration_prompt_count": 24,
+        "eval_max_length": 192,
+        "calib_max_length": 192,
+    },
 }
 
 
@@ -66,6 +72,14 @@ def make_config(result: dict, source_path: Path, base_model: str) -> dict:
         for item in audit.get("mlp_choices", [])
     ]
 
+    folded = bool(audit.get("mlp_fold_down_proj", False))
+    mlp_method = (
+        "Rotate Gemma4 MLP intermediate activations before calibrated 2-bit quantization, "
+        "then consume the rotated basis with pre-rotated down_proj weights."
+        if folded
+        else "Rotate Gemma4 MLP intermediate activations before calibrated 2-bit quantization, then invert before down_proj."
+    )
+
     return {
         "format": "gemma4-pmra-orbitquant-policy-v1",
         "created_utc": datetime.now(UTC).isoformat(),
@@ -81,6 +95,7 @@ def make_config(result: dict, source_path: Path, base_model: str) -> dict:
         "selected_policy": {
             "name": "safe3",
             "total_buses": len(kv_layers) + len(mlp_choices),
+            "mlp_fold_down_proj": folded,
             "kv_layers": kv_layers,
             "mlp_choices": mlp_choices,
         },
@@ -105,7 +120,7 @@ def make_config(result: dict, source_path: Path, base_model: str) -> dict:
         },
         "method": {
             "kv_cache": "Rotate K/V activations with Hadamard before 3-bit scalar quantization.",
-            "mlp_intermediate": "Rotate Gemma4 MLP intermediate activations before calibrated 2-bit quantization, then invert before down_proj.",
+            "mlp_intermediate": mlp_method,
             "calibration": "Hadamard-plus MLP choices reconstruct prepermutation order from calibration activations and down-proj weights.",
         },
     }
@@ -139,6 +154,7 @@ def table_rows(items: list[dict], columns: list[str]) -> str:
 def make_readme(config: dict, manifest: dict) -> str:
     eval_info = config["evaluation"]
     savings = eval_info.get("runtime_savings_estimate", {})
+    folded_label = " Folded" if config["selected_policy"].get("mlp_fold_down_proj", False) else ""
     return f"""---
 base_model: {config["base_model"]}
 library_name: transformers
@@ -151,7 +167,7 @@ tags:
 pipeline_tag: text-generation
 ---
 
-# Gemma4 PMRA OrbitQuant Safe3 Policy
+# Gemma4 PMRA OrbitQuant Safe3{folded_label} Policy
 
 Base model: `{config["base_model"]}`
 
@@ -162,6 +178,7 @@ This artifact records the current Gemma4 OrbitQuant runtime overlay evaluated on
 | Metric | Value |
 |---|---:|
 | Total compressed buses | {config["selected_policy"]["total_buses"]} |
+| MLP folded down-proj | {str(config["selected_policy"].get("mlp_fold_down_proj", False)).lower()} |
 | PMRA NLL | {eval_info["pmra_nll"]:.6f} |
 | Stack NLL | {eval_info["stack_nll"]:.6f} |
 | Delta NLL vs PMRA | {eval_info["delta_nll_vs_pmra"]:.6f} |

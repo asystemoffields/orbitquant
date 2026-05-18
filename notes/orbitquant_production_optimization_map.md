@@ -12,6 +12,7 @@ Current strongest Gemma4 point:
 |---|---:|---:|---:|
 | PMRA | 12.818462 | 5.326613 bpw | n/a |
 | PMRA + OrbitQuant safe3 | 12.834083 | 5.326613 bpw | 48.78 MiB |
+| PMRA + OrbitQuant safe3 folded | 12.800727 | 5.326613 bpw | 48.78 MiB |
 
 ## Research Signals
 
@@ -57,6 +58,12 @@ Test:
 - Add a folded-weight MLP patch beside the current hook.
 - Confirm exact equivalence before quantization and near-equivalence after quantization.
 - Measure peak RAM and wall time on CPU for batch-1 decode and longer prefill.
+
+Status:
+
+- Implemented as `--mlp-fold-down-proj`.
+- Float32 smoke test passes for identity, block-Hadamard, and Hadamard-plus prepermutation rotations.
+- Gemma4 PMRA + folded safe3 validation on 128 Wikitext prompts landed at NLL `12.800727`, or `-0.017735` versus PMRA.
 
 ### 2. Split K and V Policies
 

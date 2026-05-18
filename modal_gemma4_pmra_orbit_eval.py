@@ -134,6 +134,16 @@ def profile_args(profile: str) -> dict:
             "memory_context_length": 8192,
             "mlp_choices": SAFE3_MLP_CHOICES,
         },
+        "trim128_safe3_folded": {
+            "variants": "fp16,q3_k_s,pmra,pmra_kv_only,pmra_mlp_only,pmra_orbitquant",
+            "prompt_count": 128,
+            "calib_prompt_count": 24,
+            "eval_max_length": 192,
+            "calib_max_length": 192,
+            "memory_context_length": 8192,
+            "mlp_choices": SAFE3_MLP_CHOICES,
+            "mlp_fold_down_proj": True,
+        },
         "stack128": {
             "variants": "fp16,q3_k_s,orbitquant,pmra,pmra_orbitquant",
             "prompt_count": 128,
@@ -283,6 +293,8 @@ def _base_eval_cmd(script_name: str, output_dir: str, settings: dict, hf_file: s
     ):
         if setting_name in settings:
             cmd.extend([flag, str(settings[setting_name])])
+    if settings.get("mlp_fold_down_proj"):
+        cmd.append("--mlp-fold-down-proj")
     return cmd
 
 

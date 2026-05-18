@@ -1,0 +1,16 @@
+{
+  "artifact_type": "compression_policy",
+  "format": "gemma4-pmra-orbitquant-policy-v1",
+  "base_model": "google/gemma-4-E2B-it",
+  "static_weight_state": {
+    "method": "PMRA",
+    "variant": "c2_calib_knapsack_mixed",
+    "payload_bpw": 5.32661328956758,
+    "payload_bytes": 3094396044
+  },
+  "selected_policy_name": "safe3",
+  "selected_total_buses": 10,
+  "stack_nll": 12.800727092374421,
+  "delta_nll_vs_pmra": -0.017735359446545473,
+  "estimated_saved_mib": 48.78125
+}

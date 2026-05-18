@@ -11,12 +11,14 @@ Current best practical artifacts:
 ```text
 hf_artifacts/smol135-fused-policy-quality16-14bus
 hf_artifacts/gemma4-pmra-orbitquant-safe3
+hf_artifacts/gemma4-pmra-orbitquant-safe3-folded
 ```
 
-Published Gemma4 policy artifact:
+Published Gemma4 policy artifacts:
 
 ```text
 https://huggingface.co/Asystemoffields/gemma4-pmra-orbitquant-safe3
+https://huggingface.co/Asystemoffields/gemma4-pmra-orbitquant-safe3-folded
 ```
 
 ## Gemma4 PMRA Stack Check
@@ -39,6 +41,7 @@ results/modal_gemma4_pmra_orbit_stack_split64_latest.json
 results/modal_gemma4_pmra_orbit_layer_mlp_split64_latest.json
 results/modal_gemma4_pmra_orbit_stack_trim64_safe3_latest.json
 results/modal_gemma4_pmra_orbit_stack_trim128_safe3_latest.json
+results/modal_gemma4_pmra_orbit_stack_trim128_safe3_folded_latest.json
 ```
 
 Current Gemma4 PMRA + OrbitQuant operating point on Wikitext test, 128 prompts / 24,058 tokens:
@@ -48,21 +51,23 @@ Current Gemma4 PMRA + OrbitQuant operating point on Wikitext test, 128 prompts /
 | q3_k_s | 18.046307 | 5.326613 |
 | PMRA | 12.818462 | 5.326613 |
 | PMRA + KV-only OrbitQuant | 12.874908 | 5.326613 |
-| PMRA + OrbitQuant safe3 | 12.834083 | 5.326613 |
+| PMRA + OrbitQuant safe3 folded | 12.800727 | 5.326613 |
 
 The `safe3` stack keeps PMRA's static payload and adds a runtime overlay:
 
 - KV layers: `33,28,30,16,18,11,15`, 3-bit Hadamard.
 - MLP buses: `20:plus:preperm_activation_max_hadamard`, `19:plus:preperm_activation_max_hadamard`, `6:plus:preperm_boundary_rms_hadamard`, 2-bit.
+- Folded MLP runtime: inverse MLP rotations are folded into pre-rotated `down_proj` weights.
 - Estimated runtime memory saved: `48.78 MiB` at context length 8192 with 64 live MLP tokens.
-- NLL cost over PMRA: `0.015620`.
+- NLL delta vs PMRA: `-0.017735`.
 
-The damage attribution run found that the original inherited MLP buses caused most of the stack loss. Dropping layers 14/15 recovered `0.375819` NLL; trimming to the safe three MLP buses recovered `0.597284` NLL versus the original split stack. The 128-prompt validation tightened the safe3 estimate from `+0.075261` to `+0.015620` NLL over PMRA.
+The damage attribution run found that the original inherited MLP buses caused most of the stack loss. Dropping layers 14/15 recovered `0.375819` NLL; trimming to the safe three MLP buses recovered `0.597284` NLL versus the original split stack. The 128-prompt validation tightened the safe3 estimate from `+0.075261` to `+0.015620` NLL over PMRA; the folded-MLP runtime path improved the same policy to `-0.017735` NLL versus PMRA.
 
 Export the Gemma4 policy artifact:
 
 ```powershell
 python scripts/export_gemma4_orbit_policy_artifact.py --result results\modal_gemma4_pmra_orbit_stack_trim128_safe3_latest.json --name gemma4-pmra-orbitquant-safe3
+python scripts/export_gemma4_orbit_policy_artifact.py --result results\modal_gemma4_pmra_orbit_stack_trim128_safe3_folded_latest.json --name gemma4-pmra-orbitquant-safe3-folded
 ```
 
 Dry-run the packaged policy:

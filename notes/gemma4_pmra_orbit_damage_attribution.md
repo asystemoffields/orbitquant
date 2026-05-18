@@ -20,6 +20,7 @@ results/modal_gemma4_pmra_orbit_layer_mlp_split64_latest.json
 results/modal_gemma4_pmra_orbit_stack_trim64_no14_15_latest.json
 results/modal_gemma4_pmra_orbit_stack_trim64_safe3_latest.json
 results/modal_gemma4_pmra_orbit_stack_trim128_safe3_latest.json
+results/modal_gemma4_pmra_orbit_stack_trim128_safe3_folded_latest.json
 ```
 
 ## Stack Split
@@ -78,8 +79,11 @@ Calibration split: Wikitext train, 24 prompts, max length 192
 | PMRA + KV-only OrbitQuant | 12.874908 | 0.056445 | 45.50 MiB |
 | PMRA + MLP-only safe3 | 13.005974 | 0.187512 | 3.28 MiB MLP side |
 | PMRA + safe3 OrbitQuant | 12.834083 | 0.015620 | 48.78 MiB |
+| PMRA + folded safe3 OrbitQuant | 12.800727 | -0.017735 | 48.78 MiB |
 
 The 128-prompt check makes the `safe3` stack look substantially cleaner than the 64-prompt estimate. It keeps the same `5.326613` static payload bpw as PMRA and q3_k_s, adds `48.78 MiB` estimated runtime memory savings at context length 8192, and lands only `0.015620` NLL above PMRA on this validation.
+
+The folded MLP runtime path removes the inverse activation rotation by pre-rotating selected `down_proj` weights. On the same 128-prompt validation, the folded full stack lands `0.017735` NLL below PMRA. The local algebra smoke test is exact in float32; the Gemma4 result likely reflects changed low-precision rounding order in the production-shaped path.
 
 ## Read
 
@@ -90,6 +94,7 @@ The packaged Gemma4-native OrbitQuant policy artifact encodes:
 ```text
 KV layers: 33,28,30,16,18,11,15
 MLP buses: 20:plus:preperm_activation_max_hadamard, 19:plus:preperm_activation_max_hadamard, 6:plus:preperm_boundary_rms_hadamard
+MLP runtime: folded down_proj
 ```
 
 The policy is packaged independently from the PMRA weights and applied as a runtime compression overlay.

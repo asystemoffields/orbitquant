@@ -12,6 +12,7 @@ from pathlib import Path
 from types import SimpleNamespace
 
 import torch
+import torch.nn.functional as F
 from transformers import AutoTokenizer
 
 
@@ -281,14 +282,18 @@ def rotate_inverse(x: torch.Tensor, spec: dict) -> torch.Tensor:
     return work
 
 
-def quantize_last_dim(x: torch.Tensor, bits: int, rotation_spec: dict, alpha: float) -> torch.Tensor:
+def quantize_rotated_last_dim(x: torch.Tensor, bits: int, rotation_spec: dict, alpha: float) -> torch.Tensor:
     qmax = (1 << (bits - 1)) - 1
     if qmax <= 0:
         raise ValueError(f"bits must be >= 2, got {bits}")
-    original_dtype = x.dtype
     rotated = rotate_forward(x.float(), rotation_spec)
     scale = rotated.detach().abs().amax(dim=-1, keepdim=True).clamp_min(1e-8) * alpha / qmax
-    quantized = torch.round(rotated / scale).clamp(-qmax, qmax) * scale
+    return torch.round(rotated / scale).clamp(-qmax, qmax) * scale
+
+
+def quantize_last_dim(x: torch.Tensor, bits: int, rotation_spec: dict, alpha: float) -> torch.Tensor:
+    original_dtype = x.dtype
+    quantized = quantize_rotated_last_dim(x, bits, rotation_spec, alpha)
     return rotate_inverse(quantized, rotation_spec).to(dtype=original_dtype)
 
 
@@ -415,6 +420,23 @@ def make_mlp_forward(mlp, bits: int, rotation_spec: dict, alpha: float):
     return types.MethodType(forward, mlp)
 
 
+def make_folded_mlp_forward(mlp, bits: int, rotation_spec: dict, alpha: float):
+    rotated_down_weight = rotate_forward(mlp.down_proj.weight.detach().float(), rotation_spec).to(
+        device=mlp.down_proj.weight.device,
+        dtype=mlp.down_proj.weight.dtype,
+    )
+    down_bias = mlp.down_proj.bias.detach() if mlp.down_proj.bias is not None else None
+
+    def forward(self, x):
+        gate = self.act_fn(self.gate_proj(x))
+        up = self.up_proj(x)
+        z = gate * up
+        z_quant_rotated = quantize_rotated_last_dim(z, bits, rotation_spec, alpha).to(dtype=rotated_down_weight.dtype)
+        return F.linear(z_quant_rotated, rotated_down_weight, down_bias)
+
+    return types.MethodType(forward, mlp)
+
+
 def build_mlp_runtime_params(
     model,
     tokenizer,
@@ -450,12 +472,13 @@ def build_mlp_runtime_params(
     return params
 
 
-def patch_mlp_layers(model, params: list[dict], bits: int) -> list:
+def patch_mlp_layers(model, params: list[dict], bits: int, fold_down_proj: bool = False) -> list:
     saved = []
     for item in params:
         layer = get_text_layer(model, int(item["layer"]))
         original_forward = layer.mlp.forward
-        layer.mlp.forward = make_mlp_forward(
+        make_forward = make_folded_mlp_forward if fold_down_proj else make_mlp_forward
+        layer.mlp.forward = make_forward(
             layer.mlp,
             bits=bits,
             rotation_spec=item["rotation_spec"],
@@ -505,7 +528,7 @@ def apply_orbitquant(
             args.calib_max_length,
             args.mlp_block_size,
         )
-        handles.extend(patch_mlp_layers(model, mlp_params, args.mlp_bits))
+        handles.extend(patch_mlp_layers(model, mlp_params, args.mlp_bits, getattr(args, "mlp_fold_down_proj", False)))
     audit = {
         "mode": mode,
         "kv_layers": kv_layers,
@@ -514,6 +537,7 @@ def apply_orbitquant(
         "kv_alpha": args.kv_alpha,
         "mlp_bits": args.mlp_bits,
         "mlp_block_size": args.mlp_block_size,
+        "mlp_fold_down_proj": bool(getattr(args, "mlp_fold_down_proj", False)),
         "mlp_choices": [
             {
                 "layer": int(item["layer"]),
@@ -829,6 +853,7 @@ def main() -> int:
     parser.add_argument("--mlp-bits", type=int, default=2)
     parser.add_argument("--mlp-alpha", type=float, default=0.375)
     parser.add_argument("--mlp-block-size", type=int, default=512)
+    parser.add_argument("--mlp-fold-down-proj", action="store_true")
     parser.add_argument("--memory-context-length", type=int, default=8192)
     parser.add_argument("--mlp-lifetime-tokens", type=int, default=64)
     parser.add_argument("--dry-run", action="store_true")
